@@ -86,6 +86,7 @@ namespace GelirGider
             this.btnGiris.TabIndex = 4;
             this.btnGiris.Text = "GİRİŞ";
             this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // btnCikis
             // 
@@ -113,8 +114,10 @@ namespace GelirGider
             // 
             // KullaniciGiris
             // 
+            this.AcceptButton = this.btnGiris;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCikis;
             this.ClientSize = new System.Drawing.Size(402, 206);
             this.Controls.Add(this.chkBeniHatirla);
             this.Controls.Add(this.btnCikis);

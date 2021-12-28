@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace GelirGider
 {
@@ -15,6 +7,16 @@ namespace GelirGider
         public AnaMenu()
         {
             InitializeComponent();
+        }
+
+        private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tsCikis_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
