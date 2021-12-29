@@ -35,7 +35,9 @@ namespace GelirGider
             this.btnBorcİslemleri = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtAlacaklar = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtBorclar = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsGelirİslemleri = new System.Windows.Forms.ToolStripMenuItem();
             this.gelirİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,20 +47,18 @@ namespace GelirGider
             this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsKullaniciislemleri = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCikis = new System.Windows.Forms.ToolStripMenuItem();
-            this.dtAlacaklar = new System.Windows.Forms.DataGridView();
-            this.dtBorclar = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlacaklar)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtBorclar)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGelirİslemleri
             // 
             this.btnGelirİslemleri.Location = new System.Drawing.Point(17, 34);
-            this.btnGelirİslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGelirİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnGelirİslemleri.Name = "btnGelirİslemleri";
             this.btnGelirİslemleri.Size = new System.Drawing.Size(180, 55);
             this.btnGelirİslemleri.TabIndex = 0;
@@ -68,7 +68,7 @@ namespace GelirGider
             // btnGiderİslemleri
             // 
             this.btnGiderİslemleri.Location = new System.Drawing.Point(17, 97);
-            this.btnGiderİslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGiderİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnGiderİslemleri.Name = "btnGiderİslemleri";
             this.btnGiderİslemleri.Size = new System.Drawing.Size(180, 55);
             this.btnGiderİslemleri.TabIndex = 0;
@@ -78,7 +78,7 @@ namespace GelirGider
             // btnAlacakİslemleri
             // 
             this.btnAlacakİslemleri.Location = new System.Drawing.Point(220, 34);
-            this.btnAlacakİslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlacakİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlacakİslemleri.Name = "btnAlacakİslemleri";
             this.btnAlacakİslemleri.Size = new System.Drawing.Size(180, 55);
             this.btnAlacakİslemleri.TabIndex = 0;
@@ -88,7 +88,7 @@ namespace GelirGider
             // btnBorcİslemleri
             // 
             this.btnBorcİslemleri.Location = new System.Drawing.Point(220, 97);
-            this.btnBorcİslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorcİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorcİslemleri.Name = "btnBorcİslemleri";
             this.btnBorcİslemleri.Size = new System.Drawing.Size(180, 55);
             this.btnBorcİslemleri.TabIndex = 0;
@@ -118,6 +118,17 @@ namespace GelirGider
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alacaklar";
             // 
+            // dtAlacaklar
+            // 
+            this.dtAlacaklar.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtAlacaklar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtAlacaklar.Location = new System.Drawing.Point(6, 25);
+            this.dtAlacaklar.Name = "dtAlacaklar";
+            this.dtAlacaklar.RowHeadersWidth = 51;
+            this.dtAlacaklar.RowTemplate.Height = 25;
+            this.dtAlacaklar.Size = new System.Drawing.Size(408, 194);
+            this.dtAlacaklar.TabIndex = 0;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtBorclar);
@@ -128,15 +139,27 @@ namespace GelirGider
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Borçlar";
             // 
+            // dtBorclar
+            // 
+            this.dtBorclar.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtBorclar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtBorclar.Location = new System.Drawing.Point(6, 25);
+            this.dtBorclar.Name = "dtBorclar";
+            this.dtBorclar.RowHeadersWidth = 51;
+            this.dtBorclar.RowTemplate.Height = 25;
+            this.dtBorclar.Size = new System.Drawing.Size(408, 194);
+            this.dtBorclar.TabIndex = 0;
+            // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsGelirİslemleri,
             this.ayarlarToolStripMenuItem,
             this.tsCikis});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(464, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(464, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -148,31 +171,31 @@ namespace GelirGider
             this.tsAlacakİslemleri,
             this.tsBorcİslemleri});
             this.tsGelirİslemleri.Name = "tsGelirİslemleri";
-            this.tsGelirİslemleri.Size = new System.Drawing.Size(60, 20);
+            this.tsGelirİslemleri.Size = new System.Drawing.Size(75, 24);
             this.tsGelirİslemleri.Text = "İşlemler";
             // 
             // gelirİşlemleriToolStripMenuItem
             // 
             this.gelirİşlemleriToolStripMenuItem.Name = "gelirİşlemleriToolStripMenuItem";
-            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.gelirİşlemleriToolStripMenuItem.Text = "Gelir İşlemleri";
             // 
             // tsGiderİslemleri
             // 
             this.tsGiderİslemleri.Name = "tsGiderİslemleri";
-            this.tsGiderİslemleri.Size = new System.Drawing.Size(180, 22);
+            this.tsGiderİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsGiderİslemleri.Text = "Gider İşlemleri";
             // 
             // tsAlacakİslemleri
             // 
             this.tsAlacakİslemleri.Name = "tsAlacakİslemleri";
-            this.tsAlacakİslemleri.Size = new System.Drawing.Size(180, 22);
+            this.tsAlacakİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsAlacakİslemleri.Text = "Alacak İşlemleri";
             // 
             // tsBorcİslemleri
             // 
             this.tsBorcİslemleri.Name = "tsBorcİslemleri";
-            this.tsBorcİslemleri.Size = new System.Drawing.Size(180, 22);
+            this.tsBorcİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsBorcİslemleri.Text = "Borç İşlemleri";
             // 
             // ayarlarToolStripMenuItem
@@ -180,43 +203,25 @@ namespace GelirGider
             this.ayarlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsKullaniciislemleri});
             this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
-            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.ayarlarToolStripMenuItem.Text = "Ayarlar";
             // 
             // tsKullaniciislemleri
             // 
             this.tsKullaniciislemleri.Name = "tsKullaniciislemleri";
-            this.tsKullaniciislemleri.Size = new System.Drawing.Size(180, 22);
+            this.tsKullaniciislemleri.Size = new System.Drawing.Size(208, 26);
             this.tsKullaniciislemleri.Text = "Kullanıcı İşlemleri";
             // 
             // tsCikis
             // 
             this.tsCikis.Name = "tsCikis";
-            this.tsCikis.Size = new System.Drawing.Size(46, 20);
+            this.tsCikis.Size = new System.Drawing.Size(57, 24);
             this.tsCikis.Text = "ÇIKIŞ";
             this.tsCikis.Click += new System.EventHandler(this.tsCikis_Click);
             // 
-            // dtAlacaklar
-            // 
-            this.dtAlacaklar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtAlacaklar.Location = new System.Drawing.Point(6, 25);
-            this.dtAlacaklar.Name = "dtAlacaklar";
-            this.dtAlacaklar.RowTemplate.Height = 25;
-            this.dtAlacaklar.Size = new System.Drawing.Size(408, 194);
-            this.dtAlacaklar.TabIndex = 0;
-            // 
-            // dtBorclar
-            // 
-            this.dtBorclar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtBorclar.Location = new System.Drawing.Point(6, 25);
-            this.dtBorclar.Name = "dtBorclar";
-            this.dtBorclar.RowTemplate.Height = 25;
-            this.dtBorclar.Size = new System.Drawing.Size(408, 194);
-            this.dtBorclar.TabIndex = 0;
-            // 
             // AnaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 721);
             this.Controls.Add(this.groupBox3);
@@ -232,11 +237,11 @@ namespace GelirGider
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AnaMenu_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtAlacaklar)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtBorclar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtAlacaklar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtBorclar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
