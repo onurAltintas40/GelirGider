@@ -64,6 +64,7 @@ namespace GelirGider
             this.btnGelirİslemleri.TabIndex = 0;
             this.btnGelirİslemleri.Text = "Gelir İşlemleri";
             this.btnGelirİslemleri.UseVisualStyleBackColor = true;
+            this.btnGelirİslemleri.Click += new System.EventHandler(this.btnGelirİslemleri_Click);
             // 
             // btnGiderİslemleri
             // 
@@ -77,7 +78,7 @@ namespace GelirGider
             // 
             // btnAlacakİslemleri
             // 
-            this.btnAlacakİslemleri.Location = new System.Drawing.Point(220, 34);
+            this.btnAlacakİslemleri.Location = new System.Drawing.Point(259, 34);
             this.btnAlacakİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlacakİslemleri.Name = "btnAlacakİslemleri";
             this.btnAlacakİslemleri.Size = new System.Drawing.Size(180, 55);
@@ -87,7 +88,7 @@ namespace GelirGider
             // 
             // btnBorcİslemleri
             // 
-            this.btnBorcİslemleri.Location = new System.Drawing.Point(220, 97);
+            this.btnBorcİslemleri.Location = new System.Drawing.Point(259, 97);
             this.btnBorcİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorcİslemleri.Name = "btnBorcİslemleri";
             this.btnBorcİslemleri.Size = new System.Drawing.Size(180, 55);
@@ -103,7 +104,7 @@ namespace GelirGider
             this.groupBox1.Controls.Add(this.btnGiderİslemleri);
             this.groupBox1.Location = new System.Drawing.Point(20, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 170);
+            this.groupBox1.Size = new System.Drawing.Size(456, 170);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "İşlemler";
@@ -113,7 +114,7 @@ namespace GelirGider
             this.groupBox2.Controls.Add(this.dtAlacaklar);
             this.groupBox2.Location = new System.Drawing.Point(20, 229);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(420, 225);
+            this.groupBox2.Size = new System.Drawing.Size(825, 336);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alacaklar";
@@ -126,15 +127,15 @@ namespace GelirGider
             this.dtAlacaklar.Name = "dtAlacaklar";
             this.dtAlacaklar.RowHeadersWidth = 51;
             this.dtAlacaklar.RowTemplate.Height = 25;
-            this.dtAlacaklar.Size = new System.Drawing.Size(408, 194);
+            this.dtAlacaklar.Size = new System.Drawing.Size(812, 300);
             this.dtAlacaklar.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtBorclar);
-            this.groupBox3.Location = new System.Drawing.Point(20, 470);
+            this.groupBox3.Location = new System.Drawing.Point(20, 571);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(420, 225);
+            this.groupBox3.Size = new System.Drawing.Size(825, 338);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Borçlar";
@@ -147,7 +148,7 @@ namespace GelirGider
             this.dtBorclar.Name = "dtBorclar";
             this.dtBorclar.RowHeadersWidth = 51;
             this.dtBorclar.RowTemplate.Height = 25;
-            this.dtBorclar.Size = new System.Drawing.Size(408, 194);
+            this.dtBorclar.Size = new System.Drawing.Size(812, 300);
             this.dtBorclar.TabIndex = 0;
             // 
             // menuStrip1
@@ -159,7 +160,7 @@ namespace GelirGider
             this.tsCikis});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(464, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(860, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -223,7 +224,7 @@ namespace GelirGider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 721);
+            this.ClientSize = new System.Drawing.Size(860, 923);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -235,6 +236,7 @@ namespace GelirGider
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ana Menü";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AnaMenu_FormClosed);
+            this.Load += new System.EventHandler(this.AnaMenu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtAlacaklar)).EndInit();
