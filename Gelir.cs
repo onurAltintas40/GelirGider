@@ -9,7 +9,7 @@ namespace GelirGider
         {
             InitializeComponent();
         }
-       
+
         private void Gelir_Load(object sender, System.EventArgs e)
         {
             var gelirTuruSonuc = Veritabani.GelirTuruListele();
@@ -22,7 +22,6 @@ namespace GelirGider
 
             Temizle();
         }
-
         void Temizle()
         {
             var gelirSonuc = Veritabani.GelirListele();
@@ -32,39 +31,74 @@ namespace GelirGider
             cmbGelirTuru.Tag = null;
             txtAciklama.Clear();
             txtTutar.Clear();
-            dtTarih.Value = DateTime.Now;
             chkOdemeAlindi.Checked = false;
             txtTutar.Focus();
 
         }
-        private void dtGelirListesi_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btnEkle_Click(object sender, System.EventArgs e)
+        {
+
+            if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
+            {
+                int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
+
+                Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme);
+                Temizle();
+            }
+            else
+            {
+                MessageBox.Show("Gelir Türü ve Tutar boş olamaz !!!");
+            }
+
+
+        }
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (cmbGelirTuru.Tag == null)
+            {
+                MessageBox.Show("Lütfen bir kayıt seçin!!!");
+            }
+            else
+            {
+                if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
+                {
+                    int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
+                    Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme, Int32.Parse((string)cmbGelirTuru.Tag));
+                    Temizle();
+                }
+                else
+                {
+                    MessageBox.Show("Gelir Türü ve Tutar boş olamaz !!!");
+                }
+            }
+
+        }
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (cmbGelirTuru.Tag == null)
+            {
+                MessageBox.Show("Lütfen bir kayıt seçin!!!");
+            }
+            else
+            {
+                Veritabani.GelirSil(Int32.Parse((string)cmbGelirTuru.Tag));
+                Temizle();
+            }
+        }
+        private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        private void dtGelirListesi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             cmbGelirTuru.Tag = dtGelirListesi.CurrentRow.Cells[0].Value.ToString();
             txtTutar.Text = dtGelirListesi.CurrentRow.Cells[1].Value.ToString();
-            dtTarih.Value = DateTime.Parse((string)dtGelirListesi.CurrentRow.Cells[2].Value);
             txtAciklama.SelectedText = dtGelirListesi.CurrentRow.Cells[3].Value.ToString();
             cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();
-            chkOdemeAlindi.Checked = (int)dtGelirListesi.CurrentRow.Cells[5].Value == 1 ? true : false;
-
-            Temizle();
+            chkOdemeAlindi.Checked = Int32.Parse(dtGelirListesi.CurrentRow.Cells[5].Value.ToString()) == 1 ? true : false;
         }
-        private void btnEkle_Click(object sender, System.EventArgs e)
+        private void btnTemizle_Click(object sender, EventArgs e)
         {
-            int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;           
-
-            Veritabani.GelirEkle(Double.Parse(txtTutar.Text),dtTarih.Value.ToString(),txtAciklama.Text,cmbGelirTuru.Text,odeme);
-            Temizle();
-        }
-
-        private void btnGuncelle_Click(object sender, EventArgs e)
-        {
-            int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
-            Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), dtTarih.Value.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme,Int32.Parse((string)cmbGelirTuru.Tag));
-        }
-
-        private void btnSil_Click(object sender, EventArgs e)
-        {
-            Veritabani.GelirSil(Int32.Parse((string)cmbGelirTuru.Tag));
             Temizle();
         }
     }
