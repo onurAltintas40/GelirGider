@@ -30,6 +30,8 @@ namespace GelirGider
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtOdemeTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.txtTutar = new System.Windows.Forms.TextBox();
             this.btnSil = new System.Windows.Forms.Button();
@@ -42,8 +44,8 @@ namespace GelirGider
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtAlacakListesi = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtOdemeTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtKimden = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlacakListesi)).BeginInit();
@@ -51,6 +53,8 @@ namespace GelirGider
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtKimden);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dtOdemeTarihi);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnTemizle);
@@ -70,6 +74,22 @@ namespace GelirGider
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
             // 
+            // dtOdemeTarihi
+            // 
+            this.dtOdemeTarihi.Location = new System.Drawing.Point(113, 115);
+            this.dtOdemeTarihi.Name = "dtOdemeTarihi";
+            this.dtOdemeTarihi.Size = new System.Drawing.Size(217, 23);
+            this.dtOdemeTarihi.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Ödeme Tarihi:";
+            // 
             // btnTemizle
             // 
             this.btnTemizle.Location = new System.Drawing.Point(493, 19);
@@ -82,10 +102,10 @@ namespace GelirGider
             // 
             // txtTutar
             // 
-            this.txtTutar.Location = new System.Drawing.Point(113, 71);
+            this.txtTutar.Location = new System.Drawing.Point(391, 71);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(217, 23);
-            this.txtTutar.TabIndex = 2;
+            this.txtTutar.Size = new System.Drawing.Size(186, 23);
+            this.txtTutar.TabIndex = 3;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             // 
             // btnSil
@@ -121,16 +141,16 @@ namespace GelirGider
             // txtAciklama
             // 
             this.txtAciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAciklama.Location = new System.Drawing.Point(348, 72);
+            this.txtAciklama.Location = new System.Drawing.Point(348, 115);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(229, 134);
+            this.txtAciklama.Size = new System.Drawing.Size(229, 91);
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(348, 48);
+            this.label3.Location = new System.Drawing.Point(348, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 4;
@@ -156,7 +176,7 @@ namespace GelirGider
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 74);
+            this.label1.Location = new System.Drawing.Point(348, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 2;
@@ -188,21 +208,21 @@ namespace GelirGider
             this.dtAlacakListesi.TabIndex = 0;
             this.dtAlacakListesi.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGelirListesi_CellMouseDoubleClick);
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Ödeme Tarihi:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(56, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Kimden:";
             // 
-            // dtOdemeTarihi
+            // txtKimden
             // 
-            this.dtOdemeTarihi.Location = new System.Drawing.Point(113, 115);
-            this.dtOdemeTarihi.Name = "dtOdemeTarihi";
-            this.dtOdemeTarihi.Size = new System.Drawing.Size(217, 23);
-            this.dtOdemeTarihi.TabIndex = 11;
+            this.txtKimden.Location = new System.Drawing.Point(113, 71);
+            this.txtKimden.Name = "txtKimden";
+            this.txtKimden.Size = new System.Drawing.Size(217, 23);
+            this.txtKimden.TabIndex = 2;
             // 
             // Alacak
             // 
@@ -227,18 +247,20 @@ namespace GelirGider
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTemizle;
-        private System.Windows.Forms.TextBox txtTutar;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.RichTextBox txtAciklama;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbAlacakTuru;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtAlacakListesi;
         private System.Windows.Forms.DateTimePicker dtOdemeTarihi;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtTutar;
+        public System.Windows.Forms.RichTextBox txtAciklama;
+        public System.Windows.Forms.ComboBox cmbAlacakTuru;
+        private System.Windows.Forms.TextBox txtKimden;
+        private System.Windows.Forms.Label label5;
     }
 }

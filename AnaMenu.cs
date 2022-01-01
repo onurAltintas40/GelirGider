@@ -33,5 +33,17 @@ namespace GelirGider
             dtAlacaklar.DataSource = sonucAlacak;
             dtBorclar.DataSource = sonucBorcListele;
         }
+
+        private void gelirTürüİşlemleriToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            GelirTuru gt = new GelirTuru();
+            gt.ShowDialog();
+        }
+
+        private void tsGiderTuru_Click(object sender, System.EventArgs e)
+        {
+            GiderTuru gi = new GiderTuru();
+            gi.ShowDialog();
+        }
     }
 }

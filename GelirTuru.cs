@@ -13,13 +13,13 @@ namespace GelirGider
         {
             txtGelirTuru.Clear();
             txtGelirTuru.Focus();
-            dtGelirTuru.DataSource = Veritabani.GelirTuruListele();
+            var sonuc = Veritabani.GelirTuruListele();
+            dtGelirTuru.DataSource = sonuc;
         }
         private void GelirTuru_Load(object sender, EventArgs e)
         {
             Temizle();
-        }
-        
+        }       
 
         private void btnEkle_Click(object sender, EventArgs e)
         {

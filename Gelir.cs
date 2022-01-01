@@ -39,14 +39,24 @@ namespace GelirGider
             if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
             {
                 int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
+                if (chkOdemeAlindi.Checked == true)
+                {
+                    Alacak alacak = new Alacak();
+                    alacak.cmbAlacakTuru.SelectedIndex = cmbGelirTuru.SelectedIndex;
+                    alacak.txtTutar.Text = txtTutar.Text;
+                    alacak.txtAciklama.Text = txtAciklama.Text;
+                    alacak.Show();
+                }
 
                 Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme);
+                
                 Temizle();
             }
             else
             {
                 MessageBox.Show("Gelir Türü ve Tutar boş olamaz !!!");
             }
+
         }
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
@@ -60,6 +70,14 @@ namespace GelirGider
                 {
                     int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
                     Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme, Int32.Parse((string)cmbGelirTuru.Tag));
+                    if (chkOdemeAlindi.Checked == true)
+                    {
+                        Alacak alacak = new Alacak();
+                        alacak.cmbAlacakTuru.SelectedIndex = cmbGelirTuru.SelectedIndex;
+                        alacak.txtTutar.Text = txtTutar.Text;
+                        alacak.txtAciklama.Text = txtAciklama.Text;
+                        alacak.ShowDialog();
+                    }
                     Temizle();
                 }
                 else
@@ -89,6 +107,7 @@ namespace GelirGider
             cmbGelirTuru.Tag = dtGelirListesi.CurrentRow.Cells[0].Value.ToString();
             txtTutar.Text = dtGelirListesi.CurrentRow.Cells[1].Value.ToString();
             txtAciklama.Text = dtGelirListesi.CurrentRow.Cells[3].Value.ToString();
+            cmbGelirTuru.Text = "";
             cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();
             chkOdemeAlindi.Checked = Int32.Parse(dtGelirListesi.CurrentRow.Cells[5].Value.ToString()) == 1 ? true : false;
         }

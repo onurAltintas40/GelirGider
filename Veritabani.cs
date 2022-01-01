@@ -326,7 +326,7 @@ namespace GelirGider
 
             return sonuc;
         }
-        public static int AlacakEkle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama)
+        public static int AlacakEkle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama,string kimden)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "INSERT INTO Alacak(Tutar, OdemeTarih, Tarih, AlacakTuru, Aciklama)  VALUES(@Tutar, @OdemeTarih, @Tarih, @AlacakTuru, @Aciklama)";
@@ -349,7 +349,7 @@ namespace GelirGider
             con.Close();
             return sonuc;
         }
-        public static int AlacakGuncelle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama,int id)
+        public static int AlacakGuncelle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama, string kimden, int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Alacak set Tutar=@Tutar, OdemeTarih= @OdemeTarih, Tarih=@Tarih, AlacakTuru=@AlacakTuru, Aciklama= @Aciklama where Id = @id";
@@ -389,7 +389,7 @@ namespace GelirGider
             con.Close();
             return sonuc;
         }
-        public static int BorcEkle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama)
+        public static int BorcEkle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama,string kime)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "INSERT INTO Borc(Tarih, OdemeTarih, BorcTuru, Aciklama,Tutar)  VALUES(@Tarih, @OdemeTarih, @BorcTuru, @Aciklama, @Tutar)";
@@ -412,7 +412,7 @@ namespace GelirGider
             con.Close();
             return sonuc;
         }
-        public static int BorcGuncelle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama, int id)
+        public static int BorcGuncelle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama, string kime, int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Borc set Tarih=@Tarih, OdemeTarih=@OdemeTarih, BorcTuru=@BorcTuru, Aciklama=@Aciklama,Tutar=@Tutar where Id=@id";

@@ -89,6 +89,7 @@ namespace GelirGider
             cmbGiderTuru.Tag = dtGiderListesi.CurrentRow.Cells[0].Value.ToString();
             txtTutar.Text = dtGiderListesi.CurrentRow.Cells[1].Value.ToString();
             txtAciklama.Text = dtGiderListesi.CurrentRow.Cells[3].Value.ToString();
+            cmbGiderTuru.Text = "";
             cmbGiderTuru.SelectedText = dtGiderListesi.CurrentRow.Cells[4].Value.ToString();
             chkOdemeAlindi.Checked = Int32.Parse(dtGiderListesi.CurrentRow.Cells[5].Value.ToString()) == 1 ? true : false;
         }

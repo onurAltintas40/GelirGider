@@ -229,16 +229,16 @@ namespace GelirGider
         private System.Windows.Forms.DateTimePicker dtOdemeTarihi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTemizle;
-        private System.Windows.Forms.TextBox txtTutar;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.RichTextBox txtAciklama;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbBorcTuru;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtBorcListesi;
+        public System.Windows.Forms.TextBox txtTutar;
+        public System.Windows.Forms.RichTextBox txtAciklama;
+        public System.Windows.Forms.ComboBox cmbBorcTuru;
     }
 }

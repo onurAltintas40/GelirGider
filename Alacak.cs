@@ -20,6 +20,7 @@ namespace GelirGider
             txtTutar.Clear();
             dtOdemeTarihi.Value = DateTime.Now;
             txtTutar.Focus();
+            txtKimden.Clear();
         }
         private void Alacak_Load(object sender, EventArgs e)
         {
@@ -39,7 +40,7 @@ namespace GelirGider
             if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")            {
 
 
-                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(),DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text);
+                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(),DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text,txtKimden.Text);
                 Temizle();
             }
             else
@@ -58,7 +59,7 @@ namespace GelirGider
             {
                 if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
                 {                  
-                    Veritabani.AlacakGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text,Int32.Parse(cmbAlacakTuru.Tag.ToString()));
+                    Veritabani.AlacakGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text,txtKimden.Text,Int32.Parse(cmbAlacakTuru.Tag.ToString()));
                     Temizle();
                 }
                 else

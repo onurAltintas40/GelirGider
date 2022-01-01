@@ -44,9 +44,11 @@ namespace GelirGider
             this.tsGiderİslemleri = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAlacakİslemleri = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBorcİslemleri = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsGelirTuru = new System.Windows.Forms.ToolStripMenuItem();
             this.tsKullaniciislemleri = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCikis = new System.Windows.Forms.ToolStripMenuItem();
+            this.gelirTürüİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsGiderTuru = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlacaklar)).BeginInit();
@@ -156,11 +158,11 @@ namespace GelirGider
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsGelirİslemleri,
-            this.ayarlarToolStripMenuItem,
+            this.tsGelirTuru,
             this.tsCikis});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(860, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(860, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -172,57 +174,73 @@ namespace GelirGider
             this.tsAlacakİslemleri,
             this.tsBorcİslemleri});
             this.tsGelirİslemleri.Name = "tsGelirİslemleri";
-            this.tsGelirİslemleri.Size = new System.Drawing.Size(75, 24);
+            this.tsGelirİslemleri.Size = new System.Drawing.Size(60, 20);
             this.tsGelirİslemleri.Text = "İşlemler";
             // 
             // gelirİşlemleriToolStripMenuItem
             // 
             this.gelirİşlemleriToolStripMenuItem.Name = "gelirİşlemleriToolStripMenuItem";
-            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.gelirİşlemleriToolStripMenuItem.Text = "Gelir İşlemleri";
             // 
             // tsGiderİslemleri
             // 
             this.tsGiderİslemleri.Name = "tsGiderİslemleri";
-            this.tsGiderİslemleri.Size = new System.Drawing.Size(196, 26);
+            this.tsGiderİslemleri.Size = new System.Drawing.Size(156, 22);
             this.tsGiderİslemleri.Text = "Gider İşlemleri";
             // 
             // tsAlacakİslemleri
             // 
             this.tsAlacakİslemleri.Name = "tsAlacakİslemleri";
-            this.tsAlacakİslemleri.Size = new System.Drawing.Size(196, 26);
+            this.tsAlacakİslemleri.Size = new System.Drawing.Size(156, 22);
             this.tsAlacakİslemleri.Text = "Alacak İşlemleri";
             // 
             // tsBorcİslemleri
             // 
             this.tsBorcİslemleri.Name = "tsBorcİslemleri";
-            this.tsBorcİslemleri.Size = new System.Drawing.Size(196, 26);
+            this.tsBorcİslemleri.Size = new System.Drawing.Size(156, 22);
             this.tsBorcİslemleri.Text = "Borç İşlemleri";
             // 
-            // ayarlarToolStripMenuItem
+            // tsGelirTuru
             // 
-            this.ayarlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsKullaniciislemleri});
-            this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
-            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.ayarlarToolStripMenuItem.Text = "Ayarlar";
+            this.tsGelirTuru.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsKullaniciislemleri,
+            this.gelirTürüİşlemleriToolStripMenuItem,
+            this.tsGiderTuru});
+            this.tsGelirTuru.Name = "tsGelirTuru";
+            this.tsGelirTuru.Size = new System.Drawing.Size(56, 20);
+            this.tsGelirTuru.Text = "Ayarlar";
             // 
             // tsKullaniciislemleri
             // 
             this.tsKullaniciislemleri.Name = "tsKullaniciislemleri";
-            this.tsKullaniciislemleri.Size = new System.Drawing.Size(208, 26);
+            this.tsKullaniciislemleri.Size = new System.Drawing.Size(180, 22);
             this.tsKullaniciislemleri.Text = "Kullanıcı İşlemleri";
             // 
             // tsCikis
             // 
             this.tsCikis.Name = "tsCikis";
-            this.tsCikis.Size = new System.Drawing.Size(57, 24);
+            this.tsCikis.Size = new System.Drawing.Size(46, 20);
             this.tsCikis.Text = "ÇIKIŞ";
             this.tsCikis.Click += new System.EventHandler(this.tsCikis_Click);
             // 
+            // gelirTürüİşlemleriToolStripMenuItem
+            // 
+            this.gelirTürüİşlemleriToolStripMenuItem.Name = "gelirTürüİşlemleriToolStripMenuItem";
+            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gelirTürüİşlemleriToolStripMenuItem.Text = "Gelir Türü İşlemleri";
+            this.gelirTürüİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.gelirTürüİşlemleriToolStripMenuItem_Click);
+            // 
+            // tsGiderTuru
+            // 
+            this.tsGiderTuru.Name = "tsGiderTuru";
+            this.tsGiderTuru.Size = new System.Drawing.Size(180, 22);
+            this.tsGiderTuru.Text = "Gider Türü İşlemleri";
+            this.tsGiderTuru.Click += new System.EventHandler(this.tsGiderTuru_Click);
+            // 
             // AnaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 923);
             this.Controls.Add(this.groupBox3);
@@ -264,10 +282,12 @@ namespace GelirGider
         private System.Windows.Forms.ToolStripMenuItem tsGiderİslemleri;
         private System.Windows.Forms.ToolStripMenuItem tsAlacakİslemleri;
         private System.Windows.Forms.ToolStripMenuItem tsBorcİslemleri;
-        private System.Windows.Forms.ToolStripMenuItem ayarlarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsGelirTuru;
         private System.Windows.Forms.ToolStripMenuItem tsKullaniciislemleri;
         private System.Windows.Forms.ToolStripMenuItem tsCikis;
         private System.Windows.Forms.DataGridView dtAlacaklar;
         private System.Windows.Forms.DataGridView dtBorclar;
+        private System.Windows.Forms.ToolStripMenuItem gelirTürüİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsGiderTuru;
     }
 }
