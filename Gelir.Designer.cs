@@ -36,13 +36,13 @@ namespace GelirGider
             this.label4 = new System.Windows.Forms.Label();
             this.cmbGelirTuru = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.txtTutar = new System.Windows.Forms.TextBox();
-            this.chkOdemeAlindi = new System.Windows.Forms.CheckBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.RichTextBox();
-            this.btnTemizle = new System.Windows.Forms.Button();
+            this.chkOdemeAlindi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGelirListesi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,6 +129,16 @@ namespace GelirGider
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(493, 19);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(84, 34);
+            this.btnTemizle.TabIndex = 9;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // txtTutar
             // 
             this.txtTutar.Location = new System.Drawing.Point(114, 80);
@@ -136,16 +146,6 @@ namespace GelirGider
             this.txtTutar.Size = new System.Drawing.Size(217, 26);
             this.txtTutar.TabIndex = 2;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
-            // 
-            // chkOdemeAlindi
-            // 
-            this.chkOdemeAlindi.AutoSize = true;
-            this.chkOdemeAlindi.Location = new System.Drawing.Point(111, 127);
-            this.chkOdemeAlindi.Name = "chkOdemeAlindi";
-            this.chkOdemeAlindi.Size = new System.Drawing.Size(111, 23);
-            this.chkOdemeAlindi.TabIndex = 4;
-            this.chkOdemeAlindi.Text = "Ödeme Alındı";
-            this.chkOdemeAlindi.UseVisualStyleBackColor = true;
             // 
             // btnSil
             // 
@@ -186,15 +186,15 @@ namespace GelirGider
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
-            // btnTemizle
+            // chkOdemeAlindi
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(493, 19);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(84, 34);
-            this.btnTemizle.TabIndex = 9;
-            this.btnTemizle.Text = "TEMİZLE";
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            this.chkOdemeAlindi.AutoSize = true;
+            this.chkOdemeAlindi.Location = new System.Drawing.Point(114, 118);
+            this.chkOdemeAlindi.Name = "chkOdemeAlindi";
+            this.chkOdemeAlindi.Size = new System.Drawing.Size(111, 23);
+            this.chkOdemeAlindi.TabIndex = 4;
+            this.chkOdemeAlindi.Text = "Ödeme Alındı";
+            this.chkOdemeAlindi.UseVisualStyleBackColor = true;
             // 
             // Gelir
             // 
@@ -230,8 +230,8 @@ namespace GelirGider
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.RichTextBox txtAciklama;
-        private System.Windows.Forms.CheckBox chkOdemeAlindi;
         private System.Windows.Forms.TextBox txtTutar;
         private System.Windows.Forms.Button btnTemizle;
+        private System.Windows.Forms.CheckBox chkOdemeAlindi;
     }
 }

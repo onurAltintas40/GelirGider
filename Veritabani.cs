@@ -35,7 +35,7 @@ namespace GelirGider
         public static DataTable GelirListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from Gelir";
+            string sql = "Select * from Gelir Order By Tarih Desc";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             DataTable dt = new DataTable();
@@ -47,7 +47,7 @@ namespace GelirGider
         public static SQLiteDataReader GelirTuruListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from GelirTuru";
+            string sql = "Select * from GelirTuru Order By GelirTuru";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             SQLiteDataReader dr;
@@ -57,7 +57,7 @@ namespace GelirGider
         public static DataTable GiderListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from Gider";
+            string sql = "Select * from Gider Order By Tarih Desc";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             DataTable dt = new DataTable();
@@ -69,7 +69,7 @@ namespace GelirGider
         public static SQLiteDataReader GiderTuruListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from GiderTuru";
+            string sql = "Select * from GiderTuru Order By GiderTuru";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             SQLiteDataReader dr;
@@ -79,7 +79,7 @@ namespace GelirGider
         public static DataTable AlacakListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from Alacak";
+            string sql = "Select * from Alacak Order By OdemeTarih Desc";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             DataTable dt = new DataTable();
@@ -91,7 +91,7 @@ namespace GelirGider
         public static DataTable BorcListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from Borc";
+            string sql = "Select * from Borc Order By OdemeTarih Desc";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             DataTable dt = new DataTable();
@@ -452,8 +452,6 @@ namespace GelirGider
             con.Close();
             return sonuc;
         }
-
-
 
     }
 }

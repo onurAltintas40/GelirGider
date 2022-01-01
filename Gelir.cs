@@ -33,11 +33,9 @@ namespace GelirGider
             txtTutar.Clear();
             chkOdemeAlindi.Checked = false;
             txtTutar.Focus();
-
         }
         private void btnEkle_Click(object sender, System.EventArgs e)
         {
-
             if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
             {
                 int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
@@ -49,8 +47,6 @@ namespace GelirGider
             {
                 MessageBox.Show("Gelir Türü ve Tutar boş olamaz !!!");
             }
-
-
         }
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
@@ -71,7 +67,6 @@ namespace GelirGider
                     MessageBox.Show("Gelir Türü ve Tutar boş olamaz !!!");
                 }
             }
-
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
@@ -93,7 +88,7 @@ namespace GelirGider
         {
             cmbGelirTuru.Tag = dtGelirListesi.CurrentRow.Cells[0].Value.ToString();
             txtTutar.Text = dtGelirListesi.CurrentRow.Cells[1].Value.ToString();
-            txtAciklama.SelectedText = dtGelirListesi.CurrentRow.Cells[3].Value.ToString();
+            txtAciklama.Text = dtGelirListesi.CurrentRow.Cells[3].Value.ToString();
             cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();
             chkOdemeAlindi.Checked = Int32.Parse(dtGelirListesi.CurrentRow.Cells[5].Value.ToString()) == 1 ? true : false;
         }
