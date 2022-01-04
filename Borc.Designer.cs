@@ -30,6 +30,8 @@ namespace GelirGider
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtKime = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtOdemeTarihi = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTemizle = new System.Windows.Forms.Button();
@@ -51,6 +53,8 @@ namespace GelirGider
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtKime);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dtOdemeTarihi);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnTemizle);
@@ -70,9 +74,25 @@ namespace GelirGider
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
             // 
+            // txtKime
+            // 
+            this.txtKime.Location = new System.Drawing.Point(114, 66);
+            this.txtKime.Name = "txtKime";
+            this.txtKime.Size = new System.Drawing.Size(217, 23);
+            this.txtKime.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(56, 69);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Kimden:";
+            // 
             // dtOdemeTarihi
             // 
-            this.dtOdemeTarihi.Location = new System.Drawing.Point(113, 115);
+            this.dtOdemeTarihi.Location = new System.Drawing.Point(113, 109);
             this.dtOdemeTarihi.Name = "dtOdemeTarihi";
             this.dtOdemeTarihi.Size = new System.Drawing.Size(217, 23);
             this.dtOdemeTarihi.TabIndex = 11;
@@ -98,9 +118,9 @@ namespace GelirGider
             // 
             // txtTutar
             // 
-            this.txtTutar.Location = new System.Drawing.Point(113, 71);
+            this.txtTutar.Location = new System.Drawing.Point(391, 66);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(217, 23);
+            this.txtTutar.Size = new System.Drawing.Size(186, 23);
             this.txtTutar.TabIndex = 2;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             // 
@@ -137,16 +157,16 @@ namespace GelirGider
             // txtAciklama
             // 
             this.txtAciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAciklama.Location = new System.Drawing.Point(348, 72);
+            this.txtAciklama.Location = new System.Drawing.Point(348, 115);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(229, 134);
+            this.txtAciklama.Size = new System.Drawing.Size(229, 91);
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(348, 48);
+            this.label3.Location = new System.Drawing.Point(348, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 4;
@@ -155,7 +175,7 @@ namespace GelirGider
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 34);
+            this.label4.Location = new System.Drawing.Point(46, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 5;
@@ -172,7 +192,7 @@ namespace GelirGider
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 74);
+            this.label1.Location = new System.Drawing.Point(348, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 2;
@@ -240,5 +260,7 @@ namespace GelirGider
         public System.Windows.Forms.TextBox txtTutar;
         public System.Windows.Forms.RichTextBox txtAciklama;
         public System.Windows.Forms.ComboBox cmbBorcTuru;
+        private System.Windows.Forms.TextBox txtKime;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -13,6 +13,13 @@ namespace GelirGider
         {
             var borcSonuc = Veritabani.BorcListele();
             dtBorcListesi.DataSource = borcSonuc;
+            dtBorcListesi.Columns[0].Width = 50;
+            dtBorcListesi.Columns[1].Width = 135;
+            dtBorcListesi.Columns[2].Width = 135;
+            dtBorcListesi.Columns[3].Width = 135;
+            dtBorcListesi.Columns[4].Width = 135;
+            dtBorcListesi.Columns[5].Width = 140;
+            dtBorcListesi.Columns[6].Width = 140;
 
             cmbBorcTuru.Text = "Borç Türü Seçin";
             cmbBorcTuru.Tag = null;
@@ -38,7 +45,7 @@ namespace GelirGider
         {
             if (cmbBorcTuru.Text != "Borç Türü Seçin" && txtTutar.Text != "")
             {
-                Veritabani.BorcEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.SelectedText, txtAciklama.Text);
+                Veritabani.BorcEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.SelectedText, txtAciklama.Text,txtKime.Text);
                 Temizle();
             }
             else
@@ -57,7 +64,7 @@ namespace GelirGider
             {
                 if (cmbBorcTuru.Text != "Borç Türü Seçin" && txtTutar.Text != "")
                 {
-                    Veritabani.BorcGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.SelectedText, txtAciklama.Text, Int32.Parse(cmbBorcTuru.Tag.ToString()));
+                    Veritabani.BorcGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.SelectedText, txtAciklama.Text,txtKime.Text, Int32.Parse(cmbBorcTuru.Tag.ToString()));
                     Temizle();
                 }
                 else

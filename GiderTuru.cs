@@ -13,7 +13,8 @@ namespace GelirGider
         {
             txtGiderTuru.Clear();
             txtGiderTuru.Focus();
-            dtGiderTuru.DataSource = Veritabani.GelirTuruListele();
+            dtGiderTuru.DataSource = Veritabani.GelirTuruListeleDt();
+            dtGiderTuru.Columns[1].Width = 200;
         }
         private void GiderTuru_Load(object sender, EventArgs e)
         {

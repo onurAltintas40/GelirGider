@@ -13,8 +13,9 @@ namespace GelirGider
         {
             txtGelirTuru.Clear();
             txtGelirTuru.Focus();
-            var sonuc = Veritabani.GelirTuruListele();
-            dtGelirTuru.DataSource = sonuc;
+            var s = Veritabani.GelirTuruListeleDt();
+            dataGridView1.DataSource = s;
+            dataGridView1.Columns[1].Width = 200;
         }
         private void GelirTuru_Load(object sender, EventArgs e)
         {
@@ -65,12 +66,12 @@ namespace GelirGider
                 Veritabani.GelirTuruSil(Int32.Parse(txtGelirTuru.Tag.ToString()));
                 Temizle();
             }
-        }
+        }     
 
-        private void dtGelirTuru_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtGelirTuru.Tag = dtGelirTuru.CurrentRow.Cells[0].Value.ToString();
-            txtGelirTuru.Text = dtGelirTuru.CurrentRow.Cells[1].Value.ToString();
+            txtGelirTuru.Tag = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtGelirTuru.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }

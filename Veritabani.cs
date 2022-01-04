@@ -54,6 +54,17 @@ namespace GelirGider
             dr = cmd.ExecuteReader();
             return dr;
         }
+        public static DataTable GelirTuruListeleDt()
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "Select * from GelirTuru Order By GelirTuru";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
         public static DataTable GiderListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
@@ -75,6 +86,18 @@ namespace GelirGider
             SQLiteDataReader dr;
             dr = cmd.ExecuteReader();
             return dr;
+        }
+
+        public static DataTable GiderTuruListeleDt()
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "Select * from GelirTuru Order By GiderTuru";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
         }
         public static DataTable AlacakListele()
         {

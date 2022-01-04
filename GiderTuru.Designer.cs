@@ -46,13 +46,13 @@ namespace GelirGider
             this.dtGiderTuru.Name = "dtGiderTuru";
             this.dtGiderTuru.RowTemplate.Height = 25;
             this.dtGiderTuru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGiderTuru.Size = new System.Drawing.Size(240, 268);
+            this.dtGiderTuru.Size = new System.Drawing.Size(348, 363);
             this.dtGiderTuru.TabIndex = 8;
             this.dtGiderTuru.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGiderTuru_CellMouseDoubleClick);
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(79, 45);
+            this.btnGuncelle.Location = new System.Drawing.Point(100, 45);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(101, 35);
             this.btnGuncelle.TabIndex = 6;
@@ -75,7 +75,7 @@ namespace GelirGider
             this.txtGiderTuru.Location = new System.Drawing.Point(88, 6);
             this.txtGiderTuru.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiderTuru.Name = "txtGiderTuru";
-            this.txtGiderTuru.Size = new System.Drawing.Size(164, 26);
+            this.txtGiderTuru.Size = new System.Drawing.Size(207, 26);
             this.txtGiderTuru.TabIndex = 5;
             // 
             // label1
@@ -90,7 +90,7 @@ namespace GelirGider
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(186, 45);
+            this.btnSil.Location = new System.Drawing.Point(229, 45);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(66, 35);
             this.btnSil.TabIndex = 9;
@@ -102,7 +102,7 @@ namespace GelirGider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 363);
+            this.ClientSize = new System.Drawing.Size(366, 461);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.dtGiderTuru);
             this.Controls.Add(this.btnGuncelle);
@@ -110,7 +110,7 @@ namespace GelirGider
             this.Controls.Add(this.txtGiderTuru);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GiderTuru";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gider Türü";

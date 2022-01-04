@@ -13,6 +13,13 @@ namespace GelirGider
         {
             var alacakSonuc = Veritabani.AlacakListele();
             dtAlacakListesi.DataSource = alacakSonuc;
+            dtAlacakListesi.Columns[0].Width = 50;
+            dtAlacakListesi.Columns[1].Width = 130;
+            dtAlacakListesi.Columns[2].Width = 130;
+            dtAlacakListesi.Columns[3].Width = 130;
+            dtAlacakListesi.Columns[4].Width = 130;
+            dtAlacakListesi.Columns[5].Width = 130;
+            dtAlacakListesi.Columns[6].Width = 140;
 
             cmbAlacakTuru.Text = "Alacak Türü Seçin";
             cmbAlacakTuru.Tag = null;
