@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace GelirGider
 {
@@ -46,6 +48,39 @@ namespace GelirGider
             dtAlacaklar.Columns[5].Width = 130;
             dtBorclar.Columns[6].Width = 140;
             dtAlacaklar.Columns[6].Width = 140;
+
+            for (int i = 0; i < dtAlacaklar.RowCount - 1; i++)
+            {
+                DataGridViewCellStyle renk = new DataGridViewCellStyle();
+
+                if ((DateTime.Parse(dtAlacaklar.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 2 && (DateTime.Parse(dtAlacaklar.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays > -1)
+                {
+                    renk.BackColor = Color.Red;
+                    renk.ForeColor = Color.White;
+                }
+                else if ((DateTime.Parse(dtAlacaklar.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 5 && (DateTime.Parse(dtAlacaklar.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays > -1)
+                {
+                    renk.BackColor = Color.Yellow;
+                }
+                dtAlacaklar.Rows[i].DefaultCellStyle = renk;
+            }
+
+            for (int i = 0; i < dtBorclar.RowCount - 1; i++)
+            {
+                DataGridViewCellStyle renk = new DataGridViewCellStyle();
+
+                if ((DateTime.Parse(dtBorclar.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 2)
+                {
+                    renk.BackColor = Color.Red;
+                    renk.ForeColor = Color.White;
+                }
+                else if ((DateTime.Parse(dtBorclar.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 5)
+                {
+                    renk.BackColor = Color.Yellow;
+                }
+                dtBorclar.Rows[i].DefaultCellStyle = renk;
+            }
+
         }
 
         private void gelirTürüİşlemleriToolStripMenuItem_Click(object sender, System.EventArgs e)

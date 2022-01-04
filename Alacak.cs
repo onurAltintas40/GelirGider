@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GelirGider
@@ -21,13 +22,29 @@ namespace GelirGider
             dtAlacakListesi.Columns[5].Width = 130;
             dtAlacakListesi.Columns[6].Width = 140;
 
-            cmbAlacakTuru.Text = "Alacak Türü Seçin";
-            cmbAlacakTuru.Tag = null;
-            txtAciklama.Clear();
-            txtTutar.Clear();
-            dtOdemeTarihi.Value = DateTime.Now;
-            txtTutar.Focus();
-            txtKimden.Clear();
+            for (int i = 0; i < dtAlacakListesi.RowCount - 1; i++)
+            {
+                DataGridViewCellStyle renk = new DataGridViewCellStyle();
+
+                if ((DateTime.Parse(dtAlacakListesi.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 2 && (DateTime.Parse(dtAlacakListesi.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays > -1)
+                {
+                    renk.BackColor = Color.Red;
+                    renk.ForeColor = Color.White;
+                }
+                else if ((DateTime.Parse(dtAlacakListesi.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 5 && (DateTime.Parse(dtAlacakListesi.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays > -1)
+                {
+                    renk.BackColor = Color.Yellow;
+                }
+                dtAlacakListesi.Rows[i].DefaultCellStyle = renk;
+
+                cmbAlacakTuru.Text = "Alacak Türü Seçin";
+                cmbAlacakTuru.Tag = null;
+                txtAciklama.Clear();
+                txtTutar.Clear();
+                dtOdemeTarihi.Value = DateTime.Now;
+                txtTutar.Focus();
+                txtKimden.Clear();
+            }
         }
         private void Alacak_Load(object sender, EventArgs e)
         {
@@ -44,10 +61,11 @@ namespace GelirGider
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")            {
+            if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
+            {
 
 
-                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(),DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text,txtKimden.Text);
+                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text, txtKimden.Text);
                 Temizle();
             }
             else
@@ -65,8 +83,8 @@ namespace GelirGider
             else
             {
                 if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
-                {                  
-                    Veritabani.AlacakGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text,txtKimden.Text,Int32.Parse(cmbAlacakTuru.Tag.ToString()));
+                {
+                    Veritabani.AlacakGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text, txtKimden.Text, Int32.Parse(cmbAlacakTuru.Tag.ToString()));
                     Temizle();
                 }
                 else
@@ -98,9 +116,10 @@ namespace GelirGider
         {
             cmbAlacakTuru.Tag = dtAlacakListesi.CurrentRow.Cells[0].Value.ToString();
             txtTutar.Text = dtAlacakListesi.CurrentRow.Cells[1].Value.ToString();
-            dtOdemeTarihi.Value = DateTime.Parse(dtAlacakListesi.CurrentRow.Cells[2].Value.ToString());         
+            dtOdemeTarihi.Value = DateTime.Parse(dtAlacakListesi.CurrentRow.Cells[3].Value.ToString());
             cmbAlacakTuru.SelectedText = dtAlacakListesi.CurrentRow.Cells[4].Value.ToString();
-            txtAciklama.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();
+            txtKimden.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();
+            txtAciklama.Text = dtAlacakListesi.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)

@@ -87,7 +87,6 @@ namespace GelirGider
             dr = cmd.ExecuteReader();
             return dr;
         }
-
         public static DataTable GiderTuruListeleDt()
         {
             if (con.State != ConnectionState.Open) con.Open();
@@ -352,13 +351,14 @@ namespace GelirGider
         public static int AlacakEkle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama,string kimden)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "INSERT INTO Alacak(Tutar, OdemeTarih, Tarih, AlacakTuru, Aciklama)  VALUES(@Tutar, @OdemeTarih, @Tarih, @AlacakTuru, @Aciklama)";
+            string sql = "INSERT INTO Alacak(Tutar, Tarih, OdemeTarih, AlacakTuru,Kimden, Aciklama)  VALUES(@Tutar, @Tarih, @OdemeTarih, @AlacakTuru,@Kimden, @Aciklama)";
 
             SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
-            SQLiteParameter prm2 = new SQLiteParameter("OdemeTarih", odemeTarih);
-            SQLiteParameter prm3 = new SQLiteParameter("Tarih", tarih);
+            SQLiteParameter prm2 = new SQLiteParameter("Tarih", tarih);
+            SQLiteParameter prm3 = new SQLiteParameter("OdemeTarih", odemeTarih);
             SQLiteParameter prm4 = new SQLiteParameter("AlacakTuru", alacakTuru);
-            SQLiteParameter prm5 = new SQLiteParameter("Aciklama", aciklama);
+            SQLiteParameter prm5 = new SQLiteParameter("Kimden", kimden);
+            SQLiteParameter prm6 = new SQLiteParameter("Aciklama", aciklama);
 
             SQLiteCommand cmd = new(sql, con);
 
@@ -367,6 +367,7 @@ namespace GelirGider
             cmd.Parameters.Add(prm3);
             cmd.Parameters.Add(prm4);
             cmd.Parameters.Add(prm5);
+            cmd.Parameters.Add(prm6);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -375,14 +376,15 @@ namespace GelirGider
         public static int AlacakGuncelle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama, string kimden, int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "UPDATE Alacak set Tutar=@Tutar, OdemeTarih= @OdemeTarih, Tarih=@Tarih, AlacakTuru=@AlacakTuru, Aciklama= @Aciklama where Id = @id";
+            string sql = "UPDATE Alacak set Tutar=@Tutar, Tarih= @Tarih, OdemeTarih=@OdemeTarih, AlacakTuru=@AlacakTuru,Kimden=@Kimden, Aciklama= @Aciklama where Id = @id";
 
             SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
-            SQLiteParameter prm2 = new SQLiteParameter("OdemeTarih", odemeTarih);
-            SQLiteParameter prm3 = new SQLiteParameter("Tarih", tarih);
+            SQLiteParameter prm2 = new SQLiteParameter("Tarih", tarih);
+            SQLiteParameter prm3 = new SQLiteParameter("OdemeTarih", odemeTarih);
             SQLiteParameter prm4 = new SQLiteParameter("AlacakTuru", alacakTuru);
-            SQLiteParameter prm5 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm6 = new SQLiteParameter("Id", id);
+            SQLiteParameter prm5 = new SQLiteParameter("Kimden", kimden);
+            SQLiteParameter prm6 = new SQLiteParameter("Aciklama", aciklama);
+            SQLiteParameter prm7 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
@@ -415,37 +417,14 @@ namespace GelirGider
         public static int BorcEkle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama,string kime)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "INSERT INTO Borc(Tarih, OdemeTarih, BorcTuru, Aciklama,Tutar)  VALUES(@Tarih, @OdemeTarih, @BorcTuru, @Aciklama, @Tutar)";
+            string sql = "INSERT INTO Borc(Tutar, Tarih,OdemeTarih, BorcTuru,Kime, Aciklama)  VALUES(@Tutar, @Tarih, @OdemeTarih, @BorcTuru, @Kime,@Aciklama)";
 
-            SQLiteParameter prm1 = new SQLiteParameter("Tarih", tarih);
-            SQLiteParameter prm2 = new SQLiteParameter("OdemeTarih", odemeTarih);
-            SQLiteParameter prm3 = new SQLiteParameter("BorcTuru", borcTuru);
-            SQLiteParameter prm4 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm5 = new SQLiteParameter("Tutar", tutar);
-
-            SQLiteCommand cmd = new(sql, con);
-
-            cmd.Parameters.Add(prm1);
-            cmd.Parameters.Add(prm2);
-            cmd.Parameters.Add(prm3);
-            cmd.Parameters.Add(prm4);
-            cmd.Parameters.Add(prm5);
-
-            var sonuc = cmd.ExecuteNonQuery();
-            con.Close();
-            return sonuc;
-        }
-        public static int BorcGuncelle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama, string kime, int id)
-        {
-            if (con.State != ConnectionState.Open) con.Open();
-            string sql = "UPDATE Borc set Tarih=@Tarih, OdemeTarih=@OdemeTarih, BorcTuru=@BorcTuru, Aciklama=@Aciklama,Tutar=@Tutar where Id=@id";
-
-            SQLiteParameter prm1 = new SQLiteParameter("Tarih", tarih);
-            SQLiteParameter prm2 = new SQLiteParameter("OdemeTarih", odemeTarih);
-            SQLiteParameter prm3 = new SQLiteParameter("BorcTuru", borcTuru);
-            SQLiteParameter prm4 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm5 = new SQLiteParameter("Tutar", tutar);
-            SQLiteParameter prm6 = new SQLiteParameter("Id", id);
+            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
+            SQLiteParameter prm2 = new SQLiteParameter("Tarih", tarih);
+            SQLiteParameter prm3 = new SQLiteParameter("OdemeTarih", odemeTarih);
+            SQLiteParameter prm4 = new SQLiteParameter("BorcTuru", borcTuru);
+            SQLiteParameter prm5 = new SQLiteParameter("Kime", kime);
+            SQLiteParameter prm6 = new SQLiteParameter("Aciklama", aciklama);
 
             SQLiteCommand cmd = new(sql, con);
 
@@ -455,6 +434,33 @@ namespace GelirGider
             cmd.Parameters.Add(prm4);
             cmd.Parameters.Add(prm5);
             cmd.Parameters.Add(prm6);
+
+            var sonuc = cmd.ExecuteNonQuery();
+            con.Close();
+            return sonuc;
+        }
+        public static int BorcGuncelle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama, string kime, int id)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "UPDATE Borc set Tutar=@Tutar, Tarih=@Tarih, OdemeTarih=@OdemeTarih, BorcTuru=@BorcTuru,Kime=@Kime,Aciklama=@Aciklama where Id=@id";
+
+            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
+            SQLiteParameter prm2 = new SQLiteParameter("Tarih", tarih);
+            SQLiteParameter prm3 = new SQLiteParameter("OdemeTarih", odemeTarih);
+            SQLiteParameter prm4 = new SQLiteParameter("BorcTuru", borcTuru);
+            SQLiteParameter prm5 = new SQLiteParameter("Kime", kime);
+            SQLiteParameter prm6 = new SQLiteParameter("Aciklama", aciklama);
+            SQLiteParameter prm7 = new SQLiteParameter("Id", id);
+
+            SQLiteCommand cmd = new(sql, con);
+
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            cmd.Parameters.Add(prm3);
+            cmd.Parameters.Add(prm4);
+            cmd.Parameters.Add(prm5);
+            cmd.Parameters.Add(prm6);
+            cmd.Parameters.Add(prm7);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();

@@ -38,11 +38,11 @@ namespace GelirGider
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.txtTutar = new System.Windows.Forms.TextBox();
+            this.chkOdemeAlindi = new System.Windows.Forms.CheckBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.RichTextBox();
-            this.chkOdemeAlindi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGelirListesi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -57,7 +57,7 @@ namespace GelirGider
             this.dtGelirListesi.Name = "dtGelirListesi";
             this.dtGelirListesi.RowHeadersWidth = 51;
             this.dtGelirListesi.RowTemplate.Height = 29;
-            this.dtGelirListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtGelirListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtGelirListesi.Size = new System.Drawing.Size(932, 453);
             this.dtGelirListesi.TabIndex = 0;
             this.dtGelirListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGelirListesi_CellDoubleClick);
@@ -79,7 +79,7 @@ namespace GelirGider
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(65, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 19);
+            this.label1.Size = new System.Drawing.Size(57, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tutar:";
             // 
@@ -88,7 +88,7 @@ namespace GelirGider
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(348, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 19);
+            this.label3.Size = new System.Drawing.Size(92, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Açıklama:";
             // 
@@ -97,7 +97,7 @@ namespace GelirGider
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(35, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 19);
+            this.label4.Size = new System.Drawing.Size(102, 22);
             this.label4.TabIndex = 5;
             this.label4.Text = "Gelir Türü:";
             // 
@@ -106,7 +106,7 @@ namespace GelirGider
             this.cmbGelirTuru.FormattingEnabled = true;
             this.cmbGelirTuru.Location = new System.Drawing.Point(114, 29);
             this.cmbGelirTuru.Name = "cmbGelirTuru";
-            this.cmbGelirTuru.Size = new System.Drawing.Size(217, 27);
+            this.cmbGelirTuru.Size = new System.Drawing.Size(217, 30);
             this.cmbGelirTuru.TabIndex = 1;
             // 
             // groupBox2
@@ -143,9 +143,19 @@ namespace GelirGider
             // 
             this.txtTutar.Location = new System.Drawing.Point(114, 80);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(217, 26);
+            this.txtTutar.Size = new System.Drawing.Size(217, 30);
             this.txtTutar.TabIndex = 2;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
+            // 
+            // chkOdemeAlindi
+            // 
+            this.chkOdemeAlindi.AutoSize = true;
+            this.chkOdemeAlindi.Location = new System.Drawing.Point(114, 118);
+            this.chkOdemeAlindi.Name = "chkOdemeAlindi";
+            this.chkOdemeAlindi.Size = new System.Drawing.Size(143, 26);
+            this.chkOdemeAlindi.TabIndex = 4;
+            this.chkOdemeAlindi.Text = "Ödeme Alındı";
+            this.chkOdemeAlindi.UseVisualStyleBackColor = true;
             // 
             // btnSil
             // 
@@ -186,19 +196,9 @@ namespace GelirGider
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
-            // chkOdemeAlindi
-            // 
-            this.chkOdemeAlindi.AutoSize = true;
-            this.chkOdemeAlindi.Location = new System.Drawing.Point(114, 118);
-            this.chkOdemeAlindi.Name = "chkOdemeAlindi";
-            this.chkOdemeAlindi.Size = new System.Drawing.Size(111, 23);
-            this.chkOdemeAlindi.TabIndex = 4;
-            this.chkOdemeAlindi.Text = "Ödeme Alındı";
-            this.chkOdemeAlindi.UseVisualStyleBackColor = true;
-            // 
             // Gelir
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 756);
             this.Controls.Add(this.groupBox2);

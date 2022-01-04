@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GelirGider
@@ -20,6 +21,22 @@ namespace GelirGider
             dtBorcListesi.Columns[4].Width = 135;
             dtBorcListesi.Columns[5].Width = 140;
             dtBorcListesi.Columns[6].Width = 140;
+
+            for (int i = 0; i < dtBorcListesi.RowCount - 1; i++)
+            {
+                DataGridViewCellStyle renk = new DataGridViewCellStyle();
+
+                if ((DateTime.Parse(dtBorcListesi.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 2)
+                {
+                    renk.BackColor = Color.Red;
+                    renk.ForeColor = Color.White;
+                }
+                else if ((DateTime.Parse(dtBorcListesi.Rows[i].Cells[3].Value.ToString()).Date - DateTime.Now).TotalDays <= 5)
+                {
+                    renk.BackColor = Color.Yellow;
+                }
+                dtBorcListesi.Rows[i].DefaultCellStyle = renk;
+            }
 
             cmbBorcTuru.Text = "Borç Türü Seçin";
             cmbBorcTuru.Tag = null;
@@ -100,10 +117,11 @@ namespace GelirGider
         private void dtBorcListesi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             cmbBorcTuru.Tag = dtBorcListesi.CurrentRow.Cells[0].Value.ToString();            
-            dtOdemeTarihi.Value = DateTime.Parse(dtBorcListesi.CurrentRow.Cells[2].Value.ToString());
-            cmbBorcTuru.SelectedText = dtBorcListesi.CurrentRow.Cells[3].Value.ToString();
-            txtAciklama.Text = dtBorcListesi.CurrentRow.Cells[4].Value.ToString();
-            txtTutar.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();
+            txtTutar.Text = dtBorcListesi.CurrentRow.Cells[1].Value.ToString();
+            dtOdemeTarihi.Value = DateTime.Parse(dtBorcListesi.CurrentRow.Cells[3].Value.ToString());
+            cmbBorcTuru.SelectedText = dtBorcListesi.CurrentRow.Cells[4].Value.ToString();
+            txtKime.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();
+            txtAciklama.Text = dtBorcListesi.CurrentRow.Cells[6].Value.ToString();            
         }
     }
 }

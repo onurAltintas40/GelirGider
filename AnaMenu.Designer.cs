@@ -133,7 +133,7 @@ namespace GelirGider
             this.dtAlacaklar.ReadOnly = true;
             this.dtAlacaklar.RowHeadersWidth = 51;
             this.dtAlacaklar.RowTemplate.Height = 25;
-            this.dtAlacaklar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtAlacaklar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtAlacaklar.Size = new System.Drawing.Size(896, 300);
             this.dtAlacaklar.TabIndex = 0;
             // 
@@ -156,7 +156,7 @@ namespace GelirGider
             this.dtBorclar.ReadOnly = true;
             this.dtBorclar.RowHeadersWidth = 51;
             this.dtBorclar.RowTemplate.Height = 25;
-            this.dtBorclar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtBorclar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtBorclar.Size = new System.Drawing.Size(896, 300);
             this.dtBorclar.TabIndex = 0;
             // 
@@ -169,7 +169,7 @@ namespace GelirGider
             this.tsCikis});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -181,34 +181,34 @@ namespace GelirGider
             this.tsAlacakİslemleri,
             this.tsBorcİslemleri});
             this.tsGelirİslemleri.Name = "tsGelirİslemleri";
-            this.tsGelirİslemleri.Size = new System.Drawing.Size(60, 20);
+            this.tsGelirİslemleri.Size = new System.Drawing.Size(75, 24);
             this.tsGelirİslemleri.Text = "İşlemler";
             // 
             // gelirİşlemleriToolStripMenuItem
             // 
             this.gelirİşlemleriToolStripMenuItem.Name = "gelirİşlemleriToolStripMenuItem";
-            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.gelirİşlemleriToolStripMenuItem.Text = "Gelir İşlemleri";
             this.gelirİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.gelirİşlemleriToolStripMenuItem_Click);
             // 
             // tsGiderİslemleri
             // 
             this.tsGiderİslemleri.Name = "tsGiderİslemleri";
-            this.tsGiderİslemleri.Size = new System.Drawing.Size(156, 22);
+            this.tsGiderİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsGiderİslemleri.Text = "Gider İşlemleri";
             this.tsGiderİslemleri.Click += new System.EventHandler(this.tsGiderİslemleri_Click);
             // 
             // tsAlacakİslemleri
             // 
             this.tsAlacakİslemleri.Name = "tsAlacakİslemleri";
-            this.tsAlacakİslemleri.Size = new System.Drawing.Size(156, 22);
+            this.tsAlacakİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsAlacakİslemleri.Text = "Alacak İşlemleri";
             this.tsAlacakİslemleri.Click += new System.EventHandler(this.tsAlacakİslemleri_Click);
             // 
             // tsBorcİslemleri
             // 
             this.tsBorcİslemleri.Name = "tsBorcİslemleri";
-            this.tsBorcİslemleri.Size = new System.Drawing.Size(156, 22);
+            this.tsBorcİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsBorcİslemleri.Text = "Borç İşlemleri";
             this.tsBorcİslemleri.Click += new System.EventHandler(this.tsBorcİslemleri_Click);
             // 
@@ -219,39 +219,39 @@ namespace GelirGider
             this.gelirTürüİşlemleriToolStripMenuItem,
             this.tsGiderTuru});
             this.tsGelirTuru.Name = "tsGelirTuru";
-            this.tsGelirTuru.Size = new System.Drawing.Size(56, 20);
+            this.tsGelirTuru.Size = new System.Drawing.Size(70, 24);
             this.tsGelirTuru.Text = "Ayarlar";
             // 
             // tsKullaniciislemleri
             // 
             this.tsKullaniciislemleri.Name = "tsKullaniciislemleri";
-            this.tsKullaniciislemleri.Size = new System.Drawing.Size(176, 22);
+            this.tsKullaniciislemleri.Size = new System.Drawing.Size(221, 26);
             this.tsKullaniciislemleri.Text = "Kullanıcı İşlemleri";
             // 
             // gelirTürüİşlemleriToolStripMenuItem
             // 
             this.gelirTürüİşlemleriToolStripMenuItem.Name = "gelirTürüİşlemleriToolStripMenuItem";
-            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.gelirTürüİşlemleriToolStripMenuItem.Text = "Gelir Türü İşlemleri";
             this.gelirTürüİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.gelirTürüİşlemleriToolStripMenuItem_Click);
             // 
             // tsGiderTuru
             // 
             this.tsGiderTuru.Name = "tsGiderTuru";
-            this.tsGiderTuru.Size = new System.Drawing.Size(176, 22);
+            this.tsGiderTuru.Size = new System.Drawing.Size(221, 26);
             this.tsGiderTuru.Text = "Gider Türü İşlemleri";
             this.tsGiderTuru.Click += new System.EventHandler(this.tsGiderTuru_Click);
             // 
             // tsCikis
             // 
             this.tsCikis.Name = "tsCikis";
-            this.tsCikis.Size = new System.Drawing.Size(46, 20);
+            this.tsCikis.Size = new System.Drawing.Size(57, 24);
             this.tsCikis.Text = "ÇIKIŞ";
             this.tsCikis.Click += new System.EventHandler(this.tsCikis_Click);
             // 
             // AnaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 923);
             this.Controls.Add(this.groupBox3);
