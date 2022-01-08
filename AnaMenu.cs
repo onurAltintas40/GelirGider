@@ -136,5 +136,11 @@ namespace GelirGider
             Borc b = new Borc();
             b.ShowDialog();
         }
+
+        private void tsKullaniciislemleri_Click(object sender, EventArgs e)
+        {
+            KullaniciDuzenle k = new KullaniciDuzenle();
+            k.ShowDialog();
+        }
     }
 }

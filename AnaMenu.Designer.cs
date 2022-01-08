@@ -225,20 +225,21 @@ namespace GelirGider
             // tsKullaniciislemleri
             // 
             this.tsKullaniciislemleri.Name = "tsKullaniciislemleri";
-            this.tsKullaniciislemleri.Size = new System.Drawing.Size(221, 26);
+            this.tsKullaniciislemleri.Size = new System.Drawing.Size(224, 26);
             this.tsKullaniciislemleri.Text = "Kullanıcı İşlemleri";
+            this.tsKullaniciislemleri.Click += new System.EventHandler(this.tsKullaniciislemleri_Click);
             // 
             // gelirTürüİşlemleriToolStripMenuItem
             // 
             this.gelirTürüİşlemleriToolStripMenuItem.Name = "gelirTürüİşlemleriToolStripMenuItem";
-            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gelirTürüİşlemleriToolStripMenuItem.Text = "Gelir Türü İşlemleri";
             this.gelirTürüİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.gelirTürüİşlemleriToolStripMenuItem_Click);
             // 
             // tsGiderTuru
             // 
             this.tsGiderTuru.Name = "tsGiderTuru";
-            this.tsGiderTuru.Size = new System.Drawing.Size(221, 26);
+            this.tsGiderTuru.Size = new System.Drawing.Size(224, 26);
             this.tsGiderTuru.Text = "Gider Türü İşlemleri";
             this.tsGiderTuru.Click += new System.EventHandler(this.tsGiderTuru_Click);
             // 
@@ -279,8 +280,6 @@ namespace GelirGider
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnGelirİslemleri;
         private System.Windows.Forms.Button btnGiderİslemleri;
         private System.Windows.Forms.Button btnAlacakİslemleri;
         private System.Windows.Forms.Button btnBorcİslemleri;
@@ -300,5 +299,6 @@ namespace GelirGider
         private System.Windows.Forms.DataGridView dtBorclar;
         private System.Windows.Forms.ToolStripMenuItem gelirTürüİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsGiderTuru;
+        private System.Windows.Forms.Button btnGelirİslemleri;
     }
 }

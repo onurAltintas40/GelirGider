@@ -26,6 +26,12 @@ namespace GelirGider
         {
             var gelirSonuc = Veritabani.GelirListele();
             dtGelirListesi.DataSource = gelirSonuc;
+            dtGelirListesi.Columns[0].Width = 55;
+            dtGelirListesi.Columns[1].Width = 160;
+            dtGelirListesi.Columns[2].Width = 160;
+            dtGelirListesi.Columns[3].Width = 180;
+            dtGelirListesi.Columns[4].Width = 160;
+            dtGelirListesi.Columns[5].Width = 160;
 
             cmbGelirTuru.Text = "Gelir Türü Seçin";
             cmbGelirTuru.Tag = null;
@@ -38,18 +44,19 @@ namespace GelirGider
         {
             if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
             {
-                int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
-                if (chkOdemeAlindi.Checked == true)
-                {
-                    Alacak alacak = new Alacak();
-                    alacak.cmbAlacakTuru.SelectedIndex = cmbGelirTuru.SelectedIndex;
-                    alacak.txtTutar.Text = txtTutar.Text;
-                    alacak.txtAciklama.Text = txtAciklama.Text;
-                    alacak.Show();
-                }
+                int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;                
 
                 Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme);
-                
+
+                if (chkOdemeAlindi.Checked == false)
+                {
+                    Alacak alacak = new Alacak();
+                    alacak.a = 1;
+                    alacak.cmbAlacakTuru.Text = cmbGelirTuru.Text;
+                    alacak.txtTutar.Text = txtTutar.Text;
+                    alacak.txtAciklama.Text = txtAciklama.Text;
+                    alacak.ShowDialog();
+                }
                 Temizle();
             }
             else
@@ -70,14 +77,6 @@ namespace GelirGider
                 {
                     int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
                     Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme, Int32.Parse((string)cmbGelirTuru.Tag));
-                    if (chkOdemeAlindi.Checked == true)
-                    {
-                        Alacak alacak = new Alacak();
-                        alacak.cmbAlacakTuru.SelectedIndex = cmbGelirTuru.SelectedIndex;
-                        alacak.txtTutar.Text = txtTutar.Text;
-                        alacak.txtAciklama.Text = txtAciklama.Text;
-                        alacak.ShowDialog();
-                    }
                     Temizle();
                 }
                 else

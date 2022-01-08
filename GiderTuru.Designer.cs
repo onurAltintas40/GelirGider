@@ -47,7 +47,7 @@ namespace GelirGider
             this.dtGiderTuru.RowHeadersWidth = 51;
             this.dtGiderTuru.RowTemplate.Height = 25;
             this.dtGiderTuru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtGiderTuru.Size = new System.Drawing.Size(348, 363);
+            this.dtGiderTuru.Size = new System.Drawing.Size(352, 363);
             this.dtGiderTuru.TabIndex = 8;
             this.dtGiderTuru.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGiderTuru_CellMouseDoubleClick);
             // 
@@ -76,7 +76,7 @@ namespace GelirGider
             this.txtGiderTuru.Location = new System.Drawing.Point(88, 6);
             this.txtGiderTuru.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiderTuru.Name = "txtGiderTuru";
-            this.txtGiderTuru.Size = new System.Drawing.Size(207, 30);
+            this.txtGiderTuru.Size = new System.Drawing.Size(207, 26);
             this.txtGiderTuru.TabIndex = 5;
             // 
             // label1
@@ -85,7 +85,7 @@ namespace GelirGider
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 22);
+            this.label1.Size = new System.Drawing.Size(78, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Gider Türü:";
             // 
@@ -101,9 +101,9 @@ namespace GelirGider
             // 
             // GiderTuru
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 461);
+            this.ClientSize = new System.Drawing.Size(373, 461);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.dtGiderTuru);
             this.Controls.Add(this.btnGuncelle);

@@ -61,51 +61,51 @@ namespace GelirGider
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cmbGiderTuru);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(14, 16);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(15, 15);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(669, 301);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(700, 227);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(563, 25);
-            this.btnTemizle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTemizle.Location = new System.Drawing.Point(569, 25);
+            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(96, 45);
+            this.btnTemizle.Size = new System.Drawing.Size(106, 36);
             this.btnTemizle.TabIndex = 9;
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.UseVisualStyleBackColor = true;
             // 
             // txtTutar
             // 
-            this.txtTutar.Location = new System.Drawing.Point(130, 107);
-            this.txtTutar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTutar.Location = new System.Drawing.Point(126, 77);
+            this.txtTutar.Margin = new System.Windows.Forms.Padding(4);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(247, 27);
+            this.txtTutar.Size = new System.Drawing.Size(278, 30);
             this.txtTutar.TabIndex = 2;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             // 
             // chkOdemeAlindi
             // 
             this.chkOdemeAlindi.AutoSize = true;
-            this.chkOdemeAlindi.Location = new System.Drawing.Point(127, 169);
-            this.chkOdemeAlindi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chkOdemeAlindi.Location = new System.Drawing.Point(98, 122);
+            this.chkOdemeAlindi.Margin = new System.Windows.Forms.Padding(4);
             this.chkOdemeAlindi.Name = "chkOdemeAlindi";
-            this.chkOdemeAlindi.Size = new System.Drawing.Size(123, 24);
+            this.chkOdemeAlindi.Size = new System.Drawing.Size(143, 26);
             this.chkOdemeAlindi.TabIndex = 4;
             this.chkOdemeAlindi.Text = "Ödeme Alındı";
             this.chkOdemeAlindi.UseVisualStyleBackColor = true;
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(261, 204);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSil.Location = new System.Drawing.Point(267, 153);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(118, 71);
+            this.btnSil.Size = new System.Drawing.Size(120, 55);
             this.btnSil.TabIndex = 8;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -113,10 +113,10 @@ namespace GelirGider
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(136, 204);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuncelle.Location = new System.Drawing.Point(139, 153);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(118, 71);
+            this.btnGuncelle.Size = new System.Drawing.Size(120, 55);
             this.btnGuncelle.TabIndex = 7;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = true;
@@ -124,10 +124,10 @@ namespace GelirGider
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(11, 204);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEkle.Location = new System.Drawing.Point(11, 153);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(118, 71);
+            this.btnEkle.Size = new System.Drawing.Size(120, 55);
             this.btnEkle.TabIndex = 6;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -136,57 +136,60 @@ namespace GelirGider
             // txtAciklama
             // 
             this.txtAciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAciklama.Location = new System.Drawing.Point(398, 96);
-            this.txtAciklama.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAciklama.Location = new System.Drawing.Point(441, 95);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(262, 179);
+            this.txtAciklama.Size = new System.Drawing.Size(251, 113);
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(398, 64);
+            this.label3.Location = new System.Drawing.Point(441, 69);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.Size = new System.Drawing.Size(92, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Açıklama:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 45);
+            this.label4.Location = new System.Drawing.Point(12, 37);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.Size = new System.Drawing.Size(106, 22);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Gelir Türü:";
+            this.label4.Text = "Gider Türü:";
             // 
             // cmbGiderTuru
             // 
             this.cmbGiderTuru.FormattingEnabled = true;
-            this.cmbGiderTuru.Location = new System.Drawing.Point(130, 39);
-            this.cmbGiderTuru.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbGiderTuru.Location = new System.Drawing.Point(126, 34);
+            this.cmbGiderTuru.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGiderTuru.Name = "cmbGiderTuru";
-            this.cmbGiderTuru.Size = new System.Drawing.Size(247, 28);
+            this.cmbGiderTuru.Size = new System.Drawing.Size(278, 30);
             this.cmbGiderTuru.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 111);
+            this.label1.Location = new System.Drawing.Point(61, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(57, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tutar:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtGiderListesi);
-            this.groupBox1.Location = new System.Drawing.Point(14, 325);
+            this.groupBox1.Location = new System.Drawing.Point(15, 250);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1083, 651);
+            this.groupBox1.Size = new System.Drawing.Size(944, 493);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gider Listesi";
@@ -195,24 +198,25 @@ namespace GelirGider
             // 
             this.dtGiderListesi.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtGiderListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGiderListesi.Location = new System.Drawing.Point(7, 39);
+            this.dtGiderListesi.Location = new System.Drawing.Point(12, 31);
             this.dtGiderListesi.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtGiderListesi.Name = "dtGiderListesi";
             this.dtGiderListesi.RowHeadersWidth = 51;
             this.dtGiderListesi.RowTemplate.Height = 29;
             this.dtGiderListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtGiderListesi.Size = new System.Drawing.Size(1065, 604);
+            this.dtGiderListesi.Size = new System.Drawing.Size(926, 454);
             this.dtGiderListesi.TabIndex = 0;
             this.dtGiderListesi.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGiderListesi_CellMouseDoubleClick);
             // 
             // Gider
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 987);
+            this.ClientSize = new System.Drawing.Size(973, 756);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gider";

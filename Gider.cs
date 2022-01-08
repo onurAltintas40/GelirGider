@@ -14,6 +14,13 @@ namespace GelirGider
             var giderSonuc = Veritabani.GiderListele();
             dtGiderListesi.DataSource = giderSonuc;
 
+            dtGiderListesi.Columns[0].Width = 55;
+            dtGiderListesi.Columns[1].Width = 160;
+            dtGiderListesi.Columns[2].Width = 160;
+            dtGiderListesi.Columns[3].Width = 175;
+            dtGiderListesi.Columns[4].Width = 160;
+            dtGiderListesi.Columns[5].Width = 160;
+
             cmbGiderTuru.Text = "Gider Türü Seçin";
             cmbGiderTuru.Tag = null;
             txtAciklama.Clear();
@@ -31,7 +38,6 @@ namespace GelirGider
             {
                 cmbGiderTuru.Items.Add(giderTuruSonuc["GiderTuru"]);
             }
-
             Temizle();
         }
 
@@ -42,6 +48,15 @@ namespace GelirGider
                 int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
 
                 Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text, odeme);
+                if (chkOdemeAlindi.Checked == false)
+                {
+                    Borc borc = new Borc();
+                    borc.a = 1;
+                    borc.cmbBorcTuru.Text = cmbGiderTuru.Text;
+                    borc.txtTutar.Text = txtTutar.Text;
+                    borc.txtAciklama.Text = txtAciklama.Text;
+                    borc.ShowDialog();
+                }
                 Temizle();
             }
             else

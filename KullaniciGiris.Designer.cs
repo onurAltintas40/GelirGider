@@ -75,6 +75,7 @@ namespace GelirGider
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(213, 26);
             this.txtSifre.TabIndex = 3;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGiris
             // 

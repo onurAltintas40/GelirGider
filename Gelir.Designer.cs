@@ -77,7 +77,7 @@ namespace GelirGider
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 83);
+            this.label1.Location = new System.Drawing.Point(80, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 22);
             this.label1.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace GelirGider
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(348, 48);
+            this.label3.Location = new System.Drawing.Point(380, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 22);
             this.label3.TabIndex = 4;
@@ -104,7 +104,7 @@ namespace GelirGider
             // cmbGelirTuru
             // 
             this.cmbGelirTuru.FormattingEnabled = true;
-            this.cmbGelirTuru.Location = new System.Drawing.Point(114, 29);
+            this.cmbGelirTuru.Location = new System.Drawing.Point(143, 31);
             this.cmbGelirTuru.Name = "cmbGelirTuru";
             this.cmbGelirTuru.Size = new System.Drawing.Size(217, 30);
             this.cmbGelirTuru.TabIndex = 1;
@@ -124,16 +124,16 @@ namespace GelirGider
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 24);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 226);
+            this.groupBox2.Size = new System.Drawing.Size(624, 226);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(493, 19);
+            this.btnTemizle.Location = new System.Drawing.Point(493, 22);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(84, 34);
+            this.btnTemizle.Size = new System.Drawing.Size(116, 34);
             this.btnTemizle.TabIndex = 9;
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@ namespace GelirGider
             // 
             // txtTutar
             // 
-            this.txtTutar.Location = new System.Drawing.Point(114, 80);
+            this.txtTutar.Location = new System.Drawing.Point(143, 80);
             this.txtTutar.Name = "txtTutar";
             this.txtTutar.Size = new System.Drawing.Size(217, 30);
             this.txtTutar.TabIndex = 2;
@@ -190,7 +190,7 @@ namespace GelirGider
             // txtAciklama
             // 
             this.txtAciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAciklama.Location = new System.Drawing.Point(348, 72);
+            this.txtAciklama.Location = new System.Drawing.Point(380, 72);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(229, 134);
             this.txtAciklama.TabIndex = 5;

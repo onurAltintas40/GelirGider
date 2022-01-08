@@ -32,6 +32,35 @@ namespace GelirGider
             }
             con.Close();
         }
+        public static SQLiteDataReader KullaniciGetir()
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "Select * from Kullanici";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+
+            SQLiteDataReader dr;
+            dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public static int KullaniciGuncelle(string kullaniciAdi, string sifre,string ePosta)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "UPDATE Kullanici set KullaniciAdi=@KullaniciAdi, Sifre=@Sifre,EPosta=@EPosta";
+
+            SQLiteParameter prm1 = new SQLiteParameter("KullaniciAdi", kullaniciAdi);
+            SQLiteParameter prm2 = new SQLiteParameter("Sifre", sifre);
+            SQLiteParameter prm3 = new SQLiteParameter("EPosta", ePosta);
+
+            SQLiteCommand cmd = new(sql, con);
+
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            cmd.Parameters.Add(prm3);
+
+            var sonuc = cmd.ExecuteNonQuery();
+            con.Close();
+            return sonuc;
+        }
         public static DataTable GelirListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
@@ -90,7 +119,7 @@ namespace GelirGider
         public static DataTable GiderTuruListeleDt()
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from GelirTuru Order By GiderTuru";
+            string sql = "Select * from GiderTuru Order By GiderTuru";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             DataTable dt = new DataTable();
@@ -286,7 +315,7 @@ namespace GelirGider
         public static int GiderSil(int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "DELETE from Gider where = Id=@id";
+            string sql = "DELETE from Gider where Id=@id";
                        
             SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
@@ -481,6 +510,7 @@ namespace GelirGider
             con.Close();
             return sonuc;
         }
+
 
     }
 }

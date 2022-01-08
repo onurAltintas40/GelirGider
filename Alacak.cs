@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,17 +11,21 @@ namespace GelirGider
         {
             InitializeComponent();
         }
+
+        public int a = 0;
+
+        DataTable alacakSonuc;
         void Temizle()
         {
-            var alacakSonuc = Veritabani.AlacakListele();
+            alacakSonuc = Veritabani.AlacakListele();
             dtAlacakListesi.DataSource = alacakSonuc;
             dtAlacakListesi.Columns[0].Width = 50;
-            dtAlacakListesi.Columns[1].Width = 130;
-            dtAlacakListesi.Columns[2].Width = 130;
-            dtAlacakListesi.Columns[3].Width = 130;
-            dtAlacakListesi.Columns[4].Width = 130;
-            dtAlacakListesi.Columns[5].Width = 130;
-            dtAlacakListesi.Columns[6].Width = 140;
+            dtAlacakListesi.Columns[1].Width = 155;
+            dtAlacakListesi.Columns[2].Width = 155;
+            dtAlacakListesi.Columns[3].Width = 155;
+            dtAlacakListesi.Columns[4].Width = 155;
+            dtAlacakListesi.Columns[5].Width = 160;
+            dtAlacakListesi.Columns[6].Width = 160;
 
             for (int i = 0; i < dtAlacakListesi.RowCount - 1; i++)
             {
@@ -48,23 +53,25 @@ namespace GelirGider
         }
         private void Alacak_Load(object sender, EventArgs e)
         {
-            var gelirTuruSonuc = Veritabani.GelirTuruListele();
-
-            cmbAlacakTuru.Items.Clear();
-            while (gelirTuruSonuc.Read())
+            if (a==0)
             {
-                cmbAlacakTuru.Items.Add(gelirTuruSonuc["GelirTuru"]);
-            }
+                var gelirTuruSonuc = Veritabani.GelirTuruListele();
 
-            Temizle();
+                cmbAlacakTuru.Items.Clear();
+                while (gelirTuruSonuc.Read())
+                {
+                    cmbAlacakTuru.Items.Add(gelirTuruSonuc["GelirTuru"]);
+                }
+
+                Temizle();
+            }
+            
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
             {
-
-
                 Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text, txtKimden.Text);
                 Temizle();
             }
@@ -125,6 +132,13 @@ namespace GelirGider
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtAdAra_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = alacakSonuc.DefaultView;
+            dv.RowFilter = "Kimden LIKE '" + txtAdAra.Text + "%'";
+            dtAlacakListesi.DataSource = dv;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace GelirGider
         {
             txtGiderTuru.Clear();
             txtGiderTuru.Focus();
-            dtGiderTuru.DataSource = Veritabani.GelirTuruListeleDt();
+            dtGiderTuru.DataSource = Veritabani.GiderTuruListeleDt();
             dtGiderTuru.Columns[1].Width = 200;
         }
         private void GiderTuru_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace GelirGider
             }
             else
             {
-                Veritabani.GelirTuruEkle(txtGiderTuru.Text);
+                Veritabani.GiderTuruEkle(txtGiderTuru.Text);
                 Temizle();
             }
         }
@@ -48,7 +48,7 @@ namespace GelirGider
                 }
                 else
                 {
-                    Veritabani.GelirTuruGuncelle(txtGiderTuru.Text, Int32.Parse(txtGiderTuru.Tag.ToString()));
+                    Veritabani.GiderTuruGuncelle(txtGiderTuru.Text, Int32.Parse(txtGiderTuru.Tag.ToString()));
                     Temizle();
                 }
             }
@@ -62,7 +62,7 @@ namespace GelirGider
             }
             else
             {
-                Veritabani.GelirTuruSil(Int32.Parse(txtGiderTuru.Tag.ToString()));
+                Veritabani.GiderTuruSil(Int32.Parse(txtGiderTuru.Tag.ToString()));
                 Temizle();
             }
         }

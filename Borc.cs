@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,17 +11,20 @@ namespace GelirGider
         {
             InitializeComponent();
         }
+
+        DataTable borcSonuc;
+        public int a = 0;
         void Temizle()
         {
-            var borcSonuc = Veritabani.BorcListele();
+            borcSonuc = Veritabani.BorcListele();
             dtBorcListesi.DataSource = borcSonuc;
             dtBorcListesi.Columns[0].Width = 50;
-            dtBorcListesi.Columns[1].Width = 135;
-            dtBorcListesi.Columns[2].Width = 135;
-            dtBorcListesi.Columns[3].Width = 135;
-            dtBorcListesi.Columns[4].Width = 135;
-            dtBorcListesi.Columns[5].Width = 140;
-            dtBorcListesi.Columns[6].Width = 140;
+            dtBorcListesi.Columns[1].Width = 155;
+            dtBorcListesi.Columns[2].Width = 155;
+            dtBorcListesi.Columns[3].Width = 155;
+            dtBorcListesi.Columns[4].Width = 155;
+            dtBorcListesi.Columns[5].Width = 160;
+            dtBorcListesi.Columns[6].Width = 160;
 
             for (int i = 0; i < dtBorcListesi.RowCount - 1; i++)
             {
@@ -44,18 +48,24 @@ namespace GelirGider
             txtTutar.Clear();
             dtOdemeTarihi.Value = DateTime.Now;
             txtTutar.Focus();
+            txtAdAra.Clear();
         }
         private void Borc_Load(object sender, EventArgs e)
         {
-            var giderTuruSonuc = Veritabani.GiderTuruListele();
-
-            cmbBorcTuru.Items.Clear();
-            while (giderTuruSonuc.Read())
+            if (a==0)
             {
-                cmbBorcTuru.Items.Add(giderTuruSonuc["GiderTuru"]);
+                var giderTuruSonuc = Veritabani.GiderTuruListele();
+
+                cmbBorcTuru.Items.Clear();
+                while (giderTuruSonuc.Read())
+                {
+                    cmbBorcTuru.Items.Add(giderTuruSonuc["GiderTuru"]);
+                }
+
+                Temizle();
             }
 
-            Temizle();
+            
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -122,6 +132,13 @@ namespace GelirGider
             cmbBorcTuru.SelectedText = dtBorcListesi.CurrentRow.Cells[4].Value.ToString();
             txtKime.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();
             txtAciklama.Text = dtBorcListesi.CurrentRow.Cells[6].Value.ToString();            
+        }
+
+        private void txtAdAra_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = borcSonuc.DefaultView;
+            dv.RowFilter = "Kime LIKE '" + txtAdAra.Text + "%'";
+            dtBorcListesi.DataSource = dv;
         }
     }
 }
