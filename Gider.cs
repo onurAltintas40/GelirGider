@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GelirGider
@@ -8,6 +9,18 @@ namespace GelirGider
         public Gider()
         {
             InitializeComponent();
+        }
+
+        DataTable borcSonuc;
+        private void Hesapla()
+        {
+            int toplam = 0;
+
+            for (int i = 0; i < dtGiderListesi.Rows.Count; ++i)
+            {
+                toplam += Convert.ToInt32(dtGiderListesi.Rows[i].Cells[1].Value);
+            }
+            txtTutarToplam.Text = toplam.ToString();
         }
         void Temizle()
         {
@@ -39,6 +52,7 @@ namespace GelirGider
                 cmbGiderTuru.Items.Add(giderTuruSonuc["GiderTuru"]);
             }
             Temizle();
+            Hesapla();
         }
 
         private void btnEkle_Click(object sender, System.EventArgs e)
@@ -112,6 +126,23 @@ namespace GelirGider
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void btnTarihAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.GiderTarihFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            dtGiderListesi.DataSource = sonuc;
+
+            Hesapla();
+        }
+
+        private void txtisimAra_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = borcSonuc.DefaultView;
+            dv.RowFilter = "GelirTuru LIKE '" + txtisimAra.Text + "%'";
+            dtGiderListesi.DataSource = dv;
+
+            Hesapla();
         }
     }
 }

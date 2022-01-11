@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GelirGider
@@ -10,6 +11,17 @@ namespace GelirGider
             InitializeComponent();
         }
 
+         DataTable borcSonuc;
+        private void Hesapla()
+        {
+            int toplam = 0;
+
+            for (int i = 0; i < dtGelirListesi.Rows.Count; ++i)
+            {
+                toplam += Convert.ToInt32(dtGelirListesi.Rows[i].Cells[1].Value);
+            }
+            txtTutarToplam.Text = toplam.ToString();
+        }
         private void Gelir_Load(object sender, System.EventArgs e)
         {
             var gelirTuruSonuc = Veritabani.GelirTuruListele();
@@ -21,17 +33,18 @@ namespace GelirGider
             }
 
             Temizle();
+            Hesapla();
         }
         void Temizle()
         {
             var gelirSonuc = Veritabani.GelirListele();
             dtGelirListesi.DataSource = gelirSonuc;
             dtGelirListesi.Columns[0].Width = 55;
-            dtGelirListesi.Columns[1].Width = 160;
-            dtGelirListesi.Columns[2].Width = 160;
-            dtGelirListesi.Columns[3].Width = 180;
-            dtGelirListesi.Columns[4].Width = 160;
-            dtGelirListesi.Columns[5].Width = 160;
+            dtGelirListesi.Columns[1].Width = 165;
+            dtGelirListesi.Columns[2].Width = 165;
+            dtGelirListesi.Columns[3].Width = 185;
+            dtGelirListesi.Columns[4].Width = 165;
+            dtGelirListesi.Columns[5].Width = 165;
 
             cmbGelirTuru.Text = "Gelir Türü Seçin";
             cmbGelirTuru.Tag = null;
@@ -113,6 +126,21 @@ namespace GelirGider
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
+        }
+        private void btnTarihAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.ToString(),dtBitis.Value.ToString());
+            dtGelirListesi.DataSource = sonuc;
+
+            Hesapla();
+        }
+        private void txtisimAra_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = borcSonuc.DefaultView;
+            dv.RowFilter = "GelirTuru LIKE '" + txtisimAra.Text + "%'";
+            dtGelirListesi.DataSource = dv;
+
+            Hesapla();
         }
     }
 }

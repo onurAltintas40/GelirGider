@@ -235,7 +235,7 @@ namespace GelirGider
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1063, 618);
+            this.groupBox1.Size = new System.Drawing.Size(1063, 547);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alacak Listesi";
@@ -250,7 +250,7 @@ namespace GelirGider
             this.dtAlacakListesi.RowHeadersWidth = 51;
             this.dtAlacakListesi.RowTemplate.Height = 29;
             this.dtAlacakListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtAlacakListesi.Size = new System.Drawing.Size(1047, 574);
+            this.dtAlacakListesi.Size = new System.Drawing.Size(1047, 504);
             this.dtAlacakListesi.TabIndex = 0;
             this.dtAlacakListesi.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGelirListesi_CellMouseDoubleClick);
             // 
@@ -382,7 +382,7 @@ namespace GelirGider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 1028);
+            this.ClientSize = new System.Drawing.Size(1088, 948);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

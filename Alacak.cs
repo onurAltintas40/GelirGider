@@ -175,6 +175,5 @@ namespace GelirGider
             Hesapla();
         }
 
-
     }
 }

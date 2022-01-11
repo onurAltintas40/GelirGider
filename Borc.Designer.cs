@@ -32,6 +32,7 @@ namespace GelirGider
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtKime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.dtOdemeTarihi = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTutar = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@ namespace GelirGider
             this.label4 = new System.Windows.Forms.Label();
             this.cmbBorcTuru = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTemizle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtBorcListesi = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -107,6 +107,17 @@ namespace GelirGider
             this.label5.Size = new System.Drawing.Size(78, 22);
             this.label5.TabIndex = 14;
             this.label5.Text = "Kimden:";
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(633, 27);
+            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(108, 38);
+            this.btnTemizle.TabIndex = 9;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // dtOdemeTarihi
             // 
@@ -217,17 +228,6 @@ namespace GelirGider
             this.label1.TabIndex = 2;
             this.label1.Text = "Tutar:";
             // 
-            // btnTemizle
-            // 
-            this.btnTemizle.Location = new System.Drawing.Point(633, 27);
-            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(108, 38);
-            this.btnTemizle.TabIndex = 9;
-            this.btnTemizle.Text = "TEMİZLE";
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtBorcListesi);
@@ -235,7 +235,7 @@ namespace GelirGider
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1063, 618);
+            this.groupBox1.Size = new System.Drawing.Size(1063, 547);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Borc Listesi";
@@ -250,7 +250,7 @@ namespace GelirGider
             this.dtBorcListesi.RowHeadersWidth = 51;
             this.dtBorcListesi.RowTemplate.Height = 29;
             this.dtBorcListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtBorcListesi.Size = new System.Drawing.Size(1049, 574);
+            this.dtBorcListesi.Size = new System.Drawing.Size(1049, 504);
             this.dtBorcListesi.TabIndex = 0;
             this.dtBorcListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtBorcListesi_CellDoubleClick);
             // 
@@ -382,7 +382,7 @@ namespace GelirGider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 1028);
+            this.ClientSize = new System.Drawing.Size(1088, 948);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
