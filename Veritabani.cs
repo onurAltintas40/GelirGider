@@ -510,7 +510,89 @@ namespace GelirGider
             con.Close();
             return sonuc;
         }
-
-
+        public static DataTable AlacakOdemeFiltre(string baslangic,string bitis)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "select * from Alacak where OdemeTarih >= @baslangic and OdemeTarih<@bitis";
+            SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
+            SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable AlacakTarihFiltre(string baslangic, string bitis)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "select * from Alacak where Tarih >= @baslangic and Tarih<@bitis";
+            SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
+            SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable BorcOdemeFiltre(string baslangic, string bitis)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "select * from Borc where OdemeTarih >= @baslangic and OdemeTarih<@bitis";
+            SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
+            SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable BorcTarihFiltre(string baslangic, string bitis)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "select * from Borc where Tarih >= @baslangic and Tarih<@bitis";
+            SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
+            SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable GelirTarihFiltre(string baslangic, string bitis)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "select * from Gelir where Tarih >= @baslangic and Tarih<@bitis";
+            SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
+            SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable GiderTarihFiltre(string baslangic, string bitis)
+        {
+            if (con.State != ConnectionState.Open) con.Open();
+            string sql = "select * from Gider where Tarih >= @baslangic and Tarih<@bitis";
+            SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
+            SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

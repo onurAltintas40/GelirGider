@@ -51,6 +51,17 @@ namespace GelirGider
                 txtKimden.Clear();
             }
         }
+
+        private void Hesapla()
+        {
+            int toplam = 0;
+
+            for (int i = 0; i < dtAlacakListesi.Rows.Count; ++i)
+            {
+                toplam += Convert.ToInt32(dtAlacakListesi.Rows[i].Cells[1].Value);
+            }
+            txtTutarToplam.Text = toplam.ToString();
+        }
         private void Alacak_Load(object sender, EventArgs e)
         {
             if (a==0)
@@ -64,6 +75,7 @@ namespace GelirGider
                 }
 
                 Temizle();
+                Hesapla();
             }
             
         }
@@ -140,5 +152,29 @@ namespace GelirGider
             dv.RowFilter = "Kimden LIKE '" + txtAdAra.Text + "%'";
             dtAlacakListesi.DataSource = dv;
         }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.AlacakOdemeFiltre(dtOdemeBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            dtAlacakListesi.DataSource = sonuc;
+        }
+
+        private void btnOdemeTarihAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.AlacakOdemeFiltre(dtOdemeBaslangic.Value.ToString(),dtBitis.Value.ToString());
+            dtAlacakListesi.DataSource = sonuc;
+
+            Hesapla();
+        }
+
+        private void btnTarihAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.AlacakTarihFiltre(dtOdemeBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            dtAlacakListesi.DataSource = sonuc;
+
+            Hesapla();
+        }
+
+
     }
 }

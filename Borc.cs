@@ -48,7 +48,18 @@ namespace GelirGider
             txtTutar.Clear();
             dtOdemeTarihi.Value = DateTime.Now;
             txtTutar.Focus();
-            txtAdAra.Clear();
+            txtisimAra.Clear();
+        }
+
+        private void Hesapla()
+        {
+            int toplam = 0;
+
+            for (int i = 0; i < dtBorcListesi.Rows.Count; ++i)
+            {
+                toplam += Convert.ToInt32(dtBorcListesi.Rows[i].Cells[1].Value);
+            }
+            txtTutarToplam.Text = toplam.ToString();
         }
         private void Borc_Load(object sender, EventArgs e)
         {
@@ -63,9 +74,9 @@ namespace GelirGider
                 }
 
                 Temizle();
-            }
 
-            
+                Hesapla();
+            }            
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -132,13 +143,31 @@ namespace GelirGider
             cmbBorcTuru.SelectedText = dtBorcListesi.CurrentRow.Cells[4].Value.ToString();
             txtKime.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();
             txtAciklama.Text = dtBorcListesi.CurrentRow.Cells[6].Value.ToString();            
-        }
+        }            
 
-        private void txtAdAra_TextChanged(object sender, EventArgs e)
+        private void txtisimAra_TextChanged(object sender, EventArgs e)
         {
             DataView dv = borcSonuc.DefaultView;
-            dv.RowFilter = "Kime LIKE '" + txtAdAra.Text + "%'";
+            dv.RowFilter = "Kime LIKE '" + txtisimAra.Text + "%'";
             dtBorcListesi.DataSource = dv;
+
+            Hesapla();
+        }
+
+        private void btnTarihAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            dtBorcListesi.DataSource = sonuc;
+
+            Hesapla();
+        }
+
+        private void btnOdemeTarihAra_Click(object sender, EventArgs e)
+        {
+            var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            dtBorcListesi.DataSource = sonuc;
+
+            Hesapla();
         }
     }
 }
