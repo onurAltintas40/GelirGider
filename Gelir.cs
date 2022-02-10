@@ -129,7 +129,7 @@ namespace GelirGider
         }
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.ToString(),dtBitis.Value.ToString());
+            var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
             dtGelirListesi.DataSource = sonuc;
 
             Hesapla();

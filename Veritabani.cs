@@ -541,7 +541,7 @@ namespace GelirGider
         public static DataTable AlacakOdemeFiltre(string baslangic,string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "select * from Alacak where OdemeTarih >= @baslangic and OdemeTarih<@bitis";
+            string sql = "select * from Alacak where OdemeTarih >= @baslangic and OdemeTarih <=@bitis order by OdemeTarih";
             SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
             SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
@@ -555,7 +555,7 @@ namespace GelirGider
         public static DataTable AlacakTarihFiltre(string baslangic, string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "select * from Alacak where Tarih >= @baslangic and Tarih<@bitis";
+            string sql = "select * from Alacak where Tarih >= @baslangic and Tarih <=@bitis order by Tarih";
             SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
             SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
@@ -569,7 +569,7 @@ namespace GelirGider
         public static DataTable BorcOdemeFiltre(string baslangic, string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "select * from Borc where OdemeTarih >= @baslangic and OdemeTarih<@bitis";
+            string sql = "select * from Borc where OdemeTarih >= @baslangic and OdemeTarih <=@bitis order by OdemeTarih";
             SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
             SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
@@ -583,7 +583,7 @@ namespace GelirGider
         public static DataTable BorcTarihFiltre(string baslangic, string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "select * from Borc where Tarih >= @baslangic and Tarih<@bitis";
+            string sql = "select * from Borc where Tarih >= @baslangic and Tarih <=@bitis order by Tarih";
             SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
             SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
@@ -597,7 +597,7 @@ namespace GelirGider
         public static DataTable GelirTarihFiltre(string baslangic, string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "select * from Gelir where Tarih >= @baslangic and Tarih<@bitis";
+            string sql = "select * from Gelir where Tarih >= @baslangic and Tarih <=@bitis order by Tarih";
             SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
             SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
@@ -611,7 +611,7 @@ namespace GelirGider
         public static DataTable GiderTarihFiltre(string baslangic, string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
-            string sql = "select * from Gider where Tarih >= @baslangic and Tarih<@bitis";
+            string sql = "select * from Gider where Tarih >= @baslangic and Tarih <=@bitis order by Tarih";
             SQLiteParameter prm1 = new SQLiteParameter("baslangic", baslangic);
             SQLiteParameter prm2 = new SQLiteParameter("bitis", bitis);
             SQLiteCommand cmd = new SQLiteCommand(sql, con);

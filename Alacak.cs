@@ -164,13 +164,14 @@ namespace GelirGider
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.AlacakOdemeFiltre(dtOdemeBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            var sonuc = Veritabani.AlacakOdemeFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
             dtAlacakListesi.DataSource = sonuc;
         }
 
         private void btnOdemeTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.AlacakOdemeFiltre(dtOdemeBaslangic.Value.ToString(),dtBitis.Value.ToString());
+
+            var sonuc = Veritabani.AlacakOdemeFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
             dtAlacakListesi.DataSource = sonuc;
 
             Hesapla();
@@ -178,7 +179,7 @@ namespace GelirGider
 
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.AlacakTarihFiltre(dtOdemeBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            var sonuc = Veritabani.AlacakTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
             dtAlacakListesi.DataSource = sonuc;
 
             Hesapla();

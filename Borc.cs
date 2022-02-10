@@ -157,14 +157,14 @@ namespace GelirGider
         }
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
             dtBorcListesi.DataSource = sonuc;
 
             Hesapla();
         }
         private void btnOdemeTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
+            var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
             dtBorcListesi.DataSource = sonuc;
 
             Hesapla();
