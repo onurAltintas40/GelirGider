@@ -92,7 +92,7 @@ namespace GelirGider
             // 
             // txtKime
             // 
-            this.txtKime.Location = new System.Drawing.Point(145, 84);
+            this.txtKime.Location = new System.Drawing.Point(147, 30);
             this.txtKime.Margin = new System.Windows.Forms.Padding(4);
             this.txtKime.Name = "txtKime";
             this.txtKime.Size = new System.Drawing.Size(278, 30);
@@ -101,7 +101,7 @@ namespace GelirGider
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 87);
+            this.label5.Location = new System.Drawing.Point(61, 33);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 22);
@@ -202,7 +202,7 @@ namespace GelirGider
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 42);
+            this.label4.Location = new System.Drawing.Point(36, 85);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 22);
@@ -212,7 +212,7 @@ namespace GelirGider
             // cmbBorcTuru
             // 
             this.cmbBorcTuru.FormattingEnabled = true;
-            this.cmbBorcTuru.Location = new System.Drawing.Point(147, 39);
+            this.cmbBorcTuru.Location = new System.Drawing.Point(145, 82);
             this.cmbBorcTuru.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBorcTuru.Name = "cmbBorcTuru";
             this.cmbBorcTuru.Size = new System.Drawing.Size(278, 30);

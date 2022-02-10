@@ -11,7 +11,7 @@ namespace GelirGider
             InitializeComponent();
         }
 
-        DataTable borcSonuc;
+        DataTable giderSonuc;
         private void Hesapla()
         {
             int toplam = 0;
@@ -24,15 +24,14 @@ namespace GelirGider
         }
         void Temizle()
         {
-            var giderSonuc = Veritabani.GiderListele();
+            giderSonuc = Veritabani.GiderListele();
             dtGiderListesi.DataSource = giderSonuc;
 
             dtGiderListesi.Columns[0].Width = 55;
             dtGiderListesi.Columns[1].Width = 160;
             dtGiderListesi.Columns[2].Width = 160;
-            dtGiderListesi.Columns[3].Width = 175;
+            dtGiderListesi.Columns[3].Width = 225;
             dtGiderListesi.Columns[4].Width = 160;
-            dtGiderListesi.Columns[5].Width = 160;
 
             cmbGiderTuru.Text = "Gider Türü Seçin";
             cmbGiderTuru.Tag = null;
@@ -40,6 +39,8 @@ namespace GelirGider
             txtTutar.Clear();
             chkOdemeAlindi.Checked = false;
             txtTutar.Focus();
+
+            Hesapla();
         }
 
         private void Gider_Load(object sender, System.EventArgs e)
@@ -47,21 +48,20 @@ namespace GelirGider
             var giderTuruSonuc = Veritabani.GiderTuruListele();
 
             cmbGiderTuru.Items.Clear();
+            cmbGiderTuruAra.Items.Clear();
             while (giderTuruSonuc.Read())
             {
                 cmbGiderTuru.Items.Add(giderTuruSonuc["GiderTuru"]);
+                cmbGiderTuruAra.Items.Add(giderTuruSonuc["GiderTuru"]);
             }
             Temizle();
-            Hesapla();
         }
 
         private void btnEkle_Click(object sender, System.EventArgs e)
         {
             if (cmbGiderTuru.Text != "Gider Türü Seçin" && txtTutar.Text != "")
             {
-                int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
-
-                Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text, odeme);
+                Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text);
                 if (chkOdemeAlindi.Checked == false)
                 {
                     Borc borc = new Borc();
@@ -89,8 +89,7 @@ namespace GelirGider
             {
                 if (cmbGiderTuru.Text != "Gider Türü Seçin" && txtTutar.Text != "")
                 {
-                    int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
-                    Veritabani.GiderGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text, odeme, Int32.Parse((string)cmbGiderTuru.Tag));
+                    Veritabani.GiderGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text, Int32.Parse((string)cmbGiderTuru.Tag));
                     Temizle();
                 }
                 else
@@ -120,7 +119,6 @@ namespace GelirGider
             txtAciklama.Text = dtGiderListesi.CurrentRow.Cells[3].Value.ToString();
             cmbGiderTuru.Text = "";
             cmbGiderTuru.SelectedText = dtGiderListesi.CurrentRow.Cells[4].Value.ToString();
-            chkOdemeAlindi.Checked = Int32.Parse(dtGiderListesi.CurrentRow.Cells[5].Value.ToString()) == 1 ? true : false;
         }
 
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,15 +132,20 @@ namespace GelirGider
             dtGiderListesi.DataSource = sonuc;
 
             Hesapla();
-        }
+        }       
 
-        private void txtisimAra_TextChanged(object sender, EventArgs e)
+        private void cmbGiderTuruAra_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataView dv = borcSonuc.DefaultView;
-            dv.RowFilter = "GelirTuru LIKE '" + txtisimAra.Text + "%'";
+            DataView dv = giderSonuc.DefaultView;
+            dv.RowFilter = "GiderTuru LIKE '" + cmbGiderTuruAra.Text + "%'";
             dtGiderListesi.DataSource = dv;
 
             Hesapla();
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            Temizle();
         }
     }
 }

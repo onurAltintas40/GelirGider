@@ -44,10 +44,10 @@ namespace GelirGider
             this.btnEkle = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cmbGelirTuruAra = new System.Windows.Forms.ComboBox();
             this.btnTarihAra = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dtBitis = new System.Windows.Forms.DateTimePicker();
-            this.txtisimAra = new System.Windows.Forms.TextBox();
             this.dtBaslangic = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -211,10 +211,10 @@ namespace GelirGider
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cmbGelirTuruAra);
             this.groupBox4.Controls.Add(this.btnTarihAra);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.dtBitis);
-            this.groupBox4.Controls.Add(this.txtisimAra);
             this.groupBox4.Controls.Add(this.dtBaslangic);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label9);
@@ -224,6 +224,15 @@ namespace GelirGider
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama:";
+            // 
+            // cmbGelirTuruAra
+            // 
+            this.cmbGelirTuruAra.FormattingEnabled = true;
+            this.cmbGelirTuruAra.Location = new System.Drawing.Point(6, 54);
+            this.cmbGelirTuruAra.Name = "cmbGelirTuruAra";
+            this.cmbGelirTuruAra.Size = new System.Drawing.Size(201, 30);
+            this.cmbGelirTuruAra.TabIndex = 21;
+            this.cmbGelirTuruAra.SelectedIndexChanged += new System.EventHandler(this.cmbGelirTuruAra_SelectedIndexChanged);
             // 
             // btnTarihAra
             // 
@@ -252,15 +261,6 @@ namespace GelirGider
             this.dtBitis.Name = "dtBitis";
             this.dtBitis.Size = new System.Drawing.Size(268, 30);
             this.dtBitis.TabIndex = 18;
-            // 
-            // txtisimAra
-            // 
-            this.txtisimAra.Location = new System.Drawing.Point(8, 54);
-            this.txtisimAra.Margin = new System.Windows.Forms.Padding(4);
-            this.txtisimAra.Name = "txtisimAra";
-            this.txtisimAra.Size = new System.Drawing.Size(249, 30);
-            this.txtisimAra.TabIndex = 15;
-            this.txtisimAra.TextChanged += new System.EventHandler(this.txtisimAra_TextChanged);
             // 
             // dtBaslangic
             // 
@@ -368,12 +368,12 @@ namespace GelirGider
         private System.Windows.Forms.Button btnTarihAra;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtBitis;
-        private System.Windows.Forms.TextBox txtisimAra;
         private System.Windows.Forms.DateTimePicker dtBaslangic;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTutarToplam;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbGelirTuruAra;
     }
 }

@@ -44,10 +44,10 @@ namespace GelirGider
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtGiderListesi = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cmbGiderTuruAra = new System.Windows.Forms.ComboBox();
             this.btnTarihAra = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dtBitis = new System.Windows.Forms.DateTimePicker();
-            this.txtisimAra = new System.Windows.Forms.TextBox();
             this.dtBaslangic = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,13 +92,14 @@ namespace GelirGider
             this.btnTemizle.TabIndex = 9;
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // txtTutar
             // 
             this.txtTutar.Location = new System.Drawing.Point(126, 77);
             this.txtTutar.Margin = new System.Windows.Forms.Padding(4);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(278, 30);
+            this.txtTutar.Size = new System.Drawing.Size(278, 26);
             this.txtTutar.TabIndex = 2;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             // 
@@ -108,7 +109,7 @@ namespace GelirGider
             this.chkOdemeAlindi.Location = new System.Drawing.Point(98, 122);
             this.chkOdemeAlindi.Margin = new System.Windows.Forms.Padding(4);
             this.chkOdemeAlindi.Name = "chkOdemeAlindi";
-            this.chkOdemeAlindi.Size = new System.Drawing.Size(143, 26);
+            this.chkOdemeAlindi.Size = new System.Drawing.Size(111, 23);
             this.chkOdemeAlindi.TabIndex = 4;
             this.chkOdemeAlindi.Text = "Ödeme Alındı";
             this.chkOdemeAlindi.UseVisualStyleBackColor = true;
@@ -162,7 +163,7 @@ namespace GelirGider
             this.label3.Location = new System.Drawing.Point(441, 69);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 22);
+            this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Açıklama:";
             // 
@@ -172,7 +173,7 @@ namespace GelirGider
             this.label4.Location = new System.Drawing.Point(12, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 22);
+            this.label4.Size = new System.Drawing.Size(78, 19);
             this.label4.TabIndex = 5;
             this.label4.Text = "Gider Türü:";
             // 
@@ -182,7 +183,7 @@ namespace GelirGider
             this.cmbGiderTuru.Location = new System.Drawing.Point(126, 34);
             this.cmbGiderTuru.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGiderTuru.Name = "cmbGiderTuru";
-            this.cmbGiderTuru.Size = new System.Drawing.Size(278, 30);
+            this.cmbGiderTuru.Size = new System.Drawing.Size(278, 27);
             this.cmbGiderTuru.TabIndex = 1;
             // 
             // label1
@@ -191,7 +192,7 @@ namespace GelirGider
             this.label1.Location = new System.Drawing.Point(61, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 22);
+            this.label1.Size = new System.Drawing.Size(43, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tutar:";
             // 
@@ -223,10 +224,10 @@ namespace GelirGider
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cmbGiderTuruAra);
             this.groupBox4.Controls.Add(this.btnTarihAra);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.dtBitis);
-            this.groupBox4.Controls.Add(this.txtisimAra);
             this.groupBox4.Controls.Add(this.dtBaslangic);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label9);
@@ -236,6 +237,16 @@ namespace GelirGider
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama:";
+            // 
+            // cmbGiderTuruAra
+            // 
+            this.cmbGiderTuruAra.FormattingEnabled = true;
+            this.cmbGiderTuruAra.Location = new System.Drawing.Point(8, 52);
+            this.cmbGiderTuruAra.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbGiderTuruAra.Name = "cmbGiderTuruAra";
+            this.cmbGiderTuruAra.Size = new System.Drawing.Size(199, 27);
+            this.cmbGiderTuruAra.TabIndex = 21;
+            this.cmbGiderTuruAra.SelectedIndexChanged += new System.EventHandler(this.cmbGiderTuruAra_SelectedIndexChanged);
             // 
             // btnTarihAra
             // 
@@ -254,7 +265,7 @@ namespace GelirGider
             this.label8.Location = new System.Drawing.Point(573, 26);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 22);
+            this.label8.Size = new System.Drawing.Size(38, 19);
             this.label8.TabIndex = 16;
             this.label8.Text = "Bitiş:";
             // 
@@ -262,23 +273,14 @@ namespace GelirGider
             // 
             this.dtBitis.Location = new System.Drawing.Point(573, 54);
             this.dtBitis.Name = "dtBitis";
-            this.dtBitis.Size = new System.Drawing.Size(268, 30);
+            this.dtBitis.Size = new System.Drawing.Size(268, 26);
             this.dtBitis.TabIndex = 18;
-            // 
-            // txtisimAra
-            // 
-            this.txtisimAra.Location = new System.Drawing.Point(8, 54);
-            this.txtisimAra.Margin = new System.Windows.Forms.Padding(4);
-            this.txtisimAra.Name = "txtisimAra";
-            this.txtisimAra.Size = new System.Drawing.Size(249, 30);
-            this.txtisimAra.TabIndex = 15;
-            this.txtisimAra.TextChanged += new System.EventHandler(this.txtisimAra_TextChanged);
             // 
             // dtBaslangic
             // 
             this.dtBaslangic.Location = new System.Drawing.Point(283, 54);
             this.dtBaslangic.Name = "dtBaslangic";
-            this.dtBaslangic.Size = new System.Drawing.Size(270, 30);
+            this.dtBaslangic.Size = new System.Drawing.Size(270, 26);
             this.dtBaslangic.TabIndex = 17;
             // 
             // label7
@@ -287,7 +289,7 @@ namespace GelirGider
             this.label7.Location = new System.Drawing.Point(283, 26);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 22);
+            this.label7.Size = new System.Drawing.Size(69, 19);
             this.label7.TabIndex = 16;
             this.label7.Text = "Başlangıç:";
             // 
@@ -297,7 +299,7 @@ namespace GelirGider
             this.label9.Location = new System.Drawing.Point(8, 26);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(199, 22);
+            this.label9.Size = new System.Drawing.Size(148, 19);
             this.label9.TabIndex = 16;
             this.label9.Text = "Gelir Türüne Göre Ara:";
             // 
@@ -321,7 +323,7 @@ namespace GelirGider
             this.txtTutarToplam.Location = new System.Drawing.Point(7, 72);
             this.txtTutarToplam.Name = "txtTutarToplam";
             this.txtTutarToplam.ReadOnly = true;
-            this.txtTutarToplam.Size = new System.Drawing.Size(244, 30);
+            this.txtTutarToplam.Size = new System.Drawing.Size(244, 26);
             this.txtTutarToplam.TabIndex = 11;
             // 
             // label6
@@ -329,13 +331,13 @@ namespace GelirGider
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(10, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 22);
+            this.label6.Size = new System.Drawing.Size(43, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Tutar:";
             // 
             // Gider
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 894);
             this.Controls.Add(this.groupBox3);
@@ -380,12 +382,12 @@ namespace GelirGider
         private System.Windows.Forms.Button btnTarihAra;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtBitis;
-        private System.Windows.Forms.TextBox txtisimAra;
         private System.Windows.Forms.DateTimePicker dtBaslangic;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTutarToplam;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbGiderTuruAra;
     }
 }

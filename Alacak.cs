@@ -15,7 +15,8 @@ namespace GelirGider
         public int a = 0;
 
         DataTable alacakSonuc;
-        void Temizle()
+
+        void Listele()
         {
             alacakSonuc = Veritabani.AlacakListele();
             dtAlacakListesi.DataSource = alacakSonuc;
@@ -25,7 +26,6 @@ namespace GelirGider
             dtAlacakListesi.Columns[3].Width = 155;
             dtAlacakListesi.Columns[4].Width = 155;
             dtAlacakListesi.Columns[5].Width = 160;
-            dtAlacakListesi.Columns[6].Width = 160;
 
             for (int i = 0; i < dtAlacakListesi.RowCount - 1; i++)
             {
@@ -41,15 +41,20 @@ namespace GelirGider
                     renk.BackColor = Color.Yellow;
                 }
                 dtAlacakListesi.Rows[i].DefaultCellStyle = renk;
-
-                cmbAlacakTuru.Text = "Alacak Türü Seçin";
-                cmbAlacakTuru.Tag = null;
-                txtAciklama.Clear();
-                txtTutar.Clear();
-                dtOdemeTarihi.Value = DateTime.Now;
-                txtTutar.Focus();
-                txtKimden.Clear();
             }
+            Hesapla();
+        }
+        void Temizle()
+        {
+            cmbAlacakTuru.Text = "Alacak Türü Seçin";
+            cmbAlacakTuru.Tag = null;
+            txtAciklama.Clear();
+            txtTutar.Clear();
+            dtOdemeTarihi.Value = DateTime.Now;
+            txtTutar.Focus();
+            txtKimden.Clear();
+
+            Listele();           
         }
 
         private void Hesapla()
@@ -58,7 +63,7 @@ namespace GelirGider
 
             for (int i = 0; i < dtAlacakListesi.Rows.Count; ++i)
             {
-                toplam += Convert.ToInt32(dtAlacakListesi.Rows[i].Cells[1].Value);
+                toplam += Convert.ToInt32(dtAlacakListesi.Rows[i].Cells[2].Value);
             }
             txtTutarToplam.Text = toplam.ToString();
         }
@@ -74,8 +79,11 @@ namespace GelirGider
                     cmbAlacakTuru.Items.Add(gelirTuruSonuc["GelirTuru"]);
                 }
 
-                Temizle();
-                Hesapla();
+                Temizle();              
+            }
+            else
+            {
+                Listele();  
             }
             
         }
@@ -84,7 +92,7 @@ namespace GelirGider
         {
             if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
             {
-                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text, txtKimden.Text);
+                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.Text, txtAciklama.Text, txtKimden.Text);
                 Temizle();
             }
             else
@@ -103,7 +111,7 @@ namespace GelirGider
             {
                 if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
                 {
-                    Veritabani.AlacakGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.SelectedText, txtAciklama.Text, txtKimden.Text, Int32.Parse(cmbAlacakTuru.Tag.ToString()));
+                    Veritabani.AlacakGuncelle(Convert.ToDouble(txtTutar.Text), dtOdemeTarihi.Value.ToString(), cmbAlacakTuru.Text, txtAciklama.Text, txtKimden.Text, Convert.ToInt32(cmbAlacakTuru.Tag.ToString()));
                     Temizle();
                 }
                 else
@@ -134,10 +142,10 @@ namespace GelirGider
         private void dtGelirListesi_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cmbAlacakTuru.Tag = dtAlacakListesi.CurrentRow.Cells[0].Value.ToString();
-            txtTutar.Text = dtAlacakListesi.CurrentRow.Cells[1].Value.ToString();
+            txtKimden.Text = dtAlacakListesi.CurrentRow.Cells[1].Value.ToString();
+            txtTutar.Text = dtAlacakListesi.CurrentRow.Cells[2].Value.ToString();
             dtOdemeTarihi.Value = DateTime.Parse(dtAlacakListesi.CurrentRow.Cells[3].Value.ToString());
-            cmbAlacakTuru.SelectedText = dtAlacakListesi.CurrentRow.Cells[4].Value.ToString();
-            txtKimden.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();
+            cmbAlacakTuru.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();            
             txtAciklama.Text = dtAlacakListesi.CurrentRow.Cells[6].Value.ToString();
         }
 
@@ -151,6 +159,7 @@ namespace GelirGider
             DataView dv = alacakSonuc.DefaultView;
             dv.RowFilter = "Kimden LIKE '" + txtAdAra.Text + "%'";
             dtAlacakListesi.DataSource = dv;
+            Hesapla();
         }
 
         private void btnAra_Click(object sender, EventArgs e)

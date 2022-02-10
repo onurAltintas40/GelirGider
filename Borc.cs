@@ -14,7 +14,8 @@ namespace GelirGider
 
         DataTable borcSonuc;
         public int a = 0;
-        void Temizle()
+
+        void Listele()
         {
             borcSonuc = Veritabani.BorcListele();
             dtBorcListesi.DataSource = borcSonuc;
@@ -24,7 +25,7 @@ namespace GelirGider
             dtBorcListesi.Columns[3].Width = 155;
             dtBorcListesi.Columns[4].Width = 155;
             dtBorcListesi.Columns[5].Width = 160;
-            dtBorcListesi.Columns[6].Width = 160;
+            //dtBorcListesi.Columns[6].Width = 160;
 
             for (int i = 0; i < dtBorcListesi.RowCount - 1; i++)
             {
@@ -42,6 +43,10 @@ namespace GelirGider
                 dtBorcListesi.Rows[i].DefaultCellStyle = renk;
             }
 
+            Hesapla();
+        }
+        void Temizle()
+        {
             cmbBorcTuru.Text = "Borç Türü Seçin";
             cmbBorcTuru.Tag = null;
             txtAciklama.Clear();
@@ -49,15 +54,17 @@ namespace GelirGider
             dtOdemeTarihi.Value = DateTime.Now;
             txtTutar.Focus();
             txtisimAra.Clear();
-        }
+            txtKime.Clear();
 
+            Listele();
+        }
         private void Hesapla()
         {
             int toplam = 0;
 
             for (int i = 0; i < dtBorcListesi.Rows.Count; ++i)
             {
-                toplam += Convert.ToInt32(dtBorcListesi.Rows[i].Cells[1].Value);
+                toplam += Convert.ToInt32(dtBorcListesi.Rows[i].Cells[2].Value);
             }
             txtTutarToplam.Text = toplam.ToString();
         }
@@ -74,16 +81,17 @@ namespace GelirGider
                 }
 
                 Temizle();
-
-                Hesapla();
-            }            
+            }
+            else
+            {
+                Listele();
+            }
         }
-
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (cmbBorcTuru.Text != "Borç Türü Seçin" && txtTutar.Text != "")
             {
-                Veritabani.BorcEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.SelectedText, txtAciklama.Text,txtKime.Text);
+                Veritabani.BorcEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.Text, txtAciklama.Text,txtKime.Text);
                 Temizle();
             }
             else
@@ -91,7 +99,6 @@ namespace GelirGider
                 MessageBox.Show("Borç Türü ve Tutar boş olamaz !!!");
             }
         }
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             if (cmbBorcTuru.Tag == null)
@@ -102,7 +109,7 @@ namespace GelirGider
             {
                 if (cmbBorcTuru.Text != "Borç Türü Seçin" && txtTutar.Text != "")
                 {
-                    Veritabani.BorcGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.SelectedText, txtAciklama.Text,txtKime.Text, Int32.Parse(cmbBorcTuru.Tag.ToString()));
+                    Veritabani.BorcGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(),cmbBorcTuru.Text, txtAciklama.Text,txtKime.Text, Int32.Parse(cmbBorcTuru.Tag.ToString()));
                     Temizle();
                 }
                 else
@@ -111,7 +118,6 @@ namespace GelirGider
                 }
             }
         }
-
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (cmbBorcTuru.Tag == null)
@@ -124,27 +130,23 @@ namespace GelirGider
                 Temizle();
             }
         }
-
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
         }
-
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void dtBorcListesi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            cmbBorcTuru.Tag = dtBorcListesi.CurrentRow.Cells[0].Value.ToString();            
-            txtTutar.Text = dtBorcListesi.CurrentRow.Cells[1].Value.ToString();
-            dtOdemeTarihi.Value = DateTime.Parse(dtBorcListesi.CurrentRow.Cells[3].Value.ToString());
-            cmbBorcTuru.SelectedText = dtBorcListesi.CurrentRow.Cells[4].Value.ToString();
-            txtKime.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();
+            cmbBorcTuru.Tag = dtBorcListesi.CurrentRow.Cells[0].Value.ToString();
+            txtKime.Text = dtBorcListesi.CurrentRow.Cells[1].Value.ToString();
+            txtTutar.Text = dtBorcListesi.CurrentRow.Cells[2].Value.ToString();            
+            dtOdemeTarihi.Value = DateTime.Parse(dtBorcListesi.CurrentRow.Cells[4].Value.ToString());
+            cmbBorcTuru.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();            
             txtAciklama.Text = dtBorcListesi.CurrentRow.Cells[6].Value.ToString();            
         }            
-
         private void txtisimAra_TextChanged(object sender, EventArgs e)
         {
             DataView dv = borcSonuc.DefaultView;
@@ -153,7 +155,6 @@ namespace GelirGider
 
             Hesapla();
         }
-
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
             var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
@@ -161,7 +162,6 @@ namespace GelirGider
 
             Hesapla();
         }
-
         private void btnOdemeTarihAra_Click(object sender, EventArgs e)
         {
             var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());

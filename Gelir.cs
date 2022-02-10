@@ -11,7 +11,7 @@ namespace GelirGider
             InitializeComponent();
         }
 
-         DataTable borcSonuc;
+        DataTable gelirSonuc;
         private void Hesapla()
         {
             int toplam = 0;
@@ -27,24 +27,24 @@ namespace GelirGider
             var gelirTuruSonuc = Veritabani.GelirTuruListele();
 
             cmbGelirTuru.Items.Clear();
+            cmbGelirTuruAra.Items.Clear();
             while (gelirTuruSonuc.Read())
             {
                 cmbGelirTuru.Items.Add(gelirTuruSonuc["GelirTuru"]);
+                cmbGelirTuruAra.Items.Add(gelirTuruSonuc["GelirTuru"]);
             }
 
-            Temizle();
-            Hesapla();
+            Temizle();           
         }
         void Temizle()
         {
-            var gelirSonuc = Veritabani.GelirListele();
+            gelirSonuc = Veritabani.GelirListele();
             dtGelirListesi.DataSource = gelirSonuc;
             dtGelirListesi.Columns[0].Width = 55;
             dtGelirListesi.Columns[1].Width = 165;
             dtGelirListesi.Columns[2].Width = 165;
-            dtGelirListesi.Columns[3].Width = 185;
-            dtGelirListesi.Columns[4].Width = 165;
-            dtGelirListesi.Columns[5].Width = 165;
+            dtGelirListesi.Columns[3].Width = 225;
+            dtGelirListesi.Columns[4].Width = 165;           
 
             cmbGelirTuru.Text = "Gelir Türü Seçin";
             cmbGelirTuru.Tag = null;
@@ -52,15 +52,12 @@ namespace GelirGider
             txtTutar.Clear();
             chkOdemeAlindi.Checked = false;
             txtTutar.Focus();
+            Hesapla();
         }
         private void btnEkle_Click(object sender, System.EventArgs e)
         {
             if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
-            {
-                int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;                
-
-                Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme);
-
+            { 
                 if (chkOdemeAlindi.Checked == false)
                 {
                     Alacak alacak = new Alacak();
@@ -69,6 +66,10 @@ namespace GelirGider
                     alacak.txtTutar.Text = txtTutar.Text;
                     alacak.txtAciklama.Text = txtAciklama.Text;
                     alacak.ShowDialog();
+                }
+                else
+                {
+                    Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text);
                 }
                 Temizle();
             }
@@ -89,7 +90,7 @@ namespace GelirGider
                 if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
                 {
                     int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
-                    Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, odeme, Int32.Parse((string)cmbGelirTuru.Tag));
+                    Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, Int32.Parse((string)cmbGelirTuru.Tag));
                     Temizle();
                 }
                 else
@@ -120,8 +121,7 @@ namespace GelirGider
             txtTutar.Text = dtGelirListesi.CurrentRow.Cells[1].Value.ToString();
             txtAciklama.Text = dtGelirListesi.CurrentRow.Cells[3].Value.ToString();
             cmbGelirTuru.Text = "";
-            cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();
-            chkOdemeAlindi.Checked = Int32.Parse(dtGelirListesi.CurrentRow.Cells[5].Value.ToString()) == 1 ? true : false;
+            cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();  
         }
         private void btnTemizle_Click(object sender, EventArgs e)
         {
@@ -133,11 +133,11 @@ namespace GelirGider
             dtGelirListesi.DataSource = sonuc;
 
             Hesapla();
-        }
-        private void txtisimAra_TextChanged(object sender, EventArgs e)
+        }       
+        private void cmbGelirTuruAra_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataView dv = borcSonuc.DefaultView;
-            dv.RowFilter = "GelirTuru LIKE '" + txtisimAra.Text + "%'";
+            DataView dv = gelirSonuc.DefaultView;
+            dv.RowFilter = "GelirTuru LIKE '" + cmbGelirTuruAra.Text + "%'";
             dtGelirListesi.DataSource = dv;
 
             Hesapla();
