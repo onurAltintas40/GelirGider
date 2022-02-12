@@ -25,8 +25,14 @@ namespace GelirGider
             dtBorcListesi.Columns[3].Width = 155;
             dtBorcListesi.Columns[4].Width = 155;
             dtBorcListesi.Columns[5].Width = 160;
-            //dtBorcListesi.Columns[6].Width = 160;
 
+            Renk();
+
+            Hesapla();
+        }
+
+        void Renk()
+        {
             for (int i = 0; i < dtBorcListesi.RowCount - 1; i++)
             {
                 DataGridViewCellStyle renk = new DataGridViewCellStyle();
@@ -42,8 +48,6 @@ namespace GelirGider
                 }
                 dtBorcListesi.Rows[i].DefaultCellStyle = renk;
             }
-
-            Hesapla();
         }
         void Temizle()
         {
@@ -57,6 +61,7 @@ namespace GelirGider
             txtKime.Clear();
 
             Listele();
+            dtBorcListesi.ClearSelection();
         }
         private void Hesapla()
         {
@@ -86,12 +91,14 @@ namespace GelirGider
             {
                 Listele();
             }
+
+            
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (cmbBorcTuru.Text != "Borç Türü Seçin" && txtTutar.Text != "")
             {
-                Veritabani.BorcEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbBorcTuru.Text, txtAciklama.Text,txtKime.Text);
+                Veritabani.BorcEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString("yyyy/MM/dd HH:mm:ss"), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), cmbBorcTuru.Text, txtAciklama.Text,txtKime.Text);
                 Temizle();
             }
             else
@@ -109,7 +116,7 @@ namespace GelirGider
             {
                 if (cmbBorcTuru.Text != "Borç Türü Seçin" && txtTutar.Text != "")
                 {
-                    Veritabani.BorcGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(),cmbBorcTuru.Text, txtAciklama.Text,txtKime.Text, Int32.Parse(cmbBorcTuru.Tag.ToString()));
+                    Veritabani.BorcGuncelle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString("yyyy/MM/dd HH:mm:ss"), cmbBorcTuru.Text, txtAciklama.Text,txtKime.Text, Int32.Parse(cmbBorcTuru.Tag.ToString()));
                     Temizle();
                 }
                 else
@@ -154,20 +161,38 @@ namespace GelirGider
             dtBorcListesi.DataSource = dv;
 
             Hesapla();
+            Renk();
         }
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
-            dtBorcListesi.DataSource = sonuc;
+            if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
+            {
+                var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                dtBorcListesi.DataSource = sonuc;
 
-            Hesapla();
+                Hesapla();
+                Renk();
+            }
+            else
+            {
+                MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
+            }
+
         }
         private void btnOdemeTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
-            dtBorcListesi.DataSource = sonuc;
+            if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
+            {
+                var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                dtBorcListesi.DataSource = sonuc;
 
-            Hesapla();
+                Hesapla();
+                Renk();
+            }
+            else
+            {
+                MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
+            }
         }
     }
 }

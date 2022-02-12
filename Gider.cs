@@ -41,6 +41,7 @@ namespace GelirGider
             txtTutar.Focus();
 
             Hesapla();
+            dtGiderListesi.ClearSelection();
         }
 
         private void Gider_Load(object sender, System.EventArgs e)
@@ -61,7 +62,7 @@ namespace GelirGider
         {
             if (cmbGiderTuru.Text != "Gider Türü Seçin" && txtTutar.Text != "")
             {
-                Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text);
+                Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbGiderTuru.Text);
                 if (chkOdemeAlindi.Checked == false)
                 {
                     Borc borc = new Borc();
@@ -89,7 +90,7 @@ namespace GelirGider
             {
                 if (cmbGiderTuru.Text != "Gider Türü Seçin" && txtTutar.Text != "")
                 {
-                    Veritabani.GiderGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGiderTuru.Text, Int32.Parse((string)cmbGiderTuru.Tag));
+                    Veritabani.GiderGuncelle(Double.Parse(txtTutar.Text), txtAciklama.Text, cmbGiderTuru.Text, Int32.Parse((string)cmbGiderTuru.Tag));
                     Temizle();
                 }
                 else
@@ -128,10 +129,17 @@ namespace GelirGider
 
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.GiderTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
-            dtGiderListesi.DataSource = sonuc;
+            if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
+            {
+                var sonuc = Veritabani.GiderTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                dtGiderListesi.DataSource = sonuc;
 
-            Hesapla();
+                Hesapla();
+            }
+            else
+            {
+                MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
+            }
         }       
 
         private void cmbGiderTuruAra_SelectedIndexChanged(object sender, EventArgs e)

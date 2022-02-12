@@ -41,26 +41,28 @@ namespace GelirGider
             // txtSifre
             // 
             this.txtSifre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSifre.Location = new System.Drawing.Point(202, 83);
+            this.txtSifre.Location = new System.Drawing.Point(112, 52);
+            this.txtSifre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(243, 30);
-            this.txtSifre.TabIndex = 7;
+            this.txtSifre.Size = new System.Drawing.Size(213, 26);
+            this.txtSifre.TabIndex = 2;
             // 
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(202, 37);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(112, 18);
+            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(243, 30);
-            this.txtKullaniciAdi.TabIndex = 6;
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(213, 26);
+            this.txtKullaniciAdi.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(141, 85);
+            this.label2.Location = new System.Drawing.Point(66, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 22);
+            this.label2.Size = new System.Drawing.Size(40, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Şifre:";
             // 
@@ -68,46 +70,50 @@ namespace GelirGider
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(72, 40);
+            this.label1.Location = new System.Drawing.Point(17, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 22);
+            this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Kullanıcı Adı:";
             // 
             // btnGiris
             // 
-            this.btnGiris.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGiris.Location = new System.Drawing.Point(252, 177);
+            this.btnGiris.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGiris.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGiris.Location = new System.Drawing.Point(160, 131);
+            this.btnGiris.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(124, 55);
-            this.btnGiris.TabIndex = 8;
+            this.btnGiris.Size = new System.Drawing.Size(108, 41);
+            this.btnGiris.TabIndex = 4;
             this.btnGiris.Text = "GÜNCELLE";
-            this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(118, 129);
+            this.label3.Location = new System.Drawing.Point(45, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 22);
+            this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "E-Posta:";
             // 
             // txtEPosta
             // 
             this.txtEPosta.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEPosta.Location = new System.Drawing.Point(202, 129);
+            this.txtEPosta.Location = new System.Drawing.Point(112, 87);
+            this.txtEPosta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEPosta.Name = "txtEPosta";
-            this.txtEPosta.Size = new System.Drawing.Size(243, 30);
-            this.txtEPosta.TabIndex = 10;
+            this.txtEPosta.Size = new System.Drawing.Size(213, 26);
+            this.txtEPosta.TabIndex = 3;
             // 
             // KullaniciDuzenle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AcceptButton = this.btnGiris;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 244);
+            this.ClientSize = new System.Drawing.Size(356, 183);
             this.Controls.Add(this.txtEPosta);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGiris);
@@ -115,6 +121,7 @@ namespace GelirGider
             this.Controls.Add(this.txtKullaniciAdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KullaniciDuzenle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kullanıcı İşlemleri";

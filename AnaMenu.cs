@@ -21,22 +21,34 @@ namespace GelirGider
 
             if (sonucGelir.Read())
             {
-                gelirToplam = (double)sonucGelir["Toplam"];
+                if (sonucGelir["Toplam"] is null)
+                {
+                    gelirToplam = (double)sonucGelir["Toplam"];
+                }                
             }
 
             if (sonucGider.Read())
             {
-                giderToplam = (double)sonucGider["Toplam"];
+                if (sonucGider["Toplam"] is null)
+                {
+                    giderToplam = (double)sonucGider["Toplam"];
+                }                
             }
 
             if (sonucAlacak.Read())
             {
-                alacakToplam = (double)sonucAlacak["Toplam"];
+                if (sonucAlacak["Toplam"] is null)
+                {
+                    alacakToplam = (double)sonucAlacak["Toplam"];
+                }                
             }
 
             if (sonucBorc.Read())
             {
-                borcToplam = (double)sonucBorc["Toplam"];
+                if (sonucBorc["Toplam"] is null)
+                {
+                    borcToplam = (double)sonucBorc["Toplam"];
+                }                
             }
 
             txtGelirToplam.Text = gelirToplam.ToString() + " TL";

@@ -95,7 +95,7 @@ namespace GelirGider
             this.txtKimden.Margin = new System.Windows.Forms.Padding(4);
             this.txtKimden.Name = "txtKimden";
             this.txtKimden.Size = new System.Drawing.Size(219, 26);
-            this.txtKimden.TabIndex = 2;
+            this.txtKimden.TabIndex = 1;
             // 
             // label5
             // 
@@ -109,20 +109,20 @@ namespace GelirGider
             // 
             // dtOdemeTarihi
             // 
-            this.dtOdemeTarihi.Location = new System.Drawing.Point(110, 71);
+            this.dtOdemeTarihi.Location = new System.Drawing.Point(110, 113);
             this.dtOdemeTarihi.Margin = new System.Windows.Forms.Padding(4);
             this.dtOdemeTarihi.Name = "dtOdemeTarihi";
             this.dtOdemeTarihi.Size = new System.Drawing.Size(219, 26);
-            this.dtOdemeTarihi.TabIndex = 4;
+            this.dtOdemeTarihi.TabIndex = 3;
             // 
             // cmbAlacakTuru
             // 
             this.cmbAlacakTuru.FormattingEnabled = true;
-            this.cmbAlacakTuru.Location = new System.Drawing.Point(110, 111);
+            this.cmbAlacakTuru.Location = new System.Drawing.Point(110, 69);
             this.cmbAlacakTuru.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAlacakTuru.Name = "cmbAlacakTuru";
             this.cmbAlacakTuru.Size = new System.Drawing.Size(219, 27);
-            this.cmbAlacakTuru.TabIndex = 1;
+            this.cmbAlacakTuru.TabIndex = 2;
             // 
             // label4
             // 
@@ -150,7 +150,7 @@ namespace GelirGider
             this.txtTutar.Margin = new System.Windows.Forms.Padding(4);
             this.txtTutar.Name = "txtTutar";
             this.txtTutar.Size = new System.Drawing.Size(219, 26);
-            this.txtTutar.TabIndex = 3;
+            this.txtTutar.TabIndex = 4;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             // 
             // btnSil
@@ -257,7 +257,7 @@ namespace GelirGider
             this.dtAlacakListesi.Name = "dtAlacakListesi";
             this.dtAlacakListesi.RowHeadersWidth = 51;
             this.dtAlacakListesi.RowTemplate.Height = 29;
-            this.dtAlacakListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtAlacakListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtAlacakListesi.Size = new System.Drawing.Size(985, 531);
             this.dtAlacakListesi.TabIndex = 0;
             this.dtAlacakListesi.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGelirListesi_CellMouseDoubleClick);
@@ -300,14 +300,14 @@ namespace GelirGider
             this.dtBitis.Location = new System.Drawing.Point(448, 48);
             this.dtBitis.Name = "dtBitis";
             this.dtBitis.Size = new System.Drawing.Size(220, 26);
-            this.dtBitis.TabIndex = 18;
+            this.dtBitis.TabIndex = 12;
             // 
             // dtBaslangic
             // 
             this.dtBaslangic.Location = new System.Drawing.Point(218, 48);
             this.dtBaslangic.Name = "dtBaslangic";
             this.dtBaslangic.Size = new System.Drawing.Size(220, 26);
-            this.dtBaslangic.TabIndex = 17;
+            this.dtBaslangic.TabIndex = 11;
             // 
             // txtAdAra
             // 
@@ -315,7 +315,7 @@ namespace GelirGider
             this.txtAdAra.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdAra.Name = "txtAdAra";
             this.txtAdAra.Size = new System.Drawing.Size(173, 26);
-            this.txtAdAra.TabIndex = 15;
+            this.txtAdAra.TabIndex = 10;
             this.txtAdAra.TextChanged += new System.EventHandler(this.txtAdAra_TextChanged);
             // 
             // label8
@@ -372,7 +372,7 @@ namespace GelirGider
             this.btnTarihAra.Location = new System.Drawing.Point(693, 18);
             this.btnTarihAra.Name = "btnTarihAra";
             this.btnTarihAra.Size = new System.Drawing.Size(108, 61);
-            this.btnTarihAra.TabIndex = 20;
+            this.btnTarihAra.TabIndex = 13;
             this.btnTarihAra.Text = "Tarihe Göre Ara";
             this.btnTarihAra.UseVisualStyleBackColor = false;
             this.btnTarihAra.Click += new System.EventHandler(this.btnTarihAra_Click);
@@ -384,7 +384,7 @@ namespace GelirGider
             this.btnOdemeTarihAra.Location = new System.Drawing.Point(822, 18);
             this.btnOdemeTarihAra.Name = "btnOdemeTarihAra";
             this.btnOdemeTarihAra.Size = new System.Drawing.Size(108, 61);
-            this.btnOdemeTarihAra.TabIndex = 19;
+            this.btnOdemeTarihAra.TabIndex = 14;
             this.btnOdemeTarihAra.Text = "Ödeme Tarihine Göre Ara";
             this.btnOdemeTarihAra.UseVisualStyleBackColor = false;
             this.btnOdemeTarihAra.Click += new System.EventHandler(this.btnOdemeTarihAra_Click);

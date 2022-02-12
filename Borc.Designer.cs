@@ -32,18 +32,18 @@ namespace GelirGider
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtKime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnTemizle = new System.Windows.Forms.Button();
             this.dtOdemeTarihi = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTutar = new System.Windows.Forms.TextBox();
+            this.btnSil = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.RichTextBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnEkle = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbBorcTuru = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnEkle = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtBorcListesi = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -95,7 +95,7 @@ namespace GelirGider
             this.txtKime.Margin = new System.Windows.Forms.Padding(4);
             this.txtKime.Name = "txtKime";
             this.txtKime.Size = new System.Drawing.Size(238, 26);
-            this.txtKime.TabIndex = 13;
+            this.txtKime.TabIndex = 1;
             // 
             // label5
             // 
@@ -107,27 +107,13 @@ namespace GelirGider
             this.label5.TabIndex = 14;
             this.label5.Text = "Kimden:";
             // 
-            // btnTemizle
-            // 
-            this.btnTemizle.BackColor = System.Drawing.Color.Brown;
-            this.btnTemizle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTemizle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTemizle.Location = new System.Drawing.Point(656, 120);
-            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(106, 48);
-            this.btnTemizle.TabIndex = 9;
-            this.btnTemizle.Text = "TEMİZLE";
-            this.btnTemizle.UseVisualStyleBackColor = false;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
-            // 
             // dtOdemeTarihi
             // 
             this.dtOdemeTarihi.Location = new System.Drawing.Point(110, 109);
             this.dtOdemeTarihi.Margin = new System.Windows.Forms.Padding(4);
             this.dtOdemeTarihi.Name = "dtOdemeTarihi";
             this.dtOdemeTarihi.Size = new System.Drawing.Size(238, 26);
-            this.dtOdemeTarihi.TabIndex = 11;
+            this.dtOdemeTarihi.TabIndex = 3;
             // 
             // label2
             // 
@@ -145,8 +131,21 @@ namespace GelirGider
             this.txtTutar.Margin = new System.Windows.Forms.Padding(4);
             this.txtTutar.Name = "txtTutar";
             this.txtTutar.Size = new System.Drawing.Size(238, 26);
-            this.txtTutar.TabIndex = 2;
+            this.txtTutar.TabIndex = 4;
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSil.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSil.Location = new System.Drawing.Point(412, 200);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(120, 39);
+            this.btnSil.TabIndex = 8;
+            this.btnSil.Text = "SİL";
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // txtAciklama
             // 
@@ -158,6 +157,19 @@ namespace GelirGider
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGuncelle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuncelle.Location = new System.Drawing.Point(262, 200);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(120, 39);
+            this.btnGuncelle.TabIndex = 7;
+            this.btnGuncelle.Text = "GÜNCELLE";
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -167,6 +179,19 @@ namespace GelirGider
             this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Açıklama:";
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEkle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEkle.Location = new System.Drawing.Point(110, 200);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(120, 39);
+            this.btnEkle.TabIndex = 6;
+            this.btnEkle.Text = "EKLE";
+            this.btnEkle.UseVisualStyleBackColor = false;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // label4
             // 
@@ -185,7 +210,7 @@ namespace GelirGider
             this.cmbBorcTuru.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBorcTuru.Name = "cmbBorcTuru";
             this.cmbBorcTuru.Size = new System.Drawing.Size(238, 27);
-            this.cmbBorcTuru.TabIndex = 1;
+            this.cmbBorcTuru.TabIndex = 2;
             // 
             // label1
             // 
@@ -197,44 +222,19 @@ namespace GelirGider
             this.label1.TabIndex = 2;
             this.label1.Text = "Tutar:";
             // 
-            // btnSil
+            // btnTemizle
             // 
-            this.btnSil.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSil.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSil.Location = new System.Drawing.Point(412, 200);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(120, 39);
-            this.btnSil.TabIndex = 8;
-            this.btnSil.Text = "SİL";
-            this.btnSil.UseVisualStyleBackColor = false;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnGuncelle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGuncelle.Location = new System.Drawing.Point(262, 200);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(120, 39);
-            this.btnGuncelle.TabIndex = 7;
-            this.btnGuncelle.Text = "GÜNCELLE";
-            this.btnGuncelle.UseVisualStyleBackColor = false;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEkle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEkle.Location = new System.Drawing.Point(110, 200);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(120, 39);
-            this.btnEkle.TabIndex = 6;
-            this.btnEkle.Text = "EKLE";
-            this.btnEkle.UseVisualStyleBackColor = false;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            this.btnTemizle.BackColor = System.Drawing.Color.Brown;
+            this.btnTemizle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTemizle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTemizle.Location = new System.Drawing.Point(656, 120);
+            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(106, 48);
+            this.btnTemizle.TabIndex = 9;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.UseVisualStyleBackColor = false;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // groupBox1
             // 
@@ -254,10 +254,11 @@ namespace GelirGider
             this.dtBorcListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtBorcListesi.Location = new System.Drawing.Point(8, 37);
             this.dtBorcListesi.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.dtBorcListesi.MultiSelect = false;
             this.dtBorcListesi.Name = "dtBorcListesi";
             this.dtBorcListesi.RowHeadersWidth = 51;
             this.dtBorcListesi.RowTemplate.Height = 29;
-            this.dtBorcListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtBorcListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtBorcListesi.Size = new System.Drawing.Size(984, 513);
             this.dtBorcListesi.TabIndex = 0;
             this.dtBorcListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtBorcListesi_CellDoubleClick);
@@ -286,7 +287,7 @@ namespace GelirGider
             this.btnTarihAra.Location = new System.Drawing.Point(713, 25);
             this.btnTarihAra.Name = "btnTarihAra";
             this.btnTarihAra.Size = new System.Drawing.Size(108, 61);
-            this.btnTarihAra.TabIndex = 20;
+            this.btnTarihAra.TabIndex = 13;
             this.btnTarihAra.Text = "Tarihe Göre Ara";
             this.btnTarihAra.UseVisualStyleBackColor = false;
             this.btnTarihAra.Click += new System.EventHandler(this.btnTarihAra_Click);
@@ -298,7 +299,7 @@ namespace GelirGider
             this.btnOdemeTarihAra.Location = new System.Drawing.Point(851, 25);
             this.btnOdemeTarihAra.Name = "btnOdemeTarihAra";
             this.btnOdemeTarihAra.Size = new System.Drawing.Size(108, 61);
-            this.btnOdemeTarihAra.TabIndex = 19;
+            this.btnOdemeTarihAra.TabIndex = 14;
             this.btnOdemeTarihAra.Text = "Ödeme Tarihine Göre Ara";
             this.btnOdemeTarihAra.UseVisualStyleBackColor = false;
             this.btnOdemeTarihAra.Click += new System.EventHandler(this.btnOdemeTarihAra_Click);
@@ -318,7 +319,7 @@ namespace GelirGider
             this.dtBitis.Location = new System.Drawing.Point(475, 49);
             this.dtBitis.Name = "dtBitis";
             this.dtBitis.Size = new System.Drawing.Size(220, 26);
-            this.dtBitis.TabIndex = 18;
+            this.dtBitis.TabIndex = 12;
             // 
             // txtisimAra
             // 
@@ -326,7 +327,7 @@ namespace GelirGider
             this.txtisimAra.Margin = new System.Windows.Forms.Padding(4);
             this.txtisimAra.Name = "txtisimAra";
             this.txtisimAra.Size = new System.Drawing.Size(173, 26);
-            this.txtisimAra.TabIndex = 15;
+            this.txtisimAra.TabIndex = 10;
             this.txtisimAra.TextChanged += new System.EventHandler(this.txtisimAra_TextChanged);
             // 
             // dtBaslangic
@@ -334,7 +335,7 @@ namespace GelirGider
             this.dtBaslangic.Location = new System.Drawing.Point(219, 49);
             this.dtBaslangic.Name = "dtBaslangic";
             this.dtBaslangic.Size = new System.Drawing.Size(220, 26);
-            this.dtBaslangic.TabIndex = 17;
+            this.dtBaslangic.TabIndex = 11;
             // 
             // label7
             // 

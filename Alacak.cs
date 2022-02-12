@@ -27,6 +27,13 @@ namespace GelirGider
             dtAlacakListesi.Columns[4].Width = 155;
             dtAlacakListesi.Columns[5].Width = 160;
 
+            Renk();
+           
+            Hesapla();
+        }
+
+        void Renk()
+        {
             for (int i = 0; i < dtAlacakListesi.RowCount - 1; i++)
             {
                 DataGridViewCellStyle renk = new DataGridViewCellStyle();
@@ -42,7 +49,6 @@ namespace GelirGider
                 }
                 dtAlacakListesi.Rows[i].DefaultCellStyle = renk;
             }
-            Hesapla();
         }
         void Temizle()
         {
@@ -54,7 +60,8 @@ namespace GelirGider
             txtTutar.Focus();
             txtKimden.Clear();
 
-            Listele();           
+            Listele();
+            dtAlacakListesi.ClearSelection();
         }
 
         private void Hesapla()
@@ -85,14 +92,13 @@ namespace GelirGider
             {
                 Listele();  
             }
-            
+           
         }
-
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
             {
-                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString(), DateTime.Now.ToString(), cmbAlacakTuru.Text, txtAciklama.Text, txtKimden.Text);
+                Veritabani.AlacakEkle(Double.Parse(txtTutar.Text), dtOdemeTarihi.Value.ToString("yyyy/MM/dd HH:mm:ss"), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), cmbAlacakTuru.Text, txtAciklama.Text, txtKimden.Text);
                 Temizle();
             }
             else
@@ -100,7 +106,6 @@ namespace GelirGider
                 MessageBox.Show("Alacak Türü ve Tutar boş olamaz !!!");
             }
         }
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             if (cmbAlacakTuru.Tag == null)
@@ -111,7 +116,7 @@ namespace GelirGider
             {
                 if (cmbAlacakTuru.Text != "Alacak Türü Seçin" && txtTutar.Text != "")
                 {
-                    Veritabani.AlacakGuncelle(Convert.ToDouble(txtTutar.Text), dtOdemeTarihi.Value.ToString(), cmbAlacakTuru.Text, txtAciklama.Text, txtKimden.Text, Convert.ToInt32(cmbAlacakTuru.Tag.ToString()));
+                    Veritabani.AlacakGuncelle(Convert.ToDouble(txtTutar.Text), dtOdemeTarihi.Value.ToString("yyyy/MM/dd HH:mm:ss"), cmbAlacakTuru.Text, txtAciklama.Text, txtKimden.Text, Convert.ToInt32(cmbAlacakTuru.Tag.ToString()));
                     Temizle();
                 }
                 else
@@ -120,7 +125,6 @@ namespace GelirGider
                 }
             }
         }
-
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (cmbAlacakTuru.Tag == null)
@@ -133,12 +137,10 @@ namespace GelirGider
                 Temizle();
             }
         }
-
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
         }
-
         private void dtGelirListesi_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cmbAlacakTuru.Tag = dtAlacakListesi.CurrentRow.Cells[0].Value.ToString();
@@ -148,41 +150,48 @@ namespace GelirGider
             cmbAlacakTuru.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();            
             txtAciklama.Text = dtAlacakListesi.CurrentRow.Cells[6].Value.ToString();
         }
-
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void txtAdAra_TextChanged(object sender, EventArgs e)
         {
             DataView dv = alacakSonuc.DefaultView;
             dv.RowFilter = "Kimden LIKE '" + txtAdAra.Text + "%'";
             dtAlacakListesi.DataSource = dv;
             Hesapla();
-        }
-
-        private void btnAra_Click(object sender, EventArgs e)
-        {
-            var sonuc = Veritabani.AlacakOdemeFiltre(dtBaslangic.Value.ToString(), dtBitis.Value.ToString());
-            dtAlacakListesi.DataSource = sonuc;
-        }
-
+            Renk();
+        }       
         private void btnOdemeTarihAra_Click(object sender, EventArgs e)
         {
+            if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
+            {
+                var sonuc = Veritabani.AlacakOdemeFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                dtAlacakListesi.DataSource = sonuc;
 
-            var sonuc = Veritabani.AlacakOdemeFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
-            dtAlacakListesi.DataSource = sonuc;
+                Hesapla();
+                Renk();
+            }
+            else
+            {
+                MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
+            }
 
-            Hesapla();
         }
-
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.AlacakTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
-            dtAlacakListesi.DataSource = sonuc;
+            if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
+            {
+                var sonuc = Veritabani.AlacakTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                dtAlacakListesi.DataSource = sonuc;
 
-            Hesapla();
+                Hesapla();
+                Renk();
+            }
+            else
+            {
+                MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
+            }
         }
 
     }

@@ -15,12 +15,12 @@ namespace GelirGider
             txtGiderTuru.Focus();
             dtGiderTuru.DataSource = Veritabani.GiderTuruListeleDt();
             dtGiderTuru.Columns[1].Width = 200;
+            dtGiderTuru.ClearSelection();
         }
         private void GiderTuru_Load(object sender, EventArgs e)
         {
             Temizle();
         }
-
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (txtGiderTuru.Text == "")
@@ -33,7 +33,6 @@ namespace GelirGider
                 Temizle();
             }
         }
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             if (txtGiderTuru.Tag == "")
@@ -53,7 +52,6 @@ namespace GelirGider
                 }
             }
         }
-
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (txtGiderTuru.Tag == "")
@@ -66,7 +64,6 @@ namespace GelirGider
                 Temizle();
             }
         }
-
         private void dtGiderTuru_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txtGiderTuru.Tag = dtGiderTuru.CurrentRow.Cells[0].Value.ToString();

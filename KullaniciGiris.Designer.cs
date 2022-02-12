@@ -42,7 +42,7 @@ namespace GelirGider
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(32, 30);
+            this.label1.Location = new System.Drawing.Point(20, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace GelirGider
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(93, 64);
+            this.label2.Location = new System.Drawing.Point(81, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 19);
             this.label2.TabIndex = 1;
@@ -61,7 +61,7 @@ namespace GelirGider
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(146, 28);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(134, 27);
             this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(213, 26);
@@ -70,7 +70,7 @@ namespace GelirGider
             // txtSifre
             // 
             this.txtSifre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSifre.Location = new System.Drawing.Point(146, 62);
+            this.txtSifre.Location = new System.Drawing.Point(134, 61);
             this.txtSifre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(213, 26);
@@ -79,36 +79,38 @@ namespace GelirGider
             // 
             // btnGiris
             // 
-            this.btnGiris.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGiris.Location = new System.Drawing.Point(146, 128);
+            this.btnGiris.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGiris.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGiris.Location = new System.Drawing.Point(134, 128);
             this.btnGiris.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(92, 41);
             this.btnGiris.TabIndex = 4;
             this.btnGiris.Text = "GİRİŞ";
-            this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // btnCikis
             // 
-            this.btnCikis.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCikis.Location = new System.Drawing.Point(267, 128);
+            this.btnCikis.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCikis.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCikis.Location = new System.Drawing.Point(255, 128);
             this.btnCikis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(92, 41);
             this.btnCikis.TabIndex = 5;
             this.btnCikis.Text = "ÇIKIŞ";
-            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.UseVisualStyleBackColor = false;
             this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // chkBeniHatirla
             // 
             this.chkBeniHatirla.AutoSize = true;
-            this.chkBeniHatirla.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkBeniHatirla.Location = new System.Drawing.Point(146, 93);
+            this.chkBeniHatirla.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.chkBeniHatirla.Location = new System.Drawing.Point(134, 92);
             this.chkBeniHatirla.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkBeniHatirla.Name = "chkBeniHatirla";
-            this.chkBeniHatirla.Size = new System.Drawing.Size(99, 23);
+            this.chkBeniHatirla.Size = new System.Drawing.Size(113, 23);
             this.chkBeniHatirla.TabIndex = 6;
             this.chkBeniHatirla.Text = "Beni Hatırla";
             this.chkBeniHatirla.UseVisualStyleBackColor = true;
@@ -119,7 +121,7 @@ namespace GelirGider
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCikis;
-            this.ClientSize = new System.Drawing.Size(402, 206);
+            this.ClientSize = new System.Drawing.Size(382, 190);
             this.Controls.Add(this.chkBeniHatirla);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnGiris);

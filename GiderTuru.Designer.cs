@@ -46,29 +46,33 @@ namespace GelirGider
             this.dtGiderTuru.Name = "dtGiderTuru";
             this.dtGiderTuru.RowHeadersWidth = 51;
             this.dtGiderTuru.RowTemplate.Height = 25;
-            this.dtGiderTuru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtGiderTuru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGiderTuru.Size = new System.Drawing.Size(352, 363);
             this.dtGiderTuru.TabIndex = 8;
             this.dtGiderTuru.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGiderTuru_CellMouseDoubleClick);
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGuncelle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGuncelle.Location = new System.Drawing.Point(100, 45);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(123, 35);
-            this.btnGuncelle.TabIndex = 6;
+            this.btnGuncelle.TabIndex = 3;
             this.btnGuncelle.Text = "GÜNCELLE";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
+            this.btnEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEkle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEkle.Location = new System.Drawing.Point(7, 45);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(77, 35);
-            this.btnEkle.TabIndex = 7;
+            this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "EKLE";
-            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtGiderTuru
@@ -77,7 +81,7 @@ namespace GelirGider
             this.txtGiderTuru.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiderTuru.Name = "txtGiderTuru";
             this.txtGiderTuru.Size = new System.Drawing.Size(207, 26);
-            this.txtGiderTuru.TabIndex = 5;
+            this.txtGiderTuru.TabIndex = 1;
             // 
             // label1
             // 
@@ -91,12 +95,14 @@ namespace GelirGider
             // 
             // btnSil
             // 
+            this.btnSil.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSil.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSil.Location = new System.Drawing.Point(238, 45);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(66, 35);
-            this.btnSil.TabIndex = 9;
+            this.btnSil.TabIndex = 4;
             this.btnSil.Text = "SİL";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // GiderTuru

@@ -34,7 +34,7 @@ namespace GelirGider
                 cmbGelirTuruAra.Items.Add(gelirTuruSonuc["GelirTuru"]);
             }
 
-            Temizle();           
+            Temizle();        
         }
         void Temizle()
         {
@@ -53,6 +53,7 @@ namespace GelirGider
             chkOdemeAlindi.Checked = false;
             txtTutar.Focus();
             Hesapla();
+            dtGelirListesi.ClearSelection();
         }
         private void btnEkle_Click(object sender, System.EventArgs e)
         {
@@ -69,7 +70,7 @@ namespace GelirGider
                 }
                 else
                 {
-                    Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text);
+                    Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbGelirTuru.Text);
                 }
                 Temizle();
             }
@@ -90,7 +91,7 @@ namespace GelirGider
                 if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
                 {
                     int odeme = chkOdemeAlindi.Checked == true ? 1 : 0;
-                    Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), DateTime.Now.ToString(), txtAciklama.Text, cmbGelirTuru.Text, Int32.Parse((string)cmbGelirTuru.Tag));
+                    Veritabani.GelirGuncelle(Double.Parse(txtTutar.Text), txtAciklama.Text, cmbGelirTuru.Text, Int32.Parse((string)cmbGelirTuru.Tag));
                     Temizle();
                 }
                 else
@@ -129,10 +130,18 @@ namespace GelirGider
         }
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
-            var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.ToShortDateString(), dtBitis.Value.AddDays(1).ToShortDateString());
-            dtGelirListesi.DataSource = sonuc;
+            if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
+            {
+                var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                dtGelirListesi.DataSource = sonuc;
 
-            Hesapla();
+                Hesapla();
+            }
+            else
+            {
+                MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
+            }
+           
         }       
         private void cmbGelirTuruAra_SelectedIndexChanged(object sender, EventArgs e)
         {

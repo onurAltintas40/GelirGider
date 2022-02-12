@@ -88,7 +88,7 @@ namespace GelirGider
             this.btnGiderİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnGiderİslemleri.Name = "btnGiderİslemleri";
             this.btnGiderİslemleri.Size = new System.Drawing.Size(180, 55);
-            this.btnGiderİslemleri.TabIndex = 0;
+            this.btnGiderİslemleri.TabIndex = 1;
             this.btnGiderİslemleri.Text = "Gider İşlemleri";
             this.btnGiderİslemleri.UseVisualStyleBackColor = true;
             this.btnGiderİslemleri.Click += new System.EventHandler(this.btnGiderİslemleri_Click);
@@ -99,7 +99,7 @@ namespace GelirGider
             this.btnAlacakİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlacakİslemleri.Name = "btnAlacakİslemleri";
             this.btnAlacakİslemleri.Size = new System.Drawing.Size(180, 55);
-            this.btnAlacakİslemleri.TabIndex = 0;
+            this.btnAlacakİslemleri.TabIndex = 2;
             this.btnAlacakİslemleri.Text = "Alacak İşlemleri";
             this.btnAlacakİslemleri.UseVisualStyleBackColor = true;
             this.btnAlacakİslemleri.Click += new System.EventHandler(this.btnAlacakİslemleri_Click);
@@ -110,7 +110,7 @@ namespace GelirGider
             this.btnBorcİslemleri.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorcİslemleri.Name = "btnBorcİslemleri";
             this.btnBorcİslemleri.Size = new System.Drawing.Size(180, 55);
-            this.btnBorcİslemleri.TabIndex = 0;
+            this.btnBorcİslemleri.TabIndex = 3;
             this.btnBorcİslemleri.Text = "Borç İşlemleri";
             this.btnBorcİslemleri.UseVisualStyleBackColor = true;
             this.btnBorcİslemleri.Click += new System.EventHandler(this.btnBorcİslemleri_Click);
