@@ -47,7 +47,7 @@ namespace GelirGider
             this.dtGiderTuru.RowHeadersWidth = 51;
             this.dtGiderTuru.RowTemplate.Height = 25;
             this.dtGiderTuru.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGiderTuru.Size = new System.Drawing.Size(352, 363);
+            this.dtGiderTuru.Size = new System.Drawing.Size(358, 363);
             this.dtGiderTuru.TabIndex = 8;
             this.dtGiderTuru.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGiderTuru_CellMouseDoubleClick);
             // 
@@ -109,7 +109,7 @@ namespace GelirGider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 461);
+            this.ClientSize = new System.Drawing.Size(378, 461);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.dtGiderTuru);
             this.Controls.Add(this.btnGuncelle);

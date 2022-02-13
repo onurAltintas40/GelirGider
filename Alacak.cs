@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GelirGider
@@ -202,12 +203,18 @@ namespace GelirGider
             }
             else
             {
-                Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbAlacakTuru.Text);
+                Gelir g = new Gelir();
+                g.a = 1;
+                g.cmbGelirTuru.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();
+                g.txtTutar.Text = dtAlacakListesi.CurrentRow.Cells[2].Value.ToString();
+                g.chkOdemeAlindi.Checked = true;
+                g.txtAciklama.Text = dtAlacakListesi.CurrentRow.Cells[1].Value.ToString() + " tarafından ödendi.";
+                g.ShowDialog();
+
                 Veritabani.AlacakSil(Int32.Parse((string)cmbAlacakTuru.Tag));
                 Temizle();
 
-                Gelir g = new Gelir(); 
-                g.ShowDialog(); 
+                
             }
         }
     }

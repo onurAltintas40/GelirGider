@@ -379,15 +379,11 @@ namespace GelirGider
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTemizle;
-        private System.Windows.Forms.TextBox txtTutar;
-        private System.Windows.Forms.CheckBox chkOdemeAlindi;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.RichTextBox txtAciklama;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbGiderTuru;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtGiderListesi;
@@ -402,5 +398,9 @@ namespace GelirGider
         private System.Windows.Forms.TextBox txtTutarToplam;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbGiderTuruAra;
+        public System.Windows.Forms.TextBox txtTutar;
+        public System.Windows.Forms.CheckBox chkOdemeAlindi;
+        public System.Windows.Forms.RichTextBox txtAciklama;
+        public System.Windows.Forms.ComboBox cmbGiderTuru;
     }
 }

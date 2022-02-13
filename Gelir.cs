@@ -10,6 +10,7 @@ namespace GelirGider
         {
             InitializeComponent();
         }
+        public int a = 0;
 
         DataTable gelirSonuc;
         private void Hesapla()
@@ -24,6 +25,11 @@ namespace GelirGider
         }
         private void Gelir_Load(object sender, System.EventArgs e)
         {
+            if (a == 0)
+            {
+                Temizle();
+            }
+
             var gelirTuruSonuc = Veritabani.GelirTuruListele();
 
             cmbGelirTuru.Items.Clear();
@@ -33,8 +39,6 @@ namespace GelirGider
                 cmbGelirTuru.Items.Add(gelirTuruSonuc["GelirTuru"]);
                 cmbGelirTuruAra.Items.Add(gelirTuruSonuc["GelirTuru"]);
             }
-
-            Temizle();        
         }
         void Temizle()
         {
@@ -44,7 +48,7 @@ namespace GelirGider
             dtGelirListesi.Columns[1].Width = 165;
             dtGelirListesi.Columns[2].Width = 165;
             dtGelirListesi.Columns[3].Width = 225;
-            dtGelirListesi.Columns[4].Width = 165;           
+            dtGelirListesi.Columns[4].Width = 165;
 
             cmbGelirTuru.Text = "Gelir Türü Seçin";
             cmbGelirTuru.Tag = null;
@@ -58,7 +62,7 @@ namespace GelirGider
         private void btnEkle_Click(object sender, System.EventArgs e)
         {
             if (cmbGelirTuru.Text != "Gelir Türü Seçin" && txtTutar.Text != "")
-            { 
+            {
                 if (chkOdemeAlindi.Checked == false)
                 {
                     Alacak alacak = new Alacak();
@@ -122,7 +126,7 @@ namespace GelirGider
             txtTutar.Text = dtGelirListesi.CurrentRow.Cells[1].Value.ToString();
             txtAciklama.Text = dtGelirListesi.CurrentRow.Cells[3].Value.ToString();
             cmbGelirTuru.Text = "";
-            cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();  
+            cmbGelirTuru.SelectedText = dtGelirListesi.CurrentRow.Cells[4].Value.ToString();
         }
         private void btnTemizle_Click(object sender, EventArgs e)
         {
@@ -141,8 +145,8 @@ namespace GelirGider
             {
                 MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
             }
-           
-        }       
+
+        }
         private void cmbGelirTuruAra_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataView dv = gelirSonuc.DefaultView;

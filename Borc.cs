@@ -203,12 +203,19 @@ namespace GelirGider
             }
             else
             {
-                Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbBorcTuru.Text);
+                Gider g = new Gider();
+                g.a = 1;
+                g.txtTutar.Text = dtBorcListesi.CurrentRow.Cells[2].Value.ToString();
+                g.cmbGiderTuru.Text = cmbBorcTuru.Text = dtBorcListesi.CurrentRow.Cells[5].Value.ToString();
+                g.chkOdemeAlindi.Checked = true;
+                g.txtAciklama.Text = dtBorcListesi.CurrentRow.Cells[1].Value.ToString() + " tarafına ödeme yapıldı.";
+
+                g.ShowDialog();
+
                 Veritabani.BorcSil(Int32.Parse((string)cmbBorcTuru.Tag));
                 Temizle();
 
-                Gider g = new Gider();
-                g.ShowDialog();
+                
             }
         }
     }

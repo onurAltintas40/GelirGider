@@ -30,6 +30,7 @@ namespace GelirGider
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnOdemeYap = new System.Windows.Forms.Button();
             this.txtKime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtOdemeTarihi = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@ namespace GelirGider
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTutarToplam = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnOdemeYap = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtBorcListesi)).BeginInit();
@@ -90,6 +90,19 @@ namespace GelirGider
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
+            // 
+            // btnOdemeYap
+            // 
+            this.btnOdemeYap.BackColor = System.Drawing.Color.Brown;
+            this.btnOdemeYap.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnOdemeYap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOdemeYap.Location = new System.Drawing.Point(482, 197);
+            this.btnOdemeYap.Name = "btnOdemeYap";
+            this.btnOdemeYap.Size = new System.Drawing.Size(120, 48);
+            this.btnOdemeYap.TabIndex = 15;
+            this.btnOdemeYap.Text = "Borç Ödemesi Yap";
+            this.btnOdemeYap.UseVisualStyleBackColor = false;
+            this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
             // 
             // txtKime
             // 
@@ -392,19 +405,6 @@ namespace GelirGider
             this.label6.TabIndex = 10;
             this.label6.Text = "Tutar:";
             // 
-            // btnOdemeYap
-            // 
-            this.btnOdemeYap.BackColor = System.Drawing.Color.Brown;
-            this.btnOdemeYap.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnOdemeYap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOdemeYap.Location = new System.Drawing.Point(482, 197);
-            this.btnOdemeYap.Name = "btnOdemeYap";
-            this.btnOdemeYap.Size = new System.Drawing.Size(120, 48);
-            this.btnOdemeYap.TabIndex = 15;
-            this.btnOdemeYap.Text = "Borç Ödemesi Yap";
-            this.btnOdemeYap.UseVisualStyleBackColor = false;
-            this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
-            // 
             // Borc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -450,7 +450,6 @@ namespace GelirGider
         public System.Windows.Forms.TextBox txtTutar;
         public System.Windows.Forms.RichTextBox txtAciklama;
         public System.Windows.Forms.ComboBox cmbBorcTuru;
-        private System.Windows.Forms.TextBox txtKime;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnTarihAra;
@@ -465,5 +464,6 @@ namespace GelirGider
         private System.Windows.Forms.TextBox txtTutarToplam;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnOdemeYap;
+        public System.Windows.Forms.TextBox txtKime;
     }
 }

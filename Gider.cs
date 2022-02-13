@@ -10,6 +10,7 @@ namespace GelirGider
         {
             InitializeComponent();
         }
+        public int a = 0;
 
         DataTable giderSonuc;
         private void Hesapla()
@@ -46,6 +47,12 @@ namespace GelirGider
 
         private void Gider_Load(object sender, System.EventArgs e)
         {
+
+            if (a==0)
+            {
+                Temizle();
+            }          
+
             var giderTuruSonuc = Veritabani.GiderTuruListele();
 
             cmbGiderTuru.Items.Clear();
@@ -55,7 +62,7 @@ namespace GelirGider
                 cmbGiderTuru.Items.Add(giderTuruSonuc["GiderTuru"]);
                 cmbGiderTuruAra.Items.Add(giderTuruSonuc["GiderTuru"]);
             }
-            Temizle();
+            
         }
         private void btnEkle_Click(object sender, System.EventArgs e)
         {

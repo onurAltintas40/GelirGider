@@ -101,7 +101,7 @@ namespace GelirGider
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(347, 356);
+            this.dataGridView1.Size = new System.Drawing.Size(353, 356);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -109,7 +109,7 @@ namespace GelirGider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 461);
+            this.ClientSize = new System.Drawing.Size(372, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);

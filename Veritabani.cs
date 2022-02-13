@@ -8,6 +8,24 @@ namespace GelirGider
     {
         public static SQLiteConnection con = new SQLiteConnection("Data source = .\\GelirGider.db;Version=3");
 
+        static DataTable ListeleDt(string sql)
+        {
+            using (SQLiteConnection c = new SQLiteConnection("Data source = .\\GelirGider.db;Version=3"))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, c))
+                {
+                    using (DataTable dt = new DataTable())
+                    {
+                        using (SQLiteDataAdapter da = new SQLiteDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
         public static bool KullaniciGiris(string kullaniciAdi, string sifre)
         {
             if (con.State != ConnectionState.Open) con.Open();
@@ -43,7 +61,7 @@ namespace GelirGider
             dr = cmd.ExecuteReader();
             return dr;
         }
-        public static int KullaniciGuncelle(string kullaniciAdi, string sifre,string ePosta)
+        public static int KullaniciGuncelle(string kullaniciAdi, string sifre, string ePosta)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Kullanici set KullaniciAdi=@KullaniciAdi, Sifre=@Sifre,EPosta=@EPosta";
@@ -64,93 +82,52 @@ namespace GelirGider
         }
         public static DataTable GelirListele()
         {
-            if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from Gelir Order By Tarih";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
-
-            return dt;
+            string sql = "Select * from Gelir Order By Tarih desc";
+            return ListeleDt(sql);
+            
         }
         public static SQLiteDataReader GelirTuruListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "Select * from GelirTuru Order By GelirTuru";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
-            SQLiteDataReader dr;
-            dr = cmd.ExecuteReader();
-            return dr;
+            SQLiteCommand command = new(sql, con);
+            SQLiteDataReader dr = command.ExecuteReader();
+            return dr;       
+            
         }
         public static DataTable GelirTuruListeleDt()
         {
-            if (con.State != ConnectionState.Open) con.Open();
             string sql = "Select * from GelirTuru Order By GelirTuru";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
+            return ListeleDt(sql);
         }
         public static DataTable GiderListele()
-        {
-            if (con.State != ConnectionState.Open) con.Open();
-            string sql = "Select * from Gider Order By Tarih";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
-
-            return dt;
+        {           
+            string sql = "Select * from Gider Order By Tarih desc";
+            return ListeleDt(sql);
         }
         public static SQLiteDataReader GiderTuruListele()
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "Select * from GiderTuru Order By GiderTuru";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            SQLiteDataReader dr;
-            dr = cmd.ExecuteReader();
+            SQLiteCommand command = new(sql, con);
+            SQLiteDataReader dr = command.ExecuteReader();
             return dr;
         }
         public static DataTable GiderTuruListeleDt()
-        {
-            if (con.State != ConnectionState.Open) con.Open();
+        {            
             string sql = "Select * from GiderTuru Order By GiderTuru";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
+            return ListeleDt(sql);
         }
         public static DataTable AlacakListele()
-        {
-            if (con.State != ConnectionState.Open) con.Open();
+        {           
             string sql = "Select * from Alacak Order By OdemeTarih";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
-
-            return dt;
+            return ListeleDt(sql);
         }
         public static DataTable BorcListele()
-        {
-            if (con.State != ConnectionState.Open) con.Open();
+        {           
             string sql = "Select * from Borc Order By OdemeTarih";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
-
-            return dt;
+            return ListeleDt(sql);
         }
         public static int GelirEkle(double tutar, string tarih, string aciklama, string gelirTuru)
         {
@@ -160,14 +137,14 @@ namespace GelirGider
             SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
             SQLiteParameter prm2 = new SQLiteParameter("Tarih", tarih);
             SQLiteParameter prm3 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm4 = new SQLiteParameter("GelirTuru", gelirTuru);           
+            SQLiteParameter prm4 = new SQLiteParameter("GelirTuru", gelirTuru);
 
             SQLiteCommand cmd = new(sql, con);
 
             cmd.Parameters.Add(prm1);
             cmd.Parameters.Add(prm2);
             cmd.Parameters.Add(prm3);
-            cmd.Parameters.Add(prm4);           
+            cmd.Parameters.Add(prm4);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -178,9 +155,9 @@ namespace GelirGider
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Gelir set Tutar=@Tutar, Aciklama=@Aciklama, GelirTuru=@GelirTuru where Id=@id";
 
-            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);            
+            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
             SQLiteParameter prm2 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm3 = new SQLiteParameter("GelirTuru", gelirTuru);           
+            SQLiteParameter prm3 = new SQLiteParameter("GelirTuru", gelirTuru);
             SQLiteParameter prm4 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
@@ -188,7 +165,7 @@ namespace GelirGider
             cmd.Parameters.Add(prm1);
             cmd.Parameters.Add(prm2);
             cmd.Parameters.Add(prm3);
-            cmd.Parameters.Add(prm4);           
+            cmd.Parameters.Add(prm4);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -198,12 +175,12 @@ namespace GelirGider
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "DELETE from Gelir where Id=@id";
-                        
+
             SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
-            cmd.Parameters.Add(prm1);            
+            cmd.Parameters.Add(prm1);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -225,7 +202,7 @@ namespace GelirGider
 
             return sonuc;
         }
-        public static int GelirTuruGuncelle(string gelirTuru,int id)
+        public static int GelirTuruGuncelle(string gelirTuru, int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE GelirTuru set GelirTuru=@GelirTuru where Id=@id";
@@ -247,12 +224,12 @@ namespace GelirGider
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "DELETE from GelirTuru where Id=@id";
-            
+
             SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
-            cmd.Parameters.Add(prm1);          
+            cmd.Parameters.Add(prm1);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -267,27 +244,27 @@ namespace GelirGider
             SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
             SQLiteParameter prm2 = new SQLiteParameter("Tarih", tarih);
             SQLiteParameter prm3 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm4 = new SQLiteParameter("GiderTuru", giderTuru);          
+            SQLiteParameter prm4 = new SQLiteParameter("GiderTuru", giderTuru);
 
             SQLiteCommand cmd = new(sql, con);
 
             cmd.Parameters.Add(prm1);
             cmd.Parameters.Add(prm2);
             cmd.Parameters.Add(prm3);
-            cmd.Parameters.Add(prm4);           
+            cmd.Parameters.Add(prm4);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
             return sonuc;
         }
-        public static int GiderGuncelle(double tutar, string aciklama, string giderTuru,int id)
+        public static int GiderGuncelle(double tutar, string aciklama, string giderTuru, int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Gider set Tutar=@Tutar, Aciklama=@Aciklama, GiderTuru=@GiderTuru where Id=@Id";
 
-            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);            
+            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
             SQLiteParameter prm2 = new SQLiteParameter("Aciklama", aciklama);
-            SQLiteParameter prm3 = new SQLiteParameter("GiderTuru", giderTuru);           
+            SQLiteParameter prm3 = new SQLiteParameter("GiderTuru", giderTuru);
             SQLiteParameter prm4 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
@@ -295,7 +272,7 @@ namespace GelirGider
             cmd.Parameters.Add(prm1);
             cmd.Parameters.Add(prm2);
             cmd.Parameters.Add(prm3);
-            cmd.Parameters.Add(prm4);            
+            cmd.Parameters.Add(prm4);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -305,12 +282,12 @@ namespace GelirGider
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "DELETE from Gider where Id=@id";
-                       
+
             SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
-            cmd.Parameters.Add(prm1);            
+            cmd.Parameters.Add(prm1);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -332,7 +309,7 @@ namespace GelirGider
 
             return sonuc;
         }
-        public static int GiderTuruGuncelle(string giderTuru,int id)
+        public static int GiderTuruGuncelle(string giderTuru, int id)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE GiderTuru set GiderTuru=@GiderTuru where Id=@id";
@@ -354,19 +331,19 @@ namespace GelirGider
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "DELETE from GiderTuru where Id=@id";
-                       
-            SQLiteParameter prm1= new SQLiteParameter("Id", id);
+
+            SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
-            cmd.Parameters.Add(prm1);           
+            cmd.Parameters.Add(prm1);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
 
             return sonuc;
         }
-        public static int AlacakEkle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama,string kimden)
+        public static int AlacakEkle(double tutar, string odemeTarih, string tarih, string alacakTuru, string aciklama, string kimden)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "INSERT INTO Alacak(Tutar, OdemeTarih, Tarih, AlacakTuru,Aciklama, Kimden)  VALUES(@Tutar, @OdemeTarih, @Tarih, @AlacakTuru,@Aciklama, @Kimden)";
@@ -396,7 +373,7 @@ namespace GelirGider
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Alacak set Tutar=@Tutar, OdemeTarih=@OdemeTarih, AlacakTuru=@AlacakTuru, Kimden=@Kimden, Aciklama=@Aciklama where Id=@Id";
 
-            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);          
+            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
             SQLiteParameter prm2 = new SQLiteParameter("OdemeTarih", odemeTarih);
             SQLiteParameter prm3 = new SQLiteParameter("AlacakTuru", alacakTuru);
             SQLiteParameter prm4 = new SQLiteParameter("Kimden", kimden);
@@ -410,7 +387,7 @@ namespace GelirGider
             cmd.Parameters.Add(prm3);
             cmd.Parameters.Add(prm4);
             cmd.Parameters.Add(prm5);
-            cmd.Parameters.Add(prm6);           
+            cmd.Parameters.Add(prm6);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -420,18 +397,18 @@ namespace GelirGider
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "DELETE from Alacak where Id = @id";
-                       
+
             SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
-            cmd.Parameters.Add(prm1);           
+            cmd.Parameters.Add(prm1);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
             return sonuc;
         }
-        public static int BorcEkle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama,string kime)
+        public static int BorcEkle(double tutar, string odemeTarih, string tarih, string borcTuru, string aciklama, string kime)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "INSERT INTO Borc(Tutar, Tarih,OdemeTarih, BorcTuru,Kime, Aciklama)  VALUES(@Tutar, @Tarih, @OdemeTarih, @BorcTuru, @Kime,@Aciklama)";
@@ -461,7 +438,7 @@ namespace GelirGider
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "UPDATE Borc set Tutar=@Tutar, OdemeTarih=@OdemeTarih, BorcTuru=@BorcTuru,Kime=@Kime,Aciklama=@Aciklama where Id=@id";
 
-            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);            
+            SQLiteParameter prm1 = new SQLiteParameter("Tutar", tutar);
             SQLiteParameter prm2 = new SQLiteParameter("OdemeTarih", odemeTarih);
             SQLiteParameter prm3 = new SQLiteParameter("BorcTuru", borcTuru);
             SQLiteParameter prm4 = new SQLiteParameter("Kime", kime);
@@ -475,7 +452,7 @@ namespace GelirGider
             cmd.Parameters.Add(prm3);
             cmd.Parameters.Add(prm4);
             cmd.Parameters.Add(prm5);
-            cmd.Parameters.Add(prm6);         
+            cmd.Parameters.Add(prm6);
 
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
@@ -485,13 +462,13 @@ namespace GelirGider
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "DELETE from Borc where Id=@id";
-                       
+
             SQLiteParameter prm1 = new SQLiteParameter("Id", id);
 
             SQLiteCommand cmd = new(sql, con);
 
             cmd.Parameters.Add(prm1);
-           
+
             var sonuc = cmd.ExecuteNonQuery();
             con.Close();
             return sonuc;
@@ -502,8 +479,8 @@ namespace GelirGider
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "Select SUM(Tutar) as Toplam from Gelir";
             SQLiteCommand cmd = new(sql, con);
-           
-            var sonuc = cmd.ExecuteReader();           
+
+            var sonuc = cmd.ExecuteReader();
             return sonuc;
         }
         public static SQLiteDataReader GiderToplam()
@@ -534,7 +511,7 @@ namespace GelirGider
             return sonuc;
         }
 
-        public static DataTable AlacakOdemeFiltre(string baslangic,string bitis)
+        public static DataTable AlacakOdemeFiltre(string baslangic, string bitis)
         {
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "select * from Alacak where OdemeTarih between @baslangic and @bitis order by OdemeTarih";
