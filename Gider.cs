@@ -57,12 +57,10 @@ namespace GelirGider
             }
             Temizle();
         }
-
         private void btnEkle_Click(object sender, System.EventArgs e)
         {
             if (cmbGiderTuru.Text != "Gider Türü Seçin" && txtTutar.Text != "")
-            {
-                Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbGiderTuru.Text);
+            {                
                 if (chkOdemeAlindi.Checked == false)
                 {
                     Borc borc = new Borc();
@@ -72,6 +70,10 @@ namespace GelirGider
                     borc.txtAciklama.Text = txtAciklama.Text;
                     borc.ShowDialog();
                 }
+                else
+                {
+                    Veritabani.GiderEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbGiderTuru.Text);
+                }
                 Temizle();
             }
             else
@@ -79,7 +81,6 @@ namespace GelirGider
                 MessageBox.Show("Gider Türü ve Tutar boş olamaz !!!");
             }
         }
-
         private void btnGuncelle_Click(object sender, System.EventArgs e)
         {
             if (cmbGiderTuru.Tag == null)
@@ -99,7 +100,6 @@ namespace GelirGider
                 }
             }
         }
-
         private void btnSil_Click(object sender, System.EventArgs e)
         {
             if (cmbGiderTuru.Tag == null)
@@ -112,7 +112,6 @@ namespace GelirGider
                 Temizle();
             }
         }
-
         private void dtGiderListesi_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cmbGiderTuru.Tag = dtGiderListesi.CurrentRow.Cells[0].Value.ToString();
@@ -121,12 +120,10 @@ namespace GelirGider
             cmbGiderTuru.Text = "";
             cmbGiderTuru.SelectedText = dtGiderListesi.CurrentRow.Cells[4].Value.ToString();
         }
-
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void btnTarihAra_Click(object sender, EventArgs e)
         {
             if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
@@ -141,7 +138,6 @@ namespace GelirGider
                 MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
             }
         }       
-
         private void cmbGiderTuruAra_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataView dv = giderSonuc.DefaultView;
@@ -150,7 +146,6 @@ namespace GelirGider
 
             Hesapla();
         }
-
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();

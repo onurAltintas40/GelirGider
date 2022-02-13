@@ -58,6 +58,7 @@ namespace GelirGider
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTutarToplam = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnOdemeYap = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtBorcListesi)).BeginInit();
@@ -67,6 +68,7 @@ namespace GelirGider
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnOdemeYap);
             this.groupBox2.Controls.Add(this.txtKime);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dtOdemeTarihi);
@@ -84,7 +86,7 @@ namespace GelirGider
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(633, 256);
+            this.groupBox2.Size = new System.Drawing.Size(609, 256);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
@@ -138,7 +140,7 @@ namespace GelirGider
             // 
             this.btnSil.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSil.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSil.Location = new System.Drawing.Point(412, 200);
+            this.btnSil.Location = new System.Drawing.Point(270, 197);
             this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(120, 39);
@@ -153,7 +155,7 @@ namespace GelirGider
             this.txtAciklama.Location = new System.Drawing.Point(367, 53);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(255, 122);
+            this.txtAciklama.Size = new System.Drawing.Size(230, 122);
             this.txtAciklama.TabIndex = 5;
             this.txtAciklama.Text = "";
             // 
@@ -161,7 +163,7 @@ namespace GelirGider
             // 
             this.btnGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnGuncelle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGuncelle.Location = new System.Drawing.Point(262, 200);
+            this.btnGuncelle.Location = new System.Drawing.Point(142, 197);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(120, 39);
@@ -184,7 +186,7 @@ namespace GelirGider
             // 
             this.btnEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEkle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEkle.Location = new System.Drawing.Point(110, 200);
+            this.btnEkle.Location = new System.Drawing.Point(14, 197);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(120, 39);
@@ -227,7 +229,7 @@ namespace GelirGider
             this.btnTemizle.BackColor = System.Drawing.Color.Brown;
             this.btnTemizle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTemizle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTemizle.Location = new System.Drawing.Point(656, 120);
+            this.btnTemizle.Location = new System.Drawing.Point(904, 27);
             this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(106, 48);
@@ -239,11 +241,11 @@ namespace GelirGider
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtBorcListesi);
-            this.groupBox1.Location = new System.Drawing.Point(13, 377);
+            this.groupBox1.Location = new System.Drawing.Point(13, 277);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1001, 558);
+            this.groupBox1.Size = new System.Drawing.Size(1001, 601);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Borc Listesi";
@@ -259,7 +261,7 @@ namespace GelirGider
             this.dtBorcListesi.RowHeadersWidth = 51;
             this.dtBorcListesi.RowTemplate.Height = 29;
             this.dtBorcListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtBorcListesi.Size = new System.Drawing.Size(984, 513);
+            this.dtBorcListesi.Size = new System.Drawing.Size(984, 556);
             this.dtBorcListesi.TabIndex = 0;
             this.dtBorcListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtBorcListesi_CellDoubleClick);
             // 
@@ -273,9 +275,9 @@ namespace GelirGider
             this.groupBox4.Controls.Add(this.dtBaslangic);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(13, 276);
+            this.groupBox4.Location = new System.Drawing.Point(629, 82);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(995, 94);
+            this.groupBox4.Size = new System.Drawing.Size(382, 187);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arama:";
@@ -284,9 +286,9 @@ namespace GelirGider
             // 
             this.btnTarihAra.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnTarihAra.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTarihAra.Location = new System.Drawing.Point(713, 25);
+            this.btnTarihAra.Location = new System.Drawing.Point(234, 82);
             this.btnTarihAra.Name = "btnTarihAra";
-            this.btnTarihAra.Size = new System.Drawing.Size(108, 61);
+            this.btnTarihAra.Size = new System.Drawing.Size(108, 43);
             this.btnTarihAra.TabIndex = 13;
             this.btnTarihAra.Text = "Tarihe Göre Ara";
             this.btnTarihAra.UseVisualStyleBackColor = false;
@@ -296,9 +298,9 @@ namespace GelirGider
             // 
             this.btnOdemeTarihAra.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnOdemeTarihAra.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOdemeTarihAra.Location = new System.Drawing.Point(851, 25);
+            this.btnOdemeTarihAra.Location = new System.Drawing.Point(234, 138);
             this.btnOdemeTarihAra.Name = "btnOdemeTarihAra";
-            this.btnOdemeTarihAra.Size = new System.Drawing.Size(108, 61);
+            this.btnOdemeTarihAra.Size = new System.Drawing.Size(108, 43);
             this.btnOdemeTarihAra.TabIndex = 14;
             this.btnOdemeTarihAra.Text = "Ödeme Tarihine Göre Ara";
             this.btnOdemeTarihAra.UseVisualStyleBackColor = false;
@@ -307,7 +309,7 @@ namespace GelirGider
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(475, 27);
+            this.label8.Location = new System.Drawing.Point(8, 128);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 19);
@@ -316,14 +318,14 @@ namespace GelirGider
             // 
             // dtBitis
             // 
-            this.dtBitis.Location = new System.Drawing.Point(475, 49);
+            this.dtBitis.Location = new System.Drawing.Point(8, 150);
             this.dtBitis.Name = "dtBitis";
             this.dtBitis.Size = new System.Drawing.Size(220, 26);
             this.dtBitis.TabIndex = 12;
             // 
             // txtisimAra
             // 
-            this.txtisimAra.Location = new System.Drawing.Point(7, 49);
+            this.txtisimAra.Location = new System.Drawing.Point(89, 21);
             this.txtisimAra.Margin = new System.Windows.Forms.Padding(4);
             this.txtisimAra.Name = "txtisimAra";
             this.txtisimAra.Size = new System.Drawing.Size(173, 26);
@@ -332,7 +334,7 @@ namespace GelirGider
             // 
             // dtBaslangic
             // 
-            this.dtBaslangic.Location = new System.Drawing.Point(219, 49);
+            this.dtBaslangic.Location = new System.Drawing.Point(8, 90);
             this.dtBaslangic.Name = "dtBaslangic";
             this.dtBaslangic.Size = new System.Drawing.Size(220, 26);
             this.dtBaslangic.TabIndex = 11;
@@ -340,7 +342,7 @@ namespace GelirGider
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(219, 26);
+            this.label7.Location = new System.Drawing.Point(8, 68);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 19);
@@ -361,11 +363,11 @@ namespace GelirGider
             // 
             this.groupBox3.Controls.Add(this.txtTutarToplam);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(656, 174);
+            this.groupBox3.Location = new System.Drawing.Point(629, 22);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox3.Size = new System.Drawing.Size(203, 97);
+            this.groupBox3.Size = new System.Drawing.Size(267, 54);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
@@ -375,7 +377,7 @@ namespace GelirGider
             this.txtTutarToplam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTutarToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTutarToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtTutarToplam.Location = new System.Drawing.Point(7, 56);
+            this.txtTutarToplam.Location = new System.Drawing.Point(57, 20);
             this.txtTutarToplam.Name = "txtTutarToplam";
             this.txtTutarToplam.ReadOnly = true;
             this.txtTutarToplam.Size = new System.Drawing.Size(189, 26);
@@ -384,21 +386,34 @@ namespace GelirGider
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 27);
+            this.label6.Location = new System.Drawing.Point(8, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Tutar:";
             // 
+            // btnOdemeYap
+            // 
+            this.btnOdemeYap.BackColor = System.Drawing.Color.Brown;
+            this.btnOdemeYap.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnOdemeYap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOdemeYap.Location = new System.Drawing.Point(482, 197);
+            this.btnOdemeYap.Name = "btnOdemeYap";
+            this.btnOdemeYap.Size = new System.Drawing.Size(120, 48);
+            this.btnOdemeYap.TabIndex = 15;
+            this.btnOdemeYap.Text = "Borç Ödemesi Yap";
+            this.btnOdemeYap.UseVisualStyleBackColor = false;
+            this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
+            // 
             // Borc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 948);
+            this.ClientSize = new System.Drawing.Size(1023, 886);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -449,5 +464,6 @@ namespace GelirGider
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTutarToplam;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnOdemeYap;
     }
 }

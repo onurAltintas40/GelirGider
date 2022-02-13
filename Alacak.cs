@@ -28,7 +28,7 @@ namespace GelirGider
             dtAlacakListesi.Columns[5].Width = 160;
 
             Renk();
-           
+
             Hesapla();
         }
 
@@ -76,7 +76,7 @@ namespace GelirGider
         }
         private void Alacak_Load(object sender, EventArgs e)
         {
-            if (a==0)
+            if (a == 0)
             {
                 var gelirTuruSonuc = Veritabani.GelirTuruListele();
 
@@ -86,13 +86,13 @@ namespace GelirGider
                     cmbAlacakTuru.Items.Add(gelirTuruSonuc["GelirTuru"]);
                 }
 
-                Temizle();              
+                Temizle();
             }
             else
             {
-                Listele();  
+                Listele();
             }
-           
+
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace GelirGider
             txtKimden.Text = dtAlacakListesi.CurrentRow.Cells[1].Value.ToString();
             txtTutar.Text = dtAlacakListesi.CurrentRow.Cells[2].Value.ToString();
             dtOdemeTarihi.Value = DateTime.Parse(dtAlacakListesi.CurrentRow.Cells[3].Value.ToString());
-            cmbAlacakTuru.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();            
+            cmbAlacakTuru.Text = dtAlacakListesi.CurrentRow.Cells[5].Value.ToString();
             txtAciklama.Text = dtAlacakListesi.CurrentRow.Cells[6].Value.ToString();
         }
         private void txtTutar_KeyPress(object sender, KeyPressEventArgs e)
@@ -161,7 +161,7 @@ namespace GelirGider
             dtAlacakListesi.DataSource = dv;
             Hesapla();
             Renk();
-        }       
+        }
         private void btnOdemeTarihAra_Click(object sender, EventArgs e)
         {
             if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
@@ -194,5 +194,21 @@ namespace GelirGider
             }
         }
 
+        private void btnAlacakOdendi_Click(object sender, EventArgs e)
+        {
+            if (cmbAlacakTuru.Tag == null)
+            {
+                MessageBox.Show("Lütfen bir kayıt seçin!!!");
+            }
+            else
+            {
+                Veritabani.GelirEkle(Double.Parse(txtTutar.Text), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txtAciklama.Text, cmbAlacakTuru.Text);
+                Veritabani.AlacakSil(Int32.Parse((string)cmbAlacakTuru.Tag));
+                Temizle();
+
+                Gelir g = new Gelir(); 
+                g.ShowDialog(); 
+            }
+        }
     }
 }
