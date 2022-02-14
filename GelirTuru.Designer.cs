@@ -44,25 +44,25 @@ namespace GelirGider
             this.label1.Location = new System.Drawing.Point(7, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(102, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gelir Türü:";
             // 
             // txtGelirTuru
             // 
-            this.txtGelirTuru.Location = new System.Drawing.Point(88, 13);
+            this.txtGelirTuru.Location = new System.Drawing.Point(117, 13);
             this.txtGelirTuru.Margin = new System.Windows.Forms.Padding(4);
             this.txtGelirTuru.Name = "txtGelirTuru";
-            this.txtGelirTuru.Size = new System.Drawing.Size(207, 26);
+            this.txtGelirTuru.Size = new System.Drawing.Size(226, 30);
             this.txtGelirTuru.TabIndex = 1;
             // 
             // btnEkle
             // 
             this.btnEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEkle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEkle.Location = new System.Drawing.Point(7, 52);
+            this.btnEkle.Location = new System.Drawing.Point(7, 57);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(73, 35);
+            this.btnEkle.Size = new System.Drawing.Size(133, 45);
             this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -72,9 +72,9 @@ namespace GelirGider
             // 
             this.btnGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnGuncelle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGuncelle.Location = new System.Drawing.Point(99, 52);
+            this.btnGuncelle.Location = new System.Drawing.Point(146, 57);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(122, 35);
+            this.btnGuncelle.Size = new System.Drawing.Size(133, 45);
             this.btnGuncelle.TabIndex = 2;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = false;
@@ -84,9 +84,9 @@ namespace GelirGider
             // 
             this.btnSil.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSil.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSil.Location = new System.Drawing.Point(240, 52);
+            this.btnSil.Location = new System.Drawing.Point(285, 57);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(66, 35);
+            this.btnSil.Size = new System.Drawing.Size(133, 45);
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = false;
@@ -96,20 +96,20 @@ namespace GelirGider
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 108);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(353, 356);
+            this.dataGridView1.Size = new System.Drawing.Size(406, 440);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // GelirTuru
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 461);
+            this.ClientSize = new System.Drawing.Size(427, 563);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);

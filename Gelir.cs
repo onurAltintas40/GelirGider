@@ -136,7 +136,7 @@ namespace GelirGider
         {
             if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
             {
-                var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                var sonuc = Veritabani.GelirTarihFiltre(dtBaslangic.Value.ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
                 dtGelirListesi.DataSource = sonuc;
 
                 Hesapla();

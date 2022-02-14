@@ -133,7 +133,7 @@ namespace GelirGider
             this.groupBox2.Controls.Add(this.dtAlacaklar);
             this.groupBox2.Location = new System.Drawing.Point(20, 229);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(908, 336);
+            this.groupBox2.Size = new System.Drawing.Size(930, 336);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alacaklar";
@@ -148,7 +148,7 @@ namespace GelirGider
             this.dtAlacaklar.RowHeadersWidth = 51;
             this.dtAlacaklar.RowTemplate.Height = 25;
             this.dtAlacaklar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtAlacaklar.Size = new System.Drawing.Size(896, 300);
+            this.dtAlacaklar.Size = new System.Drawing.Size(918, 300);
             this.dtAlacaklar.TabIndex = 0;
             // 
             // groupBox3
@@ -156,7 +156,7 @@ namespace GelirGider
             this.groupBox3.Controls.Add(this.dtBorclar);
             this.groupBox3.Location = new System.Drawing.Point(20, 571);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(908, 338);
+            this.groupBox3.Size = new System.Drawing.Size(930, 338);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Borçlar";
@@ -171,7 +171,7 @@ namespace GelirGider
             this.dtBorclar.RowHeadersWidth = 51;
             this.dtBorclar.RowTemplate.Height = 25;
             this.dtBorclar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtBorclar.Size = new System.Drawing.Size(896, 300);
+            this.dtBorclar.Size = new System.Drawing.Size(918, 300);
             this.dtBorclar.TabIndex = 0;
             // 
             // menuStrip1
@@ -183,7 +183,7 @@ namespace GelirGider
             this.tsCikis});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -195,34 +195,34 @@ namespace GelirGider
             this.tsAlacakİslemleri,
             this.tsBorcİslemleri});
             this.tsGelirİslemleri.Name = "tsGelirİslemleri";
-            this.tsGelirİslemleri.Size = new System.Drawing.Size(60, 20);
+            this.tsGelirİslemleri.Size = new System.Drawing.Size(75, 24);
             this.tsGelirİslemleri.Text = "İşlemler";
             // 
             // gelirİşlemleriToolStripMenuItem
             // 
             this.gelirİşlemleriToolStripMenuItem.Name = "gelirİşlemleriToolStripMenuItem";
-            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.gelirİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.gelirİşlemleriToolStripMenuItem.Text = "Gelir İşlemleri";
             this.gelirİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.gelirİşlemleriToolStripMenuItem_Click);
             // 
             // tsGiderİslemleri
             // 
             this.tsGiderİslemleri.Name = "tsGiderİslemleri";
-            this.tsGiderİslemleri.Size = new System.Drawing.Size(156, 22);
+            this.tsGiderİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsGiderİslemleri.Text = "Gider İşlemleri";
             this.tsGiderİslemleri.Click += new System.EventHandler(this.tsGiderİslemleri_Click);
             // 
             // tsAlacakİslemleri
             // 
             this.tsAlacakİslemleri.Name = "tsAlacakİslemleri";
-            this.tsAlacakİslemleri.Size = new System.Drawing.Size(156, 22);
+            this.tsAlacakİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsAlacakİslemleri.Text = "Alacak İşlemleri";
             this.tsAlacakİslemleri.Click += new System.EventHandler(this.tsAlacakİslemleri_Click);
             // 
             // tsBorcİslemleri
             // 
             this.tsBorcİslemleri.Name = "tsBorcİslemleri";
-            this.tsBorcİslemleri.Size = new System.Drawing.Size(156, 22);
+            this.tsBorcİslemleri.Size = new System.Drawing.Size(196, 26);
             this.tsBorcİslemleri.Text = "Borç İşlemleri";
             this.tsBorcİslemleri.Click += new System.EventHandler(this.tsBorcİslemleri_Click);
             // 
@@ -233,34 +233,34 @@ namespace GelirGider
             this.gelirTürüİşlemleriToolStripMenuItem,
             this.tsGiderTuru});
             this.tsGelirTuru.Name = "tsGelirTuru";
-            this.tsGelirTuru.Size = new System.Drawing.Size(56, 20);
+            this.tsGelirTuru.Size = new System.Drawing.Size(70, 24);
             this.tsGelirTuru.Text = "Ayarlar";
             // 
             // tsKullaniciislemleri
             // 
             this.tsKullaniciislemleri.Name = "tsKullaniciislemleri";
-            this.tsKullaniciislemleri.Size = new System.Drawing.Size(176, 22);
+            this.tsKullaniciislemleri.Size = new System.Drawing.Size(221, 26);
             this.tsKullaniciislemleri.Text = "Kullanıcı İşlemleri";
             this.tsKullaniciislemleri.Click += new System.EventHandler(this.tsKullaniciislemleri_Click);
             // 
             // gelirTürüİşlemleriToolStripMenuItem
             // 
             this.gelirTürüİşlemleriToolStripMenuItem.Name = "gelirTürüİşlemleriToolStripMenuItem";
-            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.gelirTürüİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.gelirTürüİşlemleriToolStripMenuItem.Text = "Gelir Türü İşlemleri";
             this.gelirTürüİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.gelirTürüİşlemleriToolStripMenuItem_Click);
             // 
             // tsGiderTuru
             // 
             this.tsGiderTuru.Name = "tsGiderTuru";
-            this.tsGiderTuru.Size = new System.Drawing.Size(176, 22);
+            this.tsGiderTuru.Size = new System.Drawing.Size(221, 26);
             this.tsGiderTuru.Text = "Gider Türü İşlemleri";
             this.tsGiderTuru.Click += new System.EventHandler(this.tsGiderTuru_Click);
             // 
             // tsCikis
             // 
             this.tsCikis.Name = "tsCikis";
-            this.tsCikis.Size = new System.Drawing.Size(46, 20);
+            this.tsCikis.Size = new System.Drawing.Size(57, 24);
             this.tsCikis.Text = "ÇIKIŞ";
             this.tsCikis.Click += new System.EventHandler(this.tsCikis_Click);
             // 
@@ -290,10 +290,10 @@ namespace GelirGider
             this.txtBorcToplam.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtBorcToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtBorcToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtBorcToplam.Location = new System.Drawing.Point(69, 134);
+            this.txtBorcToplam.Location = new System.Drawing.Point(86, 134);
             this.txtBorcToplam.Name = "txtBorcToplam";
             this.txtBorcToplam.ReadOnly = true;
-            this.txtBorcToplam.Size = new System.Drawing.Size(137, 26);
+            this.txtBorcToplam.Size = new System.Drawing.Size(137, 30);
             this.txtBorcToplam.TabIndex = 4;
             this.txtBorcToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -302,10 +302,10 @@ namespace GelirGider
             this.txtGiderToplam.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtGiderToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtGiderToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtGiderToplam.Location = new System.Drawing.Point(69, 99);
+            this.txtGiderToplam.Location = new System.Drawing.Point(85, 98);
             this.txtGiderToplam.Name = "txtGiderToplam";
             this.txtGiderToplam.ReadOnly = true;
-            this.txtGiderToplam.Size = new System.Drawing.Size(137, 26);
+            this.txtGiderToplam.Size = new System.Drawing.Size(137, 30);
             this.txtGiderToplam.TabIndex = 4;
             this.txtGiderToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -314,10 +314,10 @@ namespace GelirGider
             this.txtAlacakToplam.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtAlacakToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAlacakToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtAlacakToplam.Location = new System.Drawing.Point(69, 64);
+            this.txtAlacakToplam.Location = new System.Drawing.Point(86, 64);
             this.txtAlacakToplam.Name = "txtAlacakToplam";
             this.txtAlacakToplam.ReadOnly = true;
-            this.txtAlacakToplam.Size = new System.Drawing.Size(137, 26);
+            this.txtAlacakToplam.Size = new System.Drawing.Size(137, 30);
             this.txtAlacakToplam.TabIndex = 4;
             this.txtAlacakToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -326,10 +326,10 @@ namespace GelirGider
             this.txtGiderBorcToplam.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtGiderBorcToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtGiderBorcToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtGiderBorcToplam.Location = new System.Drawing.Point(244, 121);
+            this.txtGiderBorcToplam.Location = new System.Drawing.Point(269, 122);
             this.txtGiderBorcToplam.Name = "txtGiderBorcToplam";
             this.txtGiderBorcToplam.ReadOnly = true;
-            this.txtGiderBorcToplam.Size = new System.Drawing.Size(137, 26);
+            this.txtGiderBorcToplam.Size = new System.Drawing.Size(137, 30);
             this.txtGiderBorcToplam.TabIndex = 4;
             this.txtGiderBorcToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -338,10 +338,10 @@ namespace GelirGider
             this.txtGelirAlacakToplam.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtGelirAlacakToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtGelirAlacakToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtGelirAlacakToplam.Location = new System.Drawing.Point(244, 53);
+            this.txtGelirAlacakToplam.Location = new System.Drawing.Point(269, 58);
             this.txtGelirAlacakToplam.Name = "txtGelirAlacakToplam";
             this.txtGelirAlacakToplam.ReadOnly = true;
-            this.txtGelirAlacakToplam.Size = new System.Drawing.Size(137, 26);
+            this.txtGelirAlacakToplam.Size = new System.Drawing.Size(137, 30);
             this.txtGelirAlacakToplam.TabIndex = 4;
             this.txtGelirAlacakToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -350,10 +350,10 @@ namespace GelirGider
             this.txtGelirToplam.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtGelirToplam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtGelirToplam.ForeColor = System.Drawing.Color.Red;
-            this.txtGelirToplam.Location = new System.Drawing.Point(69, 28);
+            this.txtGelirToplam.Location = new System.Drawing.Point(86, 28);
             this.txtGelirToplam.Name = "txtGelirToplam";
             this.txtGelirToplam.ReadOnly = true;
-            this.txtGelirToplam.Size = new System.Drawing.Size(137, 26);
+            this.txtGelirToplam.Size = new System.Drawing.Size(137, 30);
             this.txtGelirToplam.TabIndex = 4;
             this.txtGelirToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -362,7 +362,7 @@ namespace GelirGider
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.Size = new System.Drawing.Size(72, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "Alacak:";
             // 
@@ -371,7 +371,7 @@ namespace GelirGider
             this.label77.AutoSize = true;
             this.label77.Location = new System.Drawing.Point(21, 137);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(42, 19);
+            this.label77.Size = new System.Drawing.Size(55, 22);
             this.label77.TabIndex = 2;
             this.label77.Text = "Borç:";
             // 
@@ -380,42 +380,42 @@ namespace GelirGider
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.Size = new System.Drawing.Size(62, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Gider:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(249, 101);
+            this.label5.Location = new System.Drawing.Point(269, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 19);
+            this.label5.Size = new System.Drawing.Size(130, 22);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Gider ve Borc";
+            this.label5.Text = "Gider ve Borc:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 33);
+            this.label3.Location = new System.Drawing.Point(269, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 19);
+            this.label3.Size = new System.Drawing.Size(142, 22);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Gelir ve Alacak";
+            this.label3.Text = "Gelir ve Alacak:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 19);
+            this.label1.Size = new System.Drawing.Size(58, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gelir:";
             // 
             // AnaMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 923);
+            this.ClientSize = new System.Drawing.Size(962, 923);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

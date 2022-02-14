@@ -19,15 +19,12 @@ namespace GelirGider
                 txtKullaniciAdi.Text = sonuc["KullaniciAdi"].ToString();
                 txtSifre.Text = sonuc["Sifre"].ToString();
                 txtEPosta.Text = sonuc["EPosta"].ToString();
-            }
-
-            
+            }            
         }
         private void KullaniciDuzenle_Load(object sender, EventArgs e)
         {
             KullaniciGetir();
         }
-
         private void btnGiris_Click(object sender, EventArgs e)
         {
             if (txtKullaniciAdi.Text is null & txtSifre.Text is null)

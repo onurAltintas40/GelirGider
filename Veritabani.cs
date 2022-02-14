@@ -1,12 +1,11 @@
 ﻿using System.Data;
-using System.Data.SqlClient;
 using System.Data.SQLite;
 
 namespace GelirGider
 {
     public class Veritabani
-    {
-        public static SQLiteConnection con = new SQLiteConnection("Data source = .\\GelirGider.db;Version=3");
+    { 
+        public static SQLiteConnection con = new SQLiteConnection("Data source = .\\GelirGider.db;Version=3;Count Changes=off;Journal Mode=off;Pooling=true;Cache Size=10000;Page Size=4096;Synchronous=off");
 
         static DataTable ListeleDt(string sql)
         {
@@ -24,6 +23,7 @@ namespace GelirGider
                         }
                     }
                 }
+                c.Close();
             }
         }
         public static bool KullaniciGiris(string kullaniciAdi, string sifre)
@@ -92,7 +92,7 @@ namespace GelirGider
             string sql = "Select * from GelirTuru Order By GelirTuru";
 
             SQLiteCommand command = new(sql, con);
-            SQLiteDataReader dr = command.ExecuteReader();
+            SQLiteDataReader dr = command.ExecuteReader();            
             return dr;       
             
         }
@@ -111,7 +111,7 @@ namespace GelirGider
             if (con.State != ConnectionState.Open) con.Open();
             string sql = "Select * from GiderTuru Order By GiderTuru";
             SQLiteCommand command = new(sql, con);
-            SQLiteDataReader dr = command.ExecuteReader();
+            SQLiteDataReader dr = command.ExecuteReader();            
             return dr;
         }
         public static DataTable GiderTuruListeleDt()
@@ -480,7 +480,7 @@ namespace GelirGider
             string sql = "Select SUM(Tutar) as Toplam from Gelir";
             SQLiteCommand cmd = new(sql, con);
 
-            var sonuc = cmd.ExecuteReader();
+            var sonuc = cmd.ExecuteReader();           
             return sonuc;
         }
         public static SQLiteDataReader GiderToplam()
@@ -489,7 +489,7 @@ namespace GelirGider
             string sql = "Select SUM(Tutar) as Toplam from Gider";
             SQLiteCommand cmd = new(sql, con);
 
-            var sonuc = cmd.ExecuteReader();
+            var sonuc = cmd.ExecuteReader();           
             return sonuc;
         }
         public static SQLiteDataReader AlacakToplam()
@@ -498,7 +498,7 @@ namespace GelirGider
             string sql = "Select SUM(Tutar) as Toplam from Alacak";
             SQLiteCommand cmd = new(sql, con);
 
-            var sonuc = cmd.ExecuteReader();
+            var sonuc = cmd.ExecuteReader();           
             return sonuc;
         }
         public static SQLiteDataReader BorcToplam()
@@ -507,7 +507,7 @@ namespace GelirGider
             string sql = "Select SUM(Tutar) as Toplam from Borc";
             SQLiteCommand cmd = new(sql, con);
 
-            var sonuc = cmd.ExecuteReader();
+            var sonuc = cmd.ExecuteReader();           
             return sonuc;
         }
 
@@ -523,6 +523,7 @@ namespace GelirGider
             DataTable dt = new DataTable();
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             da.Fill(dt);
+            con.Close();
             return dt;
         }
         public static DataTable AlacakTarihFiltre(string baslangic, string bitis)
@@ -537,6 +538,7 @@ namespace GelirGider
             DataTable dt = new DataTable();
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             da.Fill(dt);
+            con.Close();
             return dt;
         }
         public static DataTable BorcOdemeFiltre(string baslangic, string bitis)
@@ -551,6 +553,7 @@ namespace GelirGider
             DataTable dt = new DataTable();
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             da.Fill(dt);
+            con.Close();
             return dt;
         }
         public static DataTable BorcTarihFiltre(string baslangic, string bitis)
@@ -565,6 +568,7 @@ namespace GelirGider
             DataTable dt = new DataTable();
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             da.Fill(dt);
+            con.Close();
             return dt;
         }
         public static DataTable GelirTarihFiltre(string baslangic, string bitis)
@@ -579,6 +583,7 @@ namespace GelirGider
             DataTable dt = new DataTable();
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             da.Fill(dt);
+            con.Close();
             return dt;
         }
         public static DataTable GiderTarihFiltre(string baslangic, string bitis)
@@ -592,7 +597,8 @@ namespace GelirGider
             cmd.Parameters.Add(prm2);
             DataTable dt = new DataTable();
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-            da.Fill(dt);
+            da.Fill(dt);            
+            con.Close();
             return dt;
         }
     }

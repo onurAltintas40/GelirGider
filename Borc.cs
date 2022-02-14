@@ -167,7 +167,7 @@ namespace GelirGider
         {
             if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
             {
-                var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                var sonuc = Veritabani.BorcTarihFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.AddDays(1).ToString("yyyy/MM/dd HH:mm:ss"));
                 dtBorcListesi.DataSource = sonuc;
 
                 Hesapla();
@@ -183,7 +183,7 @@ namespace GelirGider
         {
             if (dtBaslangic.Value.AddDays(-1) <= dtBitis.Value)
             {
-                var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.ToString("yyyy/MM/dd HH:mm:ss"));
+                var sonuc = Veritabani.BorcOdemeFiltre(dtBaslangic.Value.AddDays(-1).ToString("yyyy/MM/dd HH:mm:ss"), dtBitis.Value.AddDays(1).ToString("yyyy/MM/dd HH:mm:ss"));
                 dtBorcListesi.DataSource = sonuc;
 
                 Hesapla();
@@ -194,7 +194,6 @@ namespace GelirGider
                 MessageBox.Show("Bitiş tarihi başlangıç tarihinden küçük olamaz !!!");
             }
         }
-
         private void btnOdemeYap_Click(object sender, EventArgs e)
         {
             if (cmbBorcTuru.Tag == null)
